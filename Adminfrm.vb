@@ -1,7 +1,7 @@
 ﻿Public Class Adminfrm
 
     Private dashcntrl As New Dashboardcntrl()
-
+    Private itemCntrl As New ItemsCntrl()
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Label4.Text = DateAndTime.Now.ToString("MMMM dd, yyyy")
         Label5.Text = DateAndTime.Now.ToString("hh:mm tt")
@@ -15,5 +15,9 @@
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         selectedControl(dashcntrl, DisplayPnl)
+    End Sub
+
+    Private Sub Itmbtn_Click(sender As Object, e As EventArgs) Handles Itmbtn.Click
+        selectedControl(itemCntrl, DisplayPnl)
     End Sub
 End Class

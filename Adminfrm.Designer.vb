@@ -40,7 +40,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
@@ -114,7 +114,7 @@ Partial Class Adminfrm
         '
         'Guna2Panel4
         '
-        Me.Guna2Panel4.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Guna2Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.Guna2Panel4.Controls.Add(Me.Label5)
         Me.Guna2Panel4.Controls.Add(Me.Label4)
         Me.Guna2Panel4.Controls.Add(Me.Label3)
@@ -132,7 +132,7 @@ Partial Class Adminfrm
         Me.Label5.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label5.Location = New System.Drawing.Point(1473, 74)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(38, 19)
@@ -144,7 +144,7 @@ Partial Class Adminfrm
         Me.Label4.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label4.Location = New System.Drawing.Point(1351, 74)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(38, 19)
@@ -156,7 +156,7 @@ Partial Class Adminfrm
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(1351, 52)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(64, 22)
@@ -179,7 +179,7 @@ Partial Class Adminfrm
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(23, 74)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(146, 19)
@@ -191,7 +191,7 @@ Partial Class Adminfrm
         Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label1.Location = New System.Drawing.Point(23, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(163, 36)
@@ -216,7 +216,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button4, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button3, 0, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button2, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.Itmbtn, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Panel6, 0, 0)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button1, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
@@ -279,28 +279,28 @@ Partial Class Adminfrm
         Me.Guna2Button3.Text = "Users"
         Me.Guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Guna2Button2
+        'Itmbtn
         '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderThickness = 2
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button2.Location = New System.Drawing.Point(0, 293)
-        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(295, 122)
-        Me.Guna2Button2.TabIndex = 5
-        Me.Guna2Button2.Text = "Items"
-        Me.Guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Itmbtn.Animated = True
+        Me.Itmbtn.BorderColor = System.Drawing.Color.Transparent
+        Me.Itmbtn.BorderThickness = 2
+        Me.Itmbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Itmbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Itmbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Itmbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Itmbtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Itmbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Itmbtn.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Itmbtn.ForeColor = System.Drawing.Color.White
+        Me.Itmbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Itmbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Itmbtn.Location = New System.Drawing.Point(0, 293)
+        Me.Itmbtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.Itmbtn.Name = "Itmbtn"
+        Me.Itmbtn.Size = New System.Drawing.Size(295, 122)
+        Me.Itmbtn.TabIndex = 5
+        Me.Itmbtn.Text = "Items"
+        Me.Itmbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Guna2Panel6
         '
@@ -390,7 +390,7 @@ Partial Class Adminfrm
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label

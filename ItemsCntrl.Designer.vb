@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
-    Inherits System.Windows.Forms.Form
+Partial Class ItemsCntrl
+    Inherits System.Windows.Forms.UserControl
 
-    'Form overrides dispose to clean up the component list.
+    'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -24,14 +24,12 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         '
-        'Form1
+        'ItemsCntrl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(1904, 1041)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "ItemsCntrl"
+        Me.Size = New System.Drawing.Size(1591, 903)
         Me.ResumeLayout(False)
 
     End Sub

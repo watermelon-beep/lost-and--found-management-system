@@ -224,12 +224,12 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 6
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.60835!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86311!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86311!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86311!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.86311!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.9392!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.79939!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.28249!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.28249!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.28249!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.28249!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.07066!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(295, 1035)
         Me.TableLayoutPanel3.TabIndex = 0
         '
@@ -244,14 +244,14 @@ Partial Class Adminfrm
         Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Button4.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button4.ForeColor = System.Drawing.Color.White
         Me.Guna2Button4.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.Guna2Button4.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button4.Location = New System.Drawing.Point(0, 537)
+        Me.Guna2Button4.Location = New System.Drawing.Point(0, 387)
         Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(295, 122)
+        Me.Guna2Button4.Size = New System.Drawing.Size(295, 85)
         Me.Guna2Button4.TabIndex = 7
         Me.Guna2Button4.Text = "Reports"
         Me.Guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -267,14 +267,14 @@ Partial Class Adminfrm
         Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Button3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button3.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button3.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.White
         Me.Guna2Button3.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.Guna2Button3.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button3.Location = New System.Drawing.Point(0, 415)
+        Me.Guna2Button3.Location = New System.Drawing.Point(0, 302)
         Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(295, 122)
+        Me.Guna2Button3.Size = New System.Drawing.Size(295, 85)
         Me.Guna2Button3.TabIndex = 6
         Me.Guna2Button3.Text = "Users"
         Me.Guna2Button3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -290,14 +290,14 @@ Partial Class Adminfrm
         Me.Itmbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Itmbtn.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Itmbtn.FillColor = System.Drawing.Color.Transparent
-        Me.Itmbtn.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Itmbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Itmbtn.ForeColor = System.Drawing.Color.White
         Me.Itmbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.Itmbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Itmbtn.Location = New System.Drawing.Point(0, 293)
+        Me.Itmbtn.Location = New System.Drawing.Point(0, 217)
         Me.Itmbtn.Margin = New System.Windows.Forms.Padding(0)
         Me.Itmbtn.Name = "Itmbtn"
-        Me.Itmbtn.Size = New System.Drawing.Size(295, 122)
+        Me.Itmbtn.Size = New System.Drawing.Size(295, 85)
         Me.Itmbtn.TabIndex = 5
         Me.Itmbtn.Text = "Items"
         Me.Itmbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
@@ -309,7 +309,7 @@ Partial Class Adminfrm
         Me.Guna2Panel6.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(295, 171)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(295, 132)
         Me.Guna2Panel6.TabIndex = 3
         '
         'Label6
@@ -318,7 +318,7 @@ Partial Class Adminfrm
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Mongolian Baiti", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(45, 52)
+        Me.Label6.Location = New System.Drawing.Point(45, 33)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(200, 69)
         Me.Label6.TabIndex = 1
@@ -337,14 +337,14 @@ Partial Class Adminfrm
         Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
         Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("MS Gothic", 20.25!, System.Drawing.FontStyle.Bold)
+        Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.White
         Me.Guna2Button1.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button1.Location = New System.Drawing.Point(0, 171)
+        Me.Guna2Button1.Location = New System.Drawing.Point(0, 132)
         Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(295, 122)
+        Me.Guna2Button1.Size = New System.Drawing.Size(295, 85)
         Me.Guna2Button1.TabIndex = 4
         Me.Guna2Button1.Text = "Dashboard"
         Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left

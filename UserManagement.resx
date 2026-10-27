@@ -117,6 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Guna2Button5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACYSURBVDhPzZI7DoAgEETpvMh6D1trYyfn89fbUnMqZQcoxJWgNk6yMZsdHgOiomgYm1wFmyzS
+        qyG97PlaTbCfhR2cIbS3AkRKUgq4lQSgdqvqYe5IT71UmDmPNycAHrjeInK+LCApwO9cdifsvSZAzDIA
+        e38A8E14SIC9ALB4Mb5vAVGfAY9/Y6rHD0kSD3wSPs61MMNipQ5IC81zU4AgMAAAAABJRU5ErkJggg==
+</value>
+  </data>
   <metadata name="DataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -144,4 +153,66 @@
   <metadata name="DataGridViewButtonColumn6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="Guna2PictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        RK5CYII=
+</value>
+  </data>
 </root>

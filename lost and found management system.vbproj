@@ -95,6 +95,7 @@
     <Compile Include="Dashboardcntrl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="DbConnection.vb" />
     <Compile Include="ItemsCntrl.Designer.vb">
       <DependentUpon>ItemsCntrl.vb</DependentUpon>
     </Compile>

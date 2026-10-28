@@ -120,10 +120,10 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="Guna2Button5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACYSURBVDhPzZI7DoAgEETpvMh6D1trYyfn89fbUnMqZQcoxJWgNk6yMZsdHgOiomgYm1wFmyzS
-        qyG97PlaTbCfhR2cIbS3AkRKUgq4lQSgdqvqYe5IT71UmDmPNycAHrjeInK+LCApwO9cdifsvSZAzDIA
-        e38A8E14SIC9ALB4Mb5vAVGfAY9/Y6rHD0kSD3wSPs61MMNipQ5IC81zU4AgMAAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAJhJREFUOE/N
+        kjsOgCAQROm8yHoPW2tjJ+fz19tScyplByjElaA2TrIxmx0eA6KiaBibXAWbLNKrIb3s+VpNsJ+FHZwh
+        tLcCREpSCriVBKB2q+ph7khPvVSYOY83JwAeuN4icr4sICnA71x2J+y9JkDMMgB7fwDwTXhIgL0AsHgx
+        vm8BUZ8Bj39jqscPSRIPfBI+zrUww2KlDkgLzXNTgCAwAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="DataGridViewTextBoxColumn8.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -139,6 +139,12 @@
     <value>True</value>
   </metadata>
   <metadata name="DataGridViewTextBoxColumn12.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="DataGridViewTextBoxColumn14.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -168,7 +174,7 @@
   <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="Guna2PictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="UsrImg.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAKAAAACgCAYAAACLz2ctAAAABGdBTUEAALGPC/xhBQAACZRJREFUeF7t
         nb9u3EYQxp1nSJG8gPs0qYIAKdOlcQLkQdIFgdsUad0HqdwYrlwZ0J2SWEcBEs9J4RcwUrky7FrZ0S2l
@@ -215,4 +221,7 @@
         RK5CYII=
 </value>
   </data>
+  <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

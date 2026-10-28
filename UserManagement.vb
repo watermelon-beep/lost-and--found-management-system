@@ -4,6 +4,36 @@ Imports Guna.UI2.WinForms
 
 Public Class UserManagement
 
+    Private Sub viewProfile(id As String)
+        Try
+            query = "SELECT * FROM user_table WHERE StaffID = @StaffID"
+
+            Using comm As New SqlCommand(query, conn)
+
+                comm.Parameters.AddWithValue("@StaffID", id)
+
+                Using dataRead = comm.ExecuteReader()
+                    While dataRead.Read
+                        Label2.Text = dataRead("FirstName").ToString()
+                        Label4.Text = dataRead("MiddleName").ToString()
+                        Label5.Text = dataRead("LastName").ToString()
+                        Label6.Text = dataRead("StaffID").ToString()
+                        Label1.Text = dataRead("AccountStatus").ToString()
+                        Label8.Text = dataRead("Age").ToString()
+                        Label18.Text = Convert.ToDateTime(dataRead("Birthdate")).ToString("MMMM dd, yyyy")
+                        Label10.Text = dataRead("ContactNumber").ToString()
+                        Label12.Text = dataRead("Email").ToString()
+                        Label14.Text = dataRead("Username").ToString()
+                        Label16.Text = dataRead("AccountStatus").ToString()
+                    End While
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub viewUserTable()
         Try
             query = "SELECT * FROM user_table"
@@ -19,7 +49,7 @@ Public Class UserManagement
                                     dataRead("FirstName"),
                                     dataRead("MiddleName"),
                                     dataRead("LastName"),
-                                    dataRead("Birthdate"),
+                                    Convert.ToDateTime(dataRead("Birthdate")).ToString("yyyy-MM-dd"),
                                     dataRead("Age").ToString(),
                                     dataRead("Gender"),
                                     dataRead("Role"),
@@ -44,26 +74,29 @@ Public Class UserManagement
     End Sub
 
     Private Sub ViewPhoto(id As String, images As Guna2PictureBox)
+        Try
+            query = "SELECT user_photo FROM staff_information WHERE staff_code = @staff_code"
 
-        query = "SELECT user_photo FROM staff_information WHERE staff_code = @staff_code"
-
-        Using comm As New SqlCommand(query, conn)
-            comm.Parameters.AddWithValue("@staff_code", id)
-            Using dataRead = comm.ExecuteReader()
-                If dataRead.Read Then
-                    If IsDBNull(dataRead("user_photo")) Then
-                        images.Image = Nothing
+            Using comm As New SqlCommand(query, conn)
+                comm.Parameters.AddWithValue("@staff_code", id)
+                Using dataRead = comm.ExecuteReader()
+                    If dataRead.Read Then
+                        If IsDBNull(dataRead("user_photo")) Then
+                            images.Image = Nothing
+                        Else
+                            Dim img() As Byte = CType(dataRead("user_photo"), Byte())
+                            Using MS As New IO.MemoryStream(img)
+                                images.Image = Image.FromStream(MS)
+                            End Using
+                        End If
                     Else
-                        Dim img() As Byte = CType(dataRead("user_photo"), Byte())
-                        Using MS As New IO.MemoryStream(img)
-                            images.Image = Image.FromStream(MS)
-                        End Using
+                        images.Image = Nothing
                     End If
-                Else
-                    images.Image = Nothing
-                End If
+                End Using
             End Using
-        End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 
@@ -100,7 +133,7 @@ Public Class UserManagement
             End Using
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -216,8 +249,6 @@ Public Class UserManagement
         CnfrmPasstxbx.Text = RegPasstxbx.Text
     End Sub
 
-
-
     Private Sub AddUsrbtn_Click(sender As Object, e As EventArgs) Handles AddUsrbtn.Click
         addUser()
     End Sub
@@ -243,5 +274,20 @@ Public Class UserManagement
 
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
         updateUser()
+    End Sub
+
+    Private Sub Usertbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Usertbl.CellContentClick
+        If e.RowIndex < 0 Then Return
+
+        Dim columnName As String = Usertbl.Columns(e.ColumnIndex).Name
+        Dim selectedRow As DataGridViewRow = Usertbl.Rows(e.RowIndex)
+        Dim rowId As String = Convert.ToString(selectedRow.Cells("DataGridViewTextBoxColumn9").Value)
+
+        Select Case columnName
+ 
+            Case "View"
+                viewProfile(rowId)
+        End Select
+
     End Sub
 End Class

@@ -24,7 +24,7 @@ Public Class UserManagement
                         Label10.Text = dataRead("ContactNumber").ToString()
                         Label12.Text = dataRead("Email").ToString()
                         Label14.Text = dataRead("Username").ToString()
-                        Label16.Text = dataRead("AccountStatus").ToString()
+                        Label16.Text = Convert.ToDateTime(dataRead("DateCreated")).ToString("MMMM dd, yyyy")
                     End While
                 End Using
             End Using
@@ -36,6 +36,7 @@ Public Class UserManagement
 
     Private Sub viewUserTable()
         Try
+            Usertbl.Rows.Clear()
             query = "SELECT * FROM user_table"
 
             Using comm As New SqlCommand(query, conn)
@@ -75,16 +76,16 @@ Public Class UserManagement
 
     Private Sub ViewPhoto(id As String, images As Guna2PictureBox)
         Try
-            query = "SELECT user_photo FROM staff_information WHERE staff_code = @staff_code"
+            query = "SELECT UserImg FROM user_table WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
-                comm.Parameters.AddWithValue("@staff_code", id)
+                comm.Parameters.AddWithValue("@StaffID", id)
                 Using dataRead = comm.ExecuteReader()
                     If dataRead.Read Then
-                        If IsDBNull(dataRead("user_photo")) Then
+                        If IsDBNull(dataRead("UserImg")) Then
                             images.Image = Nothing
                         Else
-                            Dim img() As Byte = CType(dataRead("user_photo"), Byte())
+                            Dim img() As Byte = CType(dataRead("UserImg"), Byte())
                             Using MS As New IO.MemoryStream(img)
                                 images.Image = Image.FromStream(MS)
                             End Using
@@ -99,7 +100,7 @@ Public Class UserManagement
         End Try
 
     End Sub
-
+    Private selectedStaffId As String = ""
     Private Sub updateAction(id As String)
         Try
 
@@ -127,7 +128,7 @@ Public Class UserManagement
                         Statuscmbx.Text = dataRead("AccountStatus")
 
                     End While
-
+                    selectedStaffId = id
                 End Using
 
             End Using
@@ -145,7 +146,7 @@ Public Class UserManagement
 
             If UsrImg.Image IsNot Nothing Then
                 Using ms As New MemoryStream
-                    UsrImg.Image.Save(ms, UsrImg.Image.RawFormat)
+                    UsrImg.Image.Save(ms, Imaging.ImageFormat.Png)
                     imgData = ms.ToArray()
                 End Using
             End If
@@ -162,11 +163,13 @@ Public Class UserManagement
                                             Username = @Username,
                                             UserPassword = @UserPassword,
                                             UserImg = @UserImg,
-                                            AccountStatus = @AccountStatus"
+                                            AccountStatus = @AccountStatus
+                                            WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
 
                 With comm.Parameters
+                    .AddWithValue("@StaffID", selectedStaffId)
                     .AddWithValue("@FirstName", FrstNmtxbx.Text)
                     .AddWithValue("@MiddleName", MddlNmtxbx.Text)
                     .AddWithValue("@LastName", Srnmtxbx.Text)
@@ -174,11 +177,11 @@ Public Class UserManagement
                     .AddWithValue("@Role", Rolecmbx.Text)
                     .AddWithValue("@Birthdate", Brthdt.Value.ToString("yyyy-MM-dd"))
                     .AddWithValue("@Age", Convert.ToInt32(Agetxbx.Text))
-                    .AddWithValue("@ContactNNumber", CntctNumtxbx.Text)
+                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text)
                     .AddWithValue("@Email", Emailtxbx.Text)
                     .AddWithValue("@Username", RegUsrnmtxbx.Text)
                     .AddWithValue("@UserPassword", RegPasstxbx.Text)
-                    .AddWithValue("@UserImg", imgData)
+                    .Add("@UserImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@AccountStatus", Statuscmbx.Text)
                 End With
                 comm.ExecuteNonQuery()
@@ -208,7 +211,7 @@ Public Class UserManagement
                              @Role,
                              @Birthdate,
                              @Age,
-                             @ContactNNumber,
+                             @ContactNumber,
                              @Email,
                              @Username,
                              @UserPassword,
@@ -287,6 +290,11 @@ Public Class UserManagement
  
             Case "View"
                 viewProfile(rowId)
+                ViewPhoto(rowId, Guna2PictureBox1)
+            Case "Update"
+                updateAction(rowId)
+                updateUser()
+                ViewPhoto(rowId, UsrImg)
         End Select
 
     End Sub

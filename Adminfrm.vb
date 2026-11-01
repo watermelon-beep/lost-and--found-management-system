@@ -22,9 +22,11 @@
         selectedControl(itemCntrl, DisplayPnl)
     End Sub
 
+    Private Sub DisplayPnl_Paint(sender As Object, e As PaintEventArgs) Handles DisplayPnl.Paint
+
+    End Sub
+
     Private Sub Usrsbtn_Click(sender As Object, e As EventArgs) Handles Usrsbtn.Click
-
-
         selectedControl(usrmanagement, DisplayPnl)
     End Sub
 End Class

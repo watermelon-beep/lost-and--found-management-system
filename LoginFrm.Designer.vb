@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LoginFrm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,22 +20,20 @@ Partial Class LoginFrm
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginFrm))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Exitbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LogBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.LogPasstxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Usrnmtxtbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
-        Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -68,28 +66,18 @@ Partial Class LoginFrm
         '
         Me.Guna2Panel2.BackgroundImage = CType(resources.GetObject("Guna2Panel2.BackgroundImage"), System.Drawing.Image)
         Me.Guna2Panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Guna2Panel2.Controls.Add(Me.Label2)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Guna2Panel2.Margin = New System.Windows.Forms.Padding(0)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(485, 450)
         Me.Guna2Panel2.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("HoloLens MDL2 Assets", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(9, 361)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(321, 68)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Campus Lost and Found" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management System"
+        Me.Guna2Panel2.UseTransparentBackground = True
         '
         'Guna2Panel3
         '
         Me.Guna2Panel3.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel3.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel3.Controls.Add(Me.Exitbtn)
         Me.Guna2Panel3.Controls.Add(Me.Label1)
         Me.Guna2Panel3.Controls.Add(Me.LogBtn)
         Me.Guna2Panel3.Controls.Add(Me.LogPasstxbx)
@@ -100,22 +88,25 @@ Partial Class LoginFrm
         Me.Guna2Panel3.Size = New System.Drawing.Size(309, 444)
         Me.Guna2Panel3.TabIndex = 1
         '
-        'Guna2Button2
+        'Exitbtn
         '
-        Me.Guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2Button2.BorderRadius = 10
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(243, 9)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(57, 33)
-        Me.Guna2Button2.TabIndex = 5
-        Me.Guna2Button2.Text = "Exit"
+        Me.Exitbtn.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Exitbtn.BorderRadius = 10
+        Me.Exitbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Exitbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Exitbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Exitbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Exitbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Exitbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Exitbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Exitbtn.Image = CType(resources.GetObject("Exitbtn.Image"), System.Drawing.Image)
+        Me.Exitbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Exitbtn.Location = New System.Drawing.Point(219, 9)
+        Me.Exitbtn.Name = "Exitbtn"
+        Me.Exitbtn.Size = New System.Drawing.Size(81, 45)
+        Me.Exitbtn.TabIndex = 5
+        Me.Exitbtn.Text = "Exit"
+        Me.Exitbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Label1
         '
@@ -159,9 +150,12 @@ Partial Class LoginFrm
         Me.LogPasstxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.LogPasstxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.LogPasstxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.LogPasstxbx.IconRight = Global.lost_and_found_management_system.My.Resources.Resources.eye_closed__1_
+        Me.LogPasstxbx.IconRightOffset = New System.Drawing.Point(10, 0)
         Me.LogPasstxbx.Location = New System.Drawing.Point(21, 187)
         Me.LogPasstxbx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.LogPasstxbx.Name = "LogPasstxbx"
+        Me.LogPasstxbx.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.LogPasstxbx.PlaceholderText = "Password"
         Me.LogPasstxbx.SelectedText = ""
         Me.LogPasstxbx.Size = New System.Drawing.Size(269, 46)
@@ -181,6 +175,8 @@ Partial Class LoginFrm
         Me.Usrnmtxtbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Usrnmtxtbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Usrnmtxtbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Usrnmtxtbx.IconRight = CType(resources.GetObject("Usrnmtxtbx.IconRight"), System.Drawing.Image)
+        Me.Usrnmtxtbx.IconRightOffset = New System.Drawing.Point(10, 0)
         Me.Usrnmtxtbx.Location = New System.Drawing.Point(21, 133)
         Me.Usrnmtxtbx.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Usrnmtxtbx.Name = "Usrnmtxtbx"
@@ -202,7 +198,6 @@ Partial Class LoginFrm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Guna2Panel1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel3.ResumeLayout(False)
         Me.Guna2Panel3.PerformLayout()
         Me.ResumeLayout(False)
@@ -217,6 +212,5 @@ Partial Class LoginFrm
     Friend WithEvents LogPasstxbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents LogBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Label2 As Label
+    Friend WithEvents Exitbtn As Guna.UI2.WinForms.Guna2Button
 End Class

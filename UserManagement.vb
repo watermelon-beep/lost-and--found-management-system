@@ -4,6 +4,84 @@ Imports Guna.UI2.WinForms
 
 Public Class UserManagement
 
+    Private Sub searchUser()
+        Try
+
+            query = "SELECT StaffNo, 
+                            StaffID, 
+                            FirstName, 
+                            MiddleName, 
+                            LastName, 
+                            Birthdate, 
+                            Age,
+                            Gender, 
+                            Role, 
+                            ContactNumber, 
+                            Email, 
+                            Username,
+                            AccountStatus
+                    FROM user_table
+                    WHERE StaffID LIKE @search OR FirstName LIKE @search OR LastName LIKE @search"
+
+            Using comm As New SqlCommand(query, conn)
+
+                comm.Parameters.AddWithValue("@search", "%" & Searchtxbx.Text.Trim() & "%")
+
+                Using dataRead = comm.ExecuteReader()
+                    Usertbl.Rows.Clear()
+                    While dataRead.Read
+                        With Usertbl.Rows
+                            .Add(
+                                    dataRead("StaffNo"),
+                                    dataRead("StaffID"),
+                                    dataRead("FirstName"),
+                                    dataRead("MiddleName"),
+                                    dataRead("LastName"),
+                                    Convert.ToDateTime(dataRead("Birthdate")).ToString("yyyy-MM-dd"),
+                                    dataRead("Age").ToString(),
+                                    dataRead("Gender"),
+                                    dataRead("Role"),
+                                    dataRead("ContactNumber"),
+                                    dataRead("Email"),
+                                    dataRead("Username"),
+                                    dataRead("AccountStatus"),
+                                    "Update",
+                                    "Delete",
+                                    "View")
+                        End With
+                    End While
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub deleteUser(id As String)
+
+        Try
+
+            query = "DELETE FROM user_table WHERE StaffID = @StaffID"
+
+            Using comm As New SqlCommand(query, conn)
+                comm.Parameters.AddWithValue("@StaffID", id)
+
+                Dim rowsAffected As Integer = comm.ExecuteNonQuery()
+
+                If rowsAffected > 0 Then
+                    MsgBox("User deleted successfully.")
+                    Usertbl.Rows.Clear()
+                    viewUserTable()
+                Else
+                    MsgBox("No user found with the specified StaffID.")
+                End If
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub viewProfile(id As String)
         Try
             query = "SELECT * FROM user_table WHERE StaffID = @StaffID"
@@ -36,8 +114,24 @@ Public Class UserManagement
 
     Private Sub viewUserTable()
         Try
+            comm.CommandTimeout = 120
+
             Usertbl.Rows.Clear()
-            query = "SELECT * FROM user_table"
+
+            query = "SELECT StaffNo, 
+                            StaffID, 
+                            FirstName, 
+                            MiddleName, 
+                            LastName, 
+                            Birthdate, 
+                            Age,
+                            Gender, 
+                            Role, 
+                            ContactNumber, 
+                            Email, 
+                            Username,
+                            AccountStatus
+                    FROM user_table"
 
             Using comm As New SqlCommand(query, conn)
                 Using dataRead = comm.ExecuteReader
@@ -57,7 +151,6 @@ Public Class UserManagement
                                     dataRead("ContactNumber"),
                                     dataRead("Email"),
                                     dataRead("Username"),
-                                    dataRead("UserPassword"),
                                     dataRead("AccountStatus"),
                                     "Update",
                                     "Delete",
@@ -81,14 +174,17 @@ Public Class UserManagement
             Using comm As New SqlCommand(query, conn)
                 comm.Parameters.AddWithValue("@StaffID", id)
                 Using dataRead = comm.ExecuteReader()
-                    If dataRead.Read Then
-                        If IsDBNull(dataRead("UserImg")) Then
-                            images.Image = Nothing
-                        Else
-                            Dim img() As Byte = CType(dataRead("UserImg"), Byte())
+                    If dataRead.Read AndAlso Not IsDBNull(dataRead("UserImg")) Then
+                        Dim img() As Byte = CType(dataRead("UserImg"), Byte())
+                        If img.Length > 0 Then
                             Using MS As New IO.MemoryStream(img)
-                                images.Image = Image.FromStream(MS)
+                                Using temp As Image = Image.FromStream(MS)
+                                    images.Image = New Bitmap(temp)
+                                End Using
                             End Using
+                            images.BackgroundImage = Nothing
+                        Else
+                            images.Image = Nothing
                         End If
                     Else
                         images.Image = Nothing
@@ -98,39 +194,35 @@ Public Class UserManagement
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
-
     End Sub
+
     Private selectedStaffId As String = ""
+
     Private Sub updateAction(id As String)
         Try
+            selectedStaffId = id
 
             query = "SELECT * FROM user_table WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
-
                 comm.Parameters.AddWithValue("@StaffID", id)
 
                 Using dataRead = comm.ExecuteReader()
-
                     While dataRead.Read
-
-                        FrstNmtxbx.Text = dataRead("FirstName")
-                        MddlNmtxbx.Text = dataRead("MiddleName")
-                        Srnmtxbx.Text = dataRead("LastName")
-                        Gndrcmbx.Text = dataRead("Gender")
-                        Rolecmbx.Text = dataRead("Role")
-                        Brthdt.Value = dataRead("Birthdate")
-                        Agetxbx.Text = dataRead("Age")
-                        CntctNumtxbx.Text = dataRead("ContactNumber")
-                        Emailtxbx.Text = dataRead("Email")
-                        RegUsrnmtxbx.Text = dataRead("Username")
-                        RegPasstxbx.Text = dataRead("UserPassword")
-                        Statuscmbx.Text = dataRead("AccountStatus")
-
+                        FrstNmtxbx.Text = dataRead("FirstName").ToString()
+                        MddlNmtxbx.Text = dataRead("MiddleName").ToString()
+                        Srnmtxbx.Text = dataRead("LastName").ToString()
+                        Gndrcmbx.Text = dataRead("Gender").ToString()
+                        Rolecmbx.Text = dataRead("Role").ToString()
+                        Brthdt.Value = Convert.ToDateTime(dataRead("Birthdate"))
+                        Agetxbx.Text = dataRead("Age").ToString()
+                        CntctNumtxbx.Text = dataRead("ContactNumber").ToString()
+                        Emailtxbx.Text = dataRead("Email").ToString()
+                        RegUsrnmtxbx.Text = dataRead("Username").ToString()
+                        RegPasstxbx.Text = dataRead("UserPassword").ToString()
+                        Statuscmbx.Text = dataRead("AccountStatus").ToString()
                     End While
-                    selectedStaffId = id
                 End Using
-
             End Using
 
         Catch ex As Exception
@@ -139,11 +231,13 @@ Public Class UserManagement
     End Sub
 
     Private Sub updateUser()
-
         Try
+            If selectedStaffId = "" Then
+                MsgBox("Pumili muna ng user na ia-update.")
+                Return
+            End If
 
             Dim imgData As Object = DBNull.Value
-
             If UsrImg.Image IsNot Nothing Then
                 Using ms As New MemoryStream
                     UsrImg.Image.Save(ms, Imaging.ImageFormat.Png)
@@ -151,23 +245,22 @@ Public Class UserManagement
                 End Using
             End If
 
-            query = "UPDATE user_table SET  FirstName = @FirstName,
-                                            MiddleName = @MiddleName, 
-                                            LastName = @LastName,
-                                            Gender = @Gender,
-                                            Role = @Role,
-                                            Birthdate = @Birthdate,
-                                            Age = @Age,
-                                            ContactNumber = @ContactNumber,
-                                            Email = @Email,
-                                            Username = @Username,
-                                            UserPassword = @UserPassword,
-                                            UserImg = @UserImg,
-                                            AccountStatus = @AccountStatus
-                                            WHERE StaffID = @StaffID"
+            query = "UPDATE user_table SET FirstName = @FirstName,
+                                       MiddleName = @MiddleName,
+                                       LastName = @LastName,
+                                       Gender = @Gender,
+                                       Role = @Role,
+                                       Birthdate = @Birthdate,
+                                       Age = @Age,
+                                       ContactNumber = @ContactNumber,
+                                       Email = @Email,
+                                       Username = @Username,
+                                       UserPassword = @UserPassword,
+                                       UserImg = ISNULL(@UserImg, UserImg),
+                                       AccountStatus = @AccountStatus
+                 WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
-
                 With comm.Parameters
                     .AddWithValue("@StaffID", selectedStaffId)
                     .AddWithValue("@FirstName", FrstNmtxbx.Text)
@@ -175,7 +268,7 @@ Public Class UserManagement
                     .AddWithValue("@LastName", Srnmtxbx.Text)
                     .AddWithValue("@Gender", Gndrcmbx.Text)
                     .AddWithValue("@Role", Rolecmbx.Text)
-                    .AddWithValue("@Birthdate", Brthdt.Value.ToString("yyyy-MM-dd"))
+                    .AddWithValue("@Birthdate", Brthdt.Value.Date)
                     .AddWithValue("@Age", Convert.ToInt32(Agetxbx.Text))
                     .AddWithValue("@ContactNumber", CntctNumtxbx.Text)
                     .AddWithValue("@Email", Emailtxbx.Text)
@@ -184,7 +277,16 @@ Public Class UserManagement
                     .Add("@UserImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@AccountStatus", Statuscmbx.Text)
                 End With
-                comm.ExecuteNonQuery()
+
+                Dim rows As Integer = comm.ExecuteNonQuery()
+
+                If rows > 0 Then
+                    MsgBox("updated")
+                    Usertbl.Rows.Clear()
+                    viewUserTable()
+                Else
+                    MsgBox("Walang na-update. I-check ang StaffID.")
+                End If
             End Using
 
         Catch ex As Exception
@@ -293,9 +395,21 @@ Public Class UserManagement
                 ViewPhoto(rowId, Guna2PictureBox1)
             Case "Update"
                 updateAction(rowId)
-                updateUser()
                 ViewPhoto(rowId, UsrImg)
+            Case "Delete"
+                Dim confirmResult As DialogResult = MessageBox.Show("Are you sure to delete this user?", "Confirm Delete", MessageBoxButtons.YesNo)
+                If confirmResult = DialogResult.Yes Then
+                    deleteUser(rowId)
+                End If
         End Select
 
+    End Sub
+
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
+        Guna2Panel2.Enabled = True
+    End Sub
+
+    Private Sub Searchtxbx_TextChanged(sender As Object, e As EventArgs) Handles Searchtxbx.TextChanged
+        searchUser()
     End Sub
 End Class

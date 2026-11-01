@@ -139,12 +139,12 @@ Partial Class LostCntrl
         Me.Guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TextBox3.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox3.Location = New System.Drawing.Point(1076, 31)
+        Me.Guna2TextBox3.Location = New System.Drawing.Point(562, 102)
         Me.Guna2TextBox3.Multiline = True
         Me.Guna2TextBox3.Name = "Guna2TextBox3"
         Me.Guna2TextBox3.PlaceholderText = "Description"
         Me.Guna2TextBox3.SelectedText = ""
-        Me.Guna2TextBox3.Size = New System.Drawing.Size(457, 150)
+        Me.Guna2TextBox3.Size = New System.Drawing.Size(473, 173)
         Me.Guna2TextBox3.TabIndex = 10
         '
         'Guna2Panel1
@@ -158,7 +158,7 @@ Partial Class LostCntrl
         Me.Guna2Panel1.Controls.Add(Me.Guna2PictureBox1)
         Me.Guna2Panel1.Location = New System.Drawing.Point(37, 102)
         Me.Guna2Panel1.Name = "Guna2Panel1"
-        Me.Guna2Panel1.Size = New System.Drawing.Size(998, 173)
+        Me.Guna2Panel1.Size = New System.Drawing.Size(486, 173)
         Me.Guna2Panel1.TabIndex = 11
         '
         'Guna2PictureBox1
@@ -171,7 +171,7 @@ Partial Class LostCntrl
         Me.Guna2PictureBox1.ImageRotate = 0!
         Me.Guna2PictureBox1.Location = New System.Drawing.Point(0, 0)
         Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(998, 173)
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(486, 173)
         Me.Guna2PictureBox1.TabIndex = 0
         Me.Guna2PictureBox1.TabStop = False
         '
@@ -186,9 +186,9 @@ Partial Class LostCntrl
         Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(1076, 231)
+        Me.Guna2Button2.Location = New System.Drawing.Point(1112, 100)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(212, 44)
+        Me.Guna2Button2.Size = New System.Drawing.Size(424, 52)
         Me.Guna2Button2.TabIndex = 12
         Me.Guna2Button2.Text = "Submit"
         '
@@ -206,9 +206,9 @@ Partial Class LostCntrl
         Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Guna2Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(1321, 231)
+        Me.Guna2Button1.Location = New System.Drawing.Point(1112, 158)
         Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(212, 44)
+        Me.Guna2Button1.Size = New System.Drawing.Size(424, 52)
         Me.Guna2Button1.TabIndex = 13
         Me.Guna2Button1.Text = "Clear"
         '

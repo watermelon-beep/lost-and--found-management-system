@@ -31,6 +31,7 @@ Partial Class UserManagement
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
@@ -55,10 +56,26 @@ Partial Class UserManagement
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Usertbl = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Staffno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewButtonColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Update = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Addbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2TextBox1 = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Searchtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Rolecmbx = New Guna.UI2.WinForms.Guna2ComboBox()
@@ -80,29 +97,12 @@ Partial Class UserManagement
         Me.MddlNmtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.FrstNmtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
-        Me.Staffno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewButtonColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Update = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Guna2Panel5.SuspendLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel4.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Guna2Panel8.SuspendLayout()
@@ -112,7 +112,6 @@ Partial Class UserManagement
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel9.SuspendLayout()
         CType(Me.UsrImg, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -195,6 +194,17 @@ Partial Class UserManagement
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Size = New System.Drawing.Size(376, 633)
         Me.Guna2Panel5.TabIndex = 2
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BorderRadius = 20
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(23, 52)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(136, 126)
+        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.Guna2PictureBox1.TabIndex = 28
+        Me.Guna2PictureBox1.TabStop = False
         '
         'Label18
         '
@@ -453,8 +463,8 @@ Partial Class UserManagement
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
         Me.TableLayoutPanel3.RowCount = 3
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 23.69478!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 76.30522!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.86121!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 81.13879!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1197, 633)
         Me.TableLayoutPanel3.TabIndex = 0
@@ -489,9 +499,9 @@ Partial Class UserManagement
         '
         Me.Guna2Panel7.Controls.Add(Me.Usertbl)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel7.Location = New System.Drawing.Point(3, 136)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(3, 109)
         Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(1191, 423)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(1191, 450)
         Me.Guna2Panel7.TabIndex = 8
         '
         'Usertbl
@@ -508,7 +518,7 @@ Partial Class UserManagement
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.Usertbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Usertbl.ColumnHeadersHeight = 50
-        Me.Usertbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Staffno, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.Column6, Me.Column7, Me.DataGridViewTextBoxColumn14, Me.Column8, Me.DataGridViewButtonColumn4, Me.DataGridViewButtonColumn5, Me.DataGridViewButtonColumn6, Me.Column1, Me.Column2, Me.Update, Me.Column4, Me.View})
+        Me.Usertbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Staffno, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.Column6, Me.Column7, Me.DataGridViewTextBoxColumn14, Me.Column8, Me.DataGridViewButtonColumn4, Me.DataGridViewButtonColumn5, Me.DataGridViewButtonColumn6, Me.Column2, Me.Update, Me.Delete, Me.View})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -524,7 +534,7 @@ Partial Class UserManagement
         Me.Usertbl.RowHeadersVisible = False
         Me.Usertbl.RowTemplate.Height = 50
         Me.Usertbl.RowTemplate.ReadOnly = True
-        Me.Usertbl.Size = New System.Drawing.Size(1191, 423)
+        Me.Usertbl.Size = New System.Drawing.Size(1191, 450)
         Me.Usertbl.TabIndex = 3
         Me.Usertbl.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.Usertbl.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
@@ -534,16 +544,156 @@ Partial Class UserManagement
         Me.Usertbl.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Usertbl.ThemeStyle.RowsStyle.Height = 50
         '
+        'Staffno
+        '
+        Me.Staffno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.Staffno.HeaderText = "Staff no."
+        Me.Staffno.Name = "Staffno"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn9.HeaderText = "StaffID"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Width = 77
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewTextBoxColumn10.HeaderText = "First name"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 150
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Middle name"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.Width = 150
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Surname"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.Width = 91
+        '
+        'Column6
+        '
+        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column6.HeaderText = "Birthdate"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 94
+        '
+        'Column7
+        '
+        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Column7.HeaderText = "Age"
+        Me.Column7.Name = "Column7"
+        Me.Column7.Width = 59
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Gender"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Width = 81
+        '
+        'Column8
+        '
+        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column8.HeaderText = "Role"
+        Me.Column8.Name = "Column8"
+        Me.Column8.Width = 62
+        '
+        'DataGridViewButtonColumn4
+        '
+        Me.DataGridViewButtonColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
+        Me.DataGridViewButtonColumn4.HeaderText = "Contact no."
+        Me.DataGridViewButtonColumn4.Name = "DataGridViewButtonColumn4"
+        Me.DataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataGridViewButtonColumn4.Width = 120
+        '
+        'DataGridViewButtonColumn5
+        '
+        Me.DataGridViewButtonColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewButtonColumn5.HeaderText = "Email"
+        Me.DataGridViewButtonColumn5.Name = "DataGridViewButtonColumn5"
+        Me.DataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewButtonColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataGridViewButtonColumn5.Width = 49
+        '
+        'DataGridViewButtonColumn6
+        '
+        Me.DataGridViewButtonColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewButtonColumn6.HeaderText = "Username"
+        Me.DataGridViewButtonColumn6.Name = "DataGridViewButtonColumn6"
+        Me.DataGridViewButtonColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridViewButtonColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        Me.DataGridViewButtonColumn6.Width = 80
+        '
+        'Column2
+        '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column2.HeaderText = "Status"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 72
+        '
+        'Update
+        '
+        Me.Update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Update.HeaderText = "Update"
+        Me.Update.Name = "Update"
+        Me.Update.Width = 62
+        '
+        'Delete
+        '
+        Me.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Delete.HeaderText = "Delete"
+        Me.Delete.Name = "Delete"
+        Me.Delete.Width = 56
+        '
+        'View
+        '
+        Me.View.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.View.HeaderText = "View"
+        Me.View.Name = "View"
+        Me.View.Width = 45
+        '
         'Guna2Panel6
         '
+        Me.Guna2Panel6.Controls.Add(Me.Addbtn)
         Me.Guna2Panel6.Controls.Add(Me.Label3)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2Button1)
-        Me.Guna2Panel6.Controls.Add(Me.Guna2TextBox1)
+        Me.Guna2Panel6.Controls.Add(Me.Searchtxbx)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(1191, 127)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(1191, 100)
         Me.Guna2Panel6.TabIndex = 7
+        '
+        'Addbtn
+        '
+        Me.Addbtn.Anchor = System.Windows.Forms.AnchorStyles.Right
+        Me.Addbtn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Addbtn.BorderRadius = 10
+        Me.Addbtn.BorderThickness = 2
+        Me.Addbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Addbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Addbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Addbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Addbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Addbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Addbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Addbtn.Image = CType(resources.GetObject("Addbtn.Image"), System.Drawing.Image)
+        Me.Addbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Addbtn.ImageOffset = New System.Drawing.Point(10, 0)
+        Me.Addbtn.Location = New System.Drawing.Point(995, 37)
+        Me.Addbtn.Name = "Addbtn"
+        Me.Addbtn.Size = New System.Drawing.Size(157, 44)
+        Me.Addbtn.TabIndex = 15
+        Me.Addbtn.Text = "Add user"
+        Me.Addbtn.TextOffset = New System.Drawing.Point(5, 0)
         '
         'Label3
         '
@@ -551,59 +701,39 @@ Partial Class UserManagement
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(20, 31)
+        Me.Label3.Location = New System.Drawing.Point(20, 18)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 28)
         Me.Label3.TabIndex = 5
         Me.Label3.Text = "Users Record"
         '
-        'Guna2Button1
+        'Searchtxbx
         '
-        Me.Guna2Button1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2Button1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2Button1.BorderRadius = 10
-        Me.Guna2Button1.BorderThickness = 2
-        Me.Guna2Button1.CustomizableEdges.BottomLeft = False
-        Me.Guna2Button1.CustomizableEdges.TopLeft = False
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Guna2Button1.Location = New System.Drawing.Point(928, 63)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(81, 36)
-        Me.Guna2Button1.TabIndex = 4
-        Me.Guna2Button1.Text = "Search"
-        '
-        'Guna2TextBox1
-        '
-        Me.Guna2TextBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2TextBox1.Animated = True
-        Me.Guna2TextBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2TextBox1.BorderRadius = 10
-        Me.Guna2TextBox1.BorderThickness = 2
-        Me.Guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Guna2TextBox1.CustomizableEdges.BottomRight = False
-        Me.Guna2TextBox1.CustomizableEdges.TopRight = False
-        Me.Guna2TextBox1.DefaultText = ""
-        Me.Guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Guna2TextBox1.Location = New System.Drawing.Point(15, 63)
-        Me.Guna2TextBox1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2TextBox1.Name = "Guna2TextBox1"
-        Me.Guna2TextBox1.PlaceholderText = "Search item name or ID..."
-        Me.Guna2TextBox1.SelectedText = ""
-        Me.Guna2TextBox1.Size = New System.Drawing.Size(916, 36)
-        Me.Guna2TextBox1.TabIndex = 3
+        Me.Searchtxbx.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Searchtxbx.Animated = True
+        Me.Searchtxbx.AutoRoundedCorners = True
+        Me.Searchtxbx.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Searchtxbx.BorderRadius = 19
+        Me.Searchtxbx.BorderThickness = 2
+        Me.Searchtxbx.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.Searchtxbx.DefaultText = ""
+        Me.Searchtxbx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.Searchtxbx.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.Searchtxbx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Searchtxbx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.Searchtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Searchtxbx.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Searchtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Searchtxbx.IconLeft = CType(resources.GetObject("Searchtxbx.IconLeft"), System.Drawing.Image)
+        Me.Searchtxbx.IconLeftOffset = New System.Drawing.Point(10, 0)
+        Me.Searchtxbx.IconRightOffset = New System.Drawing.Point(10, 0)
+        Me.Searchtxbx.Location = New System.Drawing.Point(15, 52)
+        Me.Searchtxbx.Margin = New System.Windows.Forms.Padding(0)
+        Me.Searchtxbx.Name = "Searchtxbx"
+        Me.Searchtxbx.PlaceholderText = "Search item name or ID..."
+        Me.Searchtxbx.SelectedText = ""
+        Me.Searchtxbx.Size = New System.Drawing.Size(459, 40)
+        Me.Searchtxbx.TabIndex = 3
         '
         'Guna2CustomGradientPanel1
         '
@@ -637,6 +767,7 @@ Partial Class UserManagement
         Me.Guna2Panel2.Controls.Add(Me.MddlNmtxbx)
         Me.Guna2Panel2.Controls.Add(Me.FrstNmtxbx)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel2.Enabled = False
         Me.Guna2Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(1585, 252)
@@ -659,7 +790,7 @@ Partial Class UserManagement
         Me.Rolecmbx.Items.AddRange(New Object() {"Admin", "Staff"})
         Me.Rolecmbx.Location = New System.Drawing.Point(878, 30)
         Me.Rolecmbx.Name = "Rolecmbx"
-        Me.Rolecmbx.Size = New System.Drawing.Size(158, 46)
+        Me.Rolecmbx.Size = New System.Drawing.Size(137, 46)
         Me.Rolecmbx.TabIndex = 23
         Me.Rolecmbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -678,9 +809,9 @@ Partial Class UserManagement
         Me.Statuscmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Statuscmbx.ItemHeight = 40
         Me.Statuscmbx.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.Statuscmbx.Location = New System.Drawing.Point(848, 109)
+        Me.Statuscmbx.Location = New System.Drawing.Point(848, 102)
         Me.Statuscmbx.Name = "Statuscmbx"
-        Me.Statuscmbx.Size = New System.Drawing.Size(188, 46)
+        Me.Statuscmbx.Size = New System.Drawing.Size(167, 46)
         Me.Statuscmbx.StartIndex = 0
         Me.Statuscmbx.TabIndex = 22
         Me.Statuscmbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
@@ -700,7 +831,7 @@ Partial Class UserManagement
         Me.Emailtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Emailtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Emailtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Emailtxbx.Location = New System.Drawing.Point(613, 111)
+        Me.Emailtxbx.Location = New System.Drawing.Point(613, 104)
         Me.Emailtxbx.Name = "Emailtxbx"
         Me.Emailtxbx.PlaceholderText = "Email"
         Me.Emailtxbx.SelectedText = ""
@@ -722,7 +853,7 @@ Partial Class UserManagement
         Me.Agetxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Agetxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Agetxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Agetxbx.Location = New System.Drawing.Point(308, 111)
+        Me.Agetxbx.Location = New System.Drawing.Point(308, 104)
         Me.Agetxbx.Name = "Agetxbx"
         Me.Agetxbx.PlaceholderText = "Age"
         Me.Agetxbx.SelectedText = ""
@@ -738,7 +869,7 @@ Partial Class UserManagement
         Me.Brthdt.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Brthdt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Brthdt.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Brthdt.Location = New System.Drawing.Point(54, 111)
+        Me.Brthdt.Location = New System.Drawing.Point(54, 104)
         Me.Brthdt.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Brthdt.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Brthdt.Name = "Brthdt"
@@ -760,11 +891,15 @@ Partial Class UserManagement
         Me.Clearbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Clearbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clearbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Clearbtn.Image = CType(resources.GetObject("Clearbtn.Image"), System.Drawing.Image)
+        Me.Clearbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Clearbtn.ImageOffset = New System.Drawing.Point(5, 0)
         Me.Clearbtn.Location = New System.Drawing.Point(923, 174)
         Me.Clearbtn.Name = "Clearbtn"
-        Me.Clearbtn.Size = New System.Drawing.Size(113, 44)
+        Me.Clearbtn.Size = New System.Drawing.Size(92, 44)
         Me.Clearbtn.TabIndex = 18
         Me.Clearbtn.Text = "Clear"
+        Me.Clearbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2Panel9
         '
@@ -785,6 +920,7 @@ Partial Class UserManagement
         Me.UsrImg.BackColor = System.Drawing.Color.Transparent
         Me.UsrImg.BackgroundImage = CType(resources.GetObject("UsrImg.BackgroundImage"), System.Drawing.Image)
         Me.UsrImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.UsrImg.BorderRadius = 20
         Me.UsrImg.Dock = System.Windows.Forms.DockStyle.Fill
         Me.UsrImg.FillColor = System.Drawing.Color.Transparent
         Me.UsrImg.ImageRotate = 0!
@@ -913,7 +1049,7 @@ Partial Class UserManagement
         Me.CntctNumtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CntctNumtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.CntctNumtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CntctNumtxbx.Location = New System.Drawing.Point(378, 111)
+        Me.CntctNumtxbx.Location = New System.Drawing.Point(378, 104)
         Me.CntctNumtxbx.Name = "CntctNumtxbx"
         Me.CntctNumtxbx.PlaceholderText = "Contact number"
         Me.CntctNumtxbx.SelectedText = ""
@@ -1011,141 +1147,6 @@ Partial Class UserManagement
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
-        'Guna2PictureBox1
-        '
-        Me.Guna2PictureBox1.BorderRadius = 20
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(23, 52)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(136, 126)
-        Me.Guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.Guna2PictureBox1.TabIndex = 28
-        Me.Guna2PictureBox1.TabStop = False
-        '
-        'Staffno
-        '
-        Me.Staffno.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.Staffno.HeaderText = "Staff no."
-        Me.Staffno.Name = "Staffno"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn9.HeaderText = "StaffID"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.Width = 77
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn10.HeaderText = "First name"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.Width = 150
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Middle name"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.Width = 150
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Surname"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.Width = 91
-        '
-        'Column6
-        '
-        Me.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column6.HeaderText = "Birthdate"
-        Me.Column6.Name = "Column6"
-        Me.Column6.Width = 94
-        '
-        'Column7
-        '
-        Me.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Column7.HeaderText = "Age"
-        Me.Column7.Name = "Column7"
-        Me.Column7.Width = 59
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Gender"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        Me.DataGridViewTextBoxColumn14.Width = 81
-        '
-        'Column8
-        '
-        Me.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column8.HeaderText = "Role"
-        Me.Column8.Name = "Column8"
-        Me.Column8.Width = 62
-        '
-        'DataGridViewButtonColumn4
-        '
-        Me.DataGridViewButtonColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None
-        Me.DataGridViewButtonColumn4.HeaderText = "Contact no."
-        Me.DataGridViewButtonColumn4.Name = "DataGridViewButtonColumn4"
-        Me.DataGridViewButtonColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewButtonColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewButtonColumn4.Width = 120
-        '
-        'DataGridViewButtonColumn5
-        '
-        Me.DataGridViewButtonColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewButtonColumn5.HeaderText = "Email"
-        Me.DataGridViewButtonColumn5.Name = "DataGridViewButtonColumn5"
-        Me.DataGridViewButtonColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewButtonColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewButtonColumn5.Width = 49
-        '
-        'DataGridViewButtonColumn6
-        '
-        Me.DataGridViewButtonColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.DataGridViewButtonColumn6.HeaderText = "Username"
-        Me.DataGridViewButtonColumn6.Name = "DataGridViewButtonColumn6"
-        Me.DataGridViewButtonColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridViewButtonColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.DataGridViewButtonColumn6.Width = 80
-        '
-        'Column1
-        '
-        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column1.HeaderText = "Password"
-        Me.Column1.Name = "Column1"
-        Me.Column1.Width = 96
-        '
-        'Column2
-        '
-        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
-        Me.Column2.HeaderText = "Status"
-        Me.Column2.Name = "Column2"
-        Me.Column2.Width = 72
-        '
-        'Update
-        '
-        Me.Update.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Update.HeaderText = "Update"
-        Me.Update.Name = "Update"
-        Me.Update.Width = 62
-        '
-        'Column4
-        '
-        Me.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Column4.HeaderText = "Delete"
-        Me.Column4.Name = "Column4"
-        Me.Column4.Width = 56
-        '
-        'View
-        '
-        Me.View.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.View.HeaderText = "View"
-        Me.View.Name = "View"
-        Me.View.Width = 45
-        '
         'UserManagement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1160,6 +1161,7 @@ Partial Class UserManagement
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel4.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.Guna2Panel8.ResumeLayout(False)
@@ -1170,7 +1172,6 @@ Partial Class UserManagement
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel9.ResumeLayout(False)
         CType(Me.UsrImg, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1189,8 +1190,7 @@ Partial Class UserManagement
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Usertbl As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2TextBox1 As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Searchtxbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Srnmtxbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents MddlNmtxbx As Guna.UI2.WinForms.Guna2TextBox
@@ -1242,9 +1242,9 @@ Partial Class UserManagement
     Friend WithEvents DataGridViewButtonColumn4 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn5 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewButtonColumn6 As DataGridViewTextBoxColumn
-    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Update As DataGridViewButtonColumn
-    Friend WithEvents Column4 As DataGridViewButtonColumn
+    Friend WithEvents Delete As DataGridViewButtonColumn
     Friend WithEvents View As DataGridViewButtonColumn
+    Friend WithEvents Addbtn As Guna.UI2.WinForms.Guna2Button
 End Class

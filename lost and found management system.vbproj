@@ -114,6 +114,12 @@
     <Compile Include="LostCntrl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ManegClaimCntrl.Designer.vb">
+      <DependentUpon>ManegClaimCntrl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManegClaimCntrl.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LostCntrl.resx">
       <DependentUpon>LostCntrl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManegClaimCntrl.resx">
+      <DependentUpon>ManegClaimCntrl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

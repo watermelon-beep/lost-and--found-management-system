@@ -730,7 +730,7 @@ Partial Class UserManagement
         Me.Searchtxbx.Location = New System.Drawing.Point(15, 52)
         Me.Searchtxbx.Margin = New System.Windows.Forms.Padding(0)
         Me.Searchtxbx.Name = "Searchtxbx"
-        Me.Searchtxbx.PlaceholderText = "Search item name or ID..."
+        Me.Searchtxbx.PlaceholderText = "Search firstname, lastname or ID..."
         Me.Searchtxbx.SelectedText = ""
         Me.Searchtxbx.Size = New System.Drawing.Size(459, 40)
         Me.Searchtxbx.TabIndex = 3

@@ -2,10 +2,8 @@
 Imports System.IO
 
 Public Class ItemsCntrl
-
-
-
-    Private Sub viewItemTable()
+    Private lostcntrl As New LostCntrl()
+    Public Sub viewItemTable()
         Try
             Itemtbl.Rows.Clear()
 
@@ -54,13 +52,8 @@ Public Class ItemsCntrl
         End Try
     End Sub
 
-    Private lostcntrl As New LostCntrl()
-    Private Sub LostBtn_Click(sender As Object, e As EventArgs) Handles LostBtn.Click
-        selectedControl(lostcntrl, Guna2Panel5)
-    End Sub
-
     Private Sub ItemsCntrl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        selectedControl(lostcntrl, Guna2Panel5)
+        selectedControl(lostcntrl, Guna2Panel4)
         viewItemTable()
     End Sub
 

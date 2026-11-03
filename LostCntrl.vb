@@ -4,7 +4,64 @@ Imports Guna.UI2.WinForms
 
 Public Class LostCntrl
 
+
+
     Dim selectedItemId As String
+    Private Sub updateUser()
+        Try
+            Dim imgData As Object = DBNull.Value
+            If ItemPic.Image IsNot Nothing Then
+                Using ms As New MemoryStream
+                    ItemPic.Image.Save(ms, Imaging.ImageFormat.Png)
+                    imgData = ms.ToArray()
+                End Using
+            End If
+
+            query = "UPDATE Items SET ItemName = @ItemName,
+                                            Category = @Category,
+                                            ItemType = @ItemType,
+                                            Description = @Description,
+                                            Location = @Location,
+                                            StorageLocation = @StorageLocation,
+                                            DateLostFound = @DateLostFound,
+                                            PersonName = @PersonName,
+                                            ContactNumber = @ContactNumber,
+                                            ItemImg = @ItemImg,
+                                            Status = @Status,
+                                            RecordedBy = @RecordedBy
+                 WHERE ItemID = @ItemID"
+
+            Using comm As New SqlCommand(query, conn)
+                With comm.Parameters
+                    .AddWithValue("@ItemID", selectedItemId)
+
+                    .AddWithValue("@ItemName", ItemNameTxt.Text)
+                    .AddWithValue("@Category", CategoryCmb.Text)
+                    .AddWithValue("@ItemType", TypeCmb.Text)
+                    .AddWithValue("@Description", DescriptionTxt.Text)
+                    .AddWithValue("@Location", LocationTxt.Text)
+                    .AddWithValue("@StorageLocation", StorageTxt.Text)
+                    .AddWithValue("@DateLostFound", DateLostFoundDtp.Value.Date)
+                    .AddWithValue("@PersonName", PersonNameTxt.Text)
+                    .AddWithValue("@ContactNumber", ContactTxt.Text)
+                    .Add("@ItemImg", SqlDbType.VarBinary, -1).Value = imgData
+                    .AddWithValue("@Status", StatusCmb.Text)
+                    .AddWithValue("@RecordedBy", currentStaffNo)
+                End With
+
+                Dim rows As Integer = comm.ExecuteNonQuery()
+
+                If rows > 0 Then
+                    MsgBox("updated")
+                Else
+                    MsgBox("no changes made")
+                End If
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Public Sub ViewPhoto(id As String, images As Guna2PictureBox)
         Try
@@ -76,9 +133,18 @@ Public Class LostCntrl
                 End Using
             End If
 
-            query = "INSERT INTO Items (ItemName, Category, ItemType, Description, Location,
-                                    StorageLocation, DateLostFound, PersonName,
-                                    ContactNumber, ItemImg, Status, RecordedBy)
+            query = "INSERT INTO Items (ItemName,
+                                        Category,
+                                        ItemType,
+                                        Description,
+                                        Location,
+                                        StorageLocation,
+                                        DateLostFound,
+                                        PersonName,
+                                        ContactNumber,
+                                        ItemImg,
+                                        Status,
+                                        RecordedBy)
                  VALUES (
                          @ItemName,
                          @Category,
@@ -122,7 +188,7 @@ Public Class LostCntrl
         End Try
     End Sub
 
-    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+    Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
         addItem()
     End Sub
 
@@ -137,5 +203,13 @@ Public Class LostCntrl
             Guna2Panel1.BorderColor = Color.Transparent
             ItemPic.BackgroundImage = Nothing
         End If
+    End Sub
+
+    Private Sub Updatebtn_Click(sender As Object, e As EventArgs) Handles Updatebtn.Click
+
+        Dim itemcntrl As New ItemsCntrl()
+
+        updateUser()
+        itemcntrl.viewItemTable()
     End Sub
 End Class

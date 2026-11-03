@@ -232,7 +232,7 @@ Public Class UserManagement
     Private Sub updateUser()
         Try
             If selectedStaffId = "" Then
-                MsgBox("Pumili muna ng user na ia-update.")
+                MsgBox("choose a user to update")
                 Return
             End If
 
@@ -376,7 +376,9 @@ Public Class UserManagement
     End Sub
 
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
+
         updateUser()
+        viewUserTable()
     End Sub
 
     Private Sub Usertbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Usertbl.CellContentClick
@@ -410,6 +412,5 @@ Public Class UserManagement
     Private Sub Searchtxbx_TextChanged(sender As Object, e As EventArgs) Handles Searchtxbx.TextChanged
         searchUser()
     End Sub
-
 
 End Class

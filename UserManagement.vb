@@ -61,7 +61,6 @@ Public Class UserManagement
     Private Sub deleteUser(id As String)
 
         Try
-
             query = "DELETE FROM user_table WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
@@ -331,11 +330,11 @@ Public Class UserManagement
                     .AddWithValue("@Role", Rolecmbx.Text)
                     .AddWithValue("@Birthdate", Brthdt.Value.ToString("yyyy-MM-dd"))
                     .AddWithValue("@Age", Agetxbx.Text)
-                    .AddWithValue("@ContactNNumber", CntctNumtxbx.Text)
+                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text)
                     .AddWithValue("@Email", Emailtxbx.Text)
                     .AddWithValue("@Username", RegUsrnmtxbx.Text)
                     .AddWithValue("@UserPassword", RegPasstxbx.Text)
-                    .AddWithValue("@UserImg", imgData)
+                    .Add("@UserImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@AccountStatus", Statuscmbx.Text)
                 End With
 
@@ -373,7 +372,6 @@ Public Class UserManagement
     End Sub
 
     Private Sub UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sqlconnection()
         viewUserTable()
     End Sub
 

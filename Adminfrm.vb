@@ -8,11 +8,6 @@
         Label5.Text = DateAndTime.Now.ToString("hh:mm tt")
     End Sub
 
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Timer1.Start()
-
-        selectedControl(dashcntrl, DisplayPnl)
-    End Sub
 
     Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
         selectedControl(dashcntrl, DisplayPnl)
@@ -28,5 +23,15 @@
 
     Private Sub Usrsbtn_Click(sender As Object, e As EventArgs) Handles Usrsbtn.Click
         selectedControl(usrmanagement, DisplayPnl)
+    End Sub
+
+    Private Sub Adminfrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Timer1.Start()
+        sqlconnection()
+        selectedControl(dashcntrl, DisplayPnl)
+    End Sub
+
+    Private Sub Adminfrm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Application.Exit()
     End Sub
 End Class

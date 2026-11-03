@@ -9,7 +9,7 @@ Public Class LoginFrm
     Private Function logVerification() As Boolean
 
         Try
-            query = "SELECT UserPassword, AccountStatus FROM user_table WHERE Username = @Username"
+            query = "SELECT UserPassword, StaffNo, AccountStatus FROM user_table WHERE Username = @Username"
 
             Using comm As New SqlCommand(query, conn)
 
@@ -18,6 +18,7 @@ Public Class LoginFrm
                 Using dataRead = comm.ExecuteReader()
                     While dataRead.Read
                         If dataRead("UserPassword").ToString() = LogPasstxbx.Text And dataRead("AccountStatus").ToString() = "Active" Then
+                            currentStaffNo = Convert.ToInt32(dataRead("StaffNo"))
                             Return True
                         End If
                     End While

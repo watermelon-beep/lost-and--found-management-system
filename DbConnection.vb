@@ -6,6 +6,7 @@ Module DbConnection
     Public comm As New SqlCommand
     Public dataRead As SqlDataReader
 
+    Public currentStaffNo As Integer
     Public Sub sqlconnection()
 
         Try

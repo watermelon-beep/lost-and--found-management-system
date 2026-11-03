@@ -3,6 +3,69 @@ Imports System.IO
 Imports Guna.UI2.WinForms
 
 Public Class LostCntrl
+
+    Dim selectedItemId As String
+
+    Public Sub ViewPhoto(id As String, images As Guna2PictureBox)
+        Try
+            query = "SELECT ItemImg FROM Items WHERE ItemID = @ItemID"
+
+            Using comm As New SqlCommand(query, conn)
+                comm.Parameters.AddWithValue("@ItemID", id)
+                Using dataRead = comm.ExecuteReader()
+                    If dataRead.Read AndAlso Not IsDBNull(dataRead("ItemImg")) Then
+                        Dim img() As Byte = CType(dataRead("ItemImg"), Byte())
+                        If img.Length > 0 Then
+                            Using MS As New IO.MemoryStream(img)
+                                Using temp As Image = Image.FromStream(MS)
+                                    images.Image = New Bitmap(temp)
+                                End Using
+                            End Using
+                            images.BackgroundImage = Nothing
+                        Else
+                            images.Image = Nothing
+                        End If
+                    Else
+                        images.Image = Nothing
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Public Sub updateAction(id As String)
+        Try
+            selectedItemId = id
+
+            query = "SELECT * FROM Items WHERE ItemID = @ItemID"
+
+            Using comm As New SqlCommand(query, conn)
+
+                comm.Parameters.AddWithValue("@ItemID", id)
+
+                Using dataRead = comm.ExecuteReader()
+                    While dataRead.Read
+                        PersonNameTxt.Text = dataRead("PersonName").ToString()
+                        CategoryCmb.Text = dataRead("Category").ToString()
+                        TypeCmb.Text = dataRead("ItemType").ToString()
+                        DescriptionTxt.Text = dataRead("Description").ToString()
+                        LocationTxt.Text = dataRead("Location").ToString()
+                        StorageTxt.Text = dataRead("StorageLocation").ToString()
+                        DateLostFoundDtp.Value = Convert.ToDateTime(dataRead("DateLostFound")).ToString("ddd, MMMM dd, yyyy")
+                        ItemNameTxt.Text = dataRead("ItemName").ToString()
+                        ContactTxt.Text = dataRead("ContactNumber").ToString()
+                        StatusCmb.Text = dataRead("Status").ToString()
+                    End While
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Private Sub addItem()
         Try
             Dim imgData As Object = DBNull.Value
@@ -34,7 +97,7 @@ Public Class LostCntrl
             Using comm As New SqlCommand(query, conn)
 
                 With comm.Parameters
-                    .AddWithValue("@ItemName", PersonNameTxt.Text)
+                    .AddWithValue("@ItemName", ItemNameTxt)
                     .AddWithValue("@Category", CategoryCmb.Text)
                     .AddWithValue("@ItemType", TypeCmb.Text)
                     .AddWithValue("@Description", DescriptionTxt.Text)

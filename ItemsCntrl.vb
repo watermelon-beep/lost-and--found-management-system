@@ -3,6 +3,8 @@ Imports System.IO
 
 Public Class ItemsCntrl
 
+
+
     Private Sub viewItemTable()
         Try
             Itemtbl.Rows.Clear()
@@ -63,6 +65,18 @@ Public Class ItemsCntrl
     End Sub
 
     Private Sub Itemtbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Itemtbl.CellContentClick
+        Dim columnName As String = Itemtbl.Columns(e.ColumnIndex).Name
+        Dim selectedRow As DataGridViewRow = Itemtbl.Rows(e.RowIndex)
+        Dim rowId As String = Convert.ToString(selectedRow.Cells("DataGridViewTextBoxColumn8").Value)
+
+        Select Case columnName
+            Case "Edit"
+                lostcntrl.updateAction(rowId)
+                lostcntrl.ViewPhoto(rowId, lostcntrl.ItemPic)
+        End Select
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox1.TextChanged
 
     End Sub
 End Class

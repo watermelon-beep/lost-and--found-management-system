@@ -8,6 +8,8 @@ Module DbConnection
 
 
     Public currentStaffNo As Integer
+    Public currentUserName As String
+
     Public Sub sqlconnection()
 
         Try

@@ -35,7 +35,7 @@ Partial Class Adminfrm
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Guna2CirclePictureBox1 = New Guna.UI2.WinForms.Guna2CirclePictureBox()
+        Me.UserPrfl = New Guna.UI2.WinForms.Guna2CirclePictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -53,7 +53,7 @@ Partial Class Adminfrm
         Me.Guna2Panel3.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserPrfl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel2.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.Guna2Panel6.SuspendLayout()
@@ -123,7 +123,7 @@ Partial Class Adminfrm
         Me.Guna2Panel4.Controls.Add(Me.Label5)
         Me.Guna2Panel4.Controls.Add(Me.Label4)
         Me.Guna2Panel4.Controls.Add(Me.Label3)
-        Me.Guna2Panel4.Controls.Add(Me.Guna2CirclePictureBox1)
+        Me.Guna2Panel4.Controls.Add(Me.UserPrfl)
         Me.Guna2Panel4.Controls.Add(Me.Label2)
         Me.Guna2Panel4.Controls.Add(Me.Label1)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -195,16 +195,17 @@ Partial Class Adminfrm
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Admin"
         '
-        'Guna2CirclePictureBox1
+        'UserPrfl
         '
-        Me.Guna2CirclePictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2CirclePictureBox1.ImageRotate = 0!
-        Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(1143, 17)
-        Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
-        Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
-        Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(110, 85)
-        Me.Guna2CirclePictureBox1.TabIndex = 2
-        Me.Guna2CirclePictureBox1.TabStop = False
+        Me.UserPrfl.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.UserPrfl.ImageRotate = 0!
+        Me.UserPrfl.Location = New System.Drawing.Point(1143, 17)
+        Me.UserPrfl.Name = "UserPrfl"
+        Me.UserPrfl.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.UserPrfl.Size = New System.Drawing.Size(110, 85)
+        Me.UserPrfl.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.UserPrfl.TabIndex = 2
+        Me.UserPrfl.TabStop = False
         '
         'Label2
         '
@@ -426,7 +427,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.Guna2Panel4.ResumeLayout(False)
         Me.Guna2Panel4.PerformLayout()
-        CType(Me.Guna2CirclePictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserPrfl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel2.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.Guna2Panel6.ResumeLayout(False)
@@ -448,7 +449,7 @@ Partial Class Adminfrm
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Usrsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2CirclePictureBox1 As Guna.UI2.WinForms.Guna2CirclePictureBox
+    Friend WithEvents UserPrfl As Guna.UI2.WinForms.Guna2CirclePictureBox
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label5 As Label

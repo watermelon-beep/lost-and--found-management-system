@@ -19,6 +19,7 @@ Public Class LoginFrm
                     While dataRead.Read
                         If dataRead("UserPassword").ToString() = LogPasstxbx.Text And dataRead("AccountStatus").ToString() = "Active" Then
                             currentStaffNo = Convert.ToInt32(dataRead("StaffNo"))
+                            currentUserName = Usrnmtxtbx.Text
                             Return True
                         End If
                     End While

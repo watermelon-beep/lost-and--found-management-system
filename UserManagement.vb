@@ -70,7 +70,6 @@ Public Class UserManagement
 
                 If rowsAffected > 0 Then
                     MsgBox("User deleted successfully.")
-                    Usertbl.Rows.Clear()
                     viewUserTable()
                 Else
                     MsgBox("No user found with the specified StaffID.")
@@ -284,7 +283,7 @@ Public Class UserManagement
                     Usertbl.Rows.Clear()
                     viewUserTable()
                 Else
-                    MsgBox("Walang na-update. I-check ang StaffID.")
+                    MsgBox("no changes made")
                 End If
             End Using
 
@@ -341,7 +340,7 @@ Public Class UserManagement
                 comm.ExecuteNonQuery()
 
                 MsgBox("added")
-
+                viewUserTable()
             End Using
 
         Catch ex As Exception
@@ -378,7 +377,6 @@ Public Class UserManagement
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
 
         updateUser()
-        viewUserTable()
     End Sub
 
     Private Sub Usertbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Usertbl.CellContentClick

@@ -41,7 +41,7 @@ Partial Class Adminfrm
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Guna2Button4 = New Guna.UI2.WinForms.Guna2Button()
+        Me.ManageClaimsbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Usrsbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
@@ -248,7 +248,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button2, 0, 5)
-        Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button4, 0, 4)
+        Me.TableLayoutPanel3.Controls.Add(Me.ManageClaimsbtn, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Usrsbtn, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Itmbtn, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Panel6, 0, 0)
@@ -291,28 +291,28 @@ Partial Class Adminfrm
         Me.Guna2Button2.Text = "Reports"
         Me.Guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Guna2Button4
+        'ManageClaimsbtn
         '
-        Me.Guna2Button4.Animated = True
-        Me.Guna2Button4.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.BorderThickness = 2
-        Me.Guna2Button4.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button4.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button4.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button4.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button4.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button4.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button4.HoverState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button4.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button4.Location = New System.Drawing.Point(0, 373)
-        Me.Guna2Button4.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Button4.Name = "Guna2Button4"
-        Me.Guna2Button4.Size = New System.Drawing.Size(295, 82)
-        Me.Guna2Button4.TabIndex = 7
-        Me.Guna2Button4.Text = "Manage claims"
-        Me.Guna2Button4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.ManageClaimsbtn.Animated = True
+        Me.ManageClaimsbtn.BorderColor = System.Drawing.Color.Transparent
+        Me.ManageClaimsbtn.BorderThickness = 2
+        Me.ManageClaimsbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.ManageClaimsbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.ManageClaimsbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.ManageClaimsbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.ManageClaimsbtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ManageClaimsbtn.FillColor = System.Drawing.Color.Transparent
+        Me.ManageClaimsbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.ManageClaimsbtn.ForeColor = System.Drawing.Color.White
+        Me.ManageClaimsbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
+        Me.ManageClaimsbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
+        Me.ManageClaimsbtn.Location = New System.Drawing.Point(0, 373)
+        Me.ManageClaimsbtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.ManageClaimsbtn.Name = "ManageClaimsbtn"
+        Me.ManageClaimsbtn.Size = New System.Drawing.Size(295, 82)
+        Me.ManageClaimsbtn.TabIndex = 7
+        Me.ManageClaimsbtn.Text = "Manage claims"
+        Me.ManageClaimsbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Usrsbtn
         '
@@ -446,7 +446,7 @@ Partial Class Adminfrm
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ManageClaimsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Usrsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents UserPrfl As Guna.UI2.WinForms.Guna2CirclePictureBox

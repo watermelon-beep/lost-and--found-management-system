@@ -68,4 +68,9 @@ Public Class Adminfrm
     Private Sub Adminfrm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Application.Exit()
     End Sub
+
+    Private Sub ManageClaimsbtn_Click(sender As Object, e As EventArgs) Handles ManageClaimsbtn.Click
+        Dim mngClms As New ManegClaimCntrl()
+        selectedControl(mngClms, DisplayPnl)
+    End Sub
 End Class

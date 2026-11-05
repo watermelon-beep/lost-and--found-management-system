@@ -26,6 +26,21 @@ Partial Class Dashboardcntrl
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim ChartFont1 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim ChartFont2 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim ChartFont3 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim ChartFont4 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim Grid1 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
+        Dim Tick1 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
+        Dim ChartFont5 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim Grid2 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
+        Dim Tick2 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
+        Dim ChartFont6 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim Grid3 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
+        Dim PointLabel1 As Guna.Charts.WinForms.PointLabel = New Guna.Charts.WinForms.PointLabel()
+        Dim ChartFont7 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim Tick3 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
+        Dim ChartFont8 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
         Dim LPoint1 As Guna.Charts.WinForms.LPoint = New Guna.Charts.WinForms.LPoint()
         Dim LPoint2 As Guna.Charts.WinForms.LPoint = New Guna.Charts.WinForms.LPoint()
         Dim ChartFont9 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
@@ -43,21 +58,9 @@ Partial Class Dashboardcntrl
         Dim ChartFont15 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
         Dim Tick6 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
         Dim ChartFont16 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim ChartFont1 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim ChartFont2 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim ChartFont3 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim ChartFont4 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim Grid1 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
-        Dim Tick1 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
-        Dim ChartFont5 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim Grid2 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
-        Dim Tick2 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
-        Dim ChartFont6 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim Grid3 As Guna.Charts.WinForms.Grid = New Guna.Charts.WinForms.Grid()
-        Dim PointLabel1 As Guna.Charts.WinForms.PointLabel = New Guna.Charts.WinForms.PointLabel()
-        Dim ChartFont7 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
-        Dim Tick3 As Guna.Charts.WinForms.Tick = New Guna.Charts.WinForms.Tick()
-        Dim ChartFont8 As Guna.Charts.WinForms.ChartFont = New Guna.Charts.WinForms.ChartFont()
+        Dim LPoint3 As Guna.Charts.WinForms.LPoint = New Guna.Charts.WinForms.LPoint()
+        Dim LPoint4 As Guna.Charts.WinForms.LPoint = New Guna.Charts.WinForms.LPoint()
+        Dim LPoint5 As Guna.Charts.WinForms.LPoint = New Guna.Charts.WinForms.LPoint()
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
@@ -81,6 +84,8 @@ Partial Class Dashboardcntrl
         Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.claimChart = New Guna.Charts.WinForms.GunaChart()
         Me.GunaDoughnutDataset1 = New Guna.Charts.WinForms.GunaDoughnutDataset()
         Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
         Me.lostFoundChart = New Guna.Charts.WinForms.GunaChart()
@@ -98,14 +103,18 @@ Partial Class Dashboardcntrl
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse2 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2Elipse3 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
-        Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.claimChart = New Guna.Charts.WinForms.GunaChart()
-        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2Panel12 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox4 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.GunaStackedBarDataset1 = New Guna.Charts.WinForms.GunaStackedBarDataset()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
@@ -115,6 +124,7 @@ Partial Class Dashboardcntrl
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel3.SuspendLayout()
         Me.TableLayoutPanel3.SuspendLayout()
+        Me.Guna2Panel9.SuspendLayout()
         Me.Guna2Panel8.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -123,8 +133,9 @@ Partial Class Dashboardcntrl
         Me.Guna2Panel6.SuspendLayout()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel5.SuspendLayout()
-        Me.Guna2Panel9.SuspendLayout()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Guna2Panel12.SuspendLayout()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -408,6 +419,65 @@ Partial Class Dashboardcntrl
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(1585, 393)
         Me.TableLayoutPanel3.TabIndex = 0
         '
+        'Guna2Panel9
+        '
+        Me.Guna2Panel9.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Guna2Panel9.BorderRadius = 20
+        Me.Guna2Panel9.BorderThickness = 2
+        Me.Guna2Panel9.Controls.Add(Me.claimChart)
+        Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel9.Location = New System.Drawing.Point(1047, 3)
+        Me.Guna2Panel9.Name = "Guna2Panel9"
+        Me.Guna2Panel9.Padding = New System.Windows.Forms.Padding(4)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(535, 387)
+        Me.Guna2Panel9.TabIndex = 1
+        '
+        'claimChart
+        '
+        Me.claimChart.Datasets.AddRange(New Guna.Charts.Interfaces.IGunaDataset() {Me.GunaDoughnutDataset1})
+        Me.claimChart.Dock = System.Windows.Forms.DockStyle.Fill
+        ChartFont1.FontName = "Arial"
+        Me.claimChart.Legend.LabelFont = ChartFont1
+        Me.claimChart.Location = New System.Drawing.Point(4, 4)
+        Me.claimChart.Name = "claimChart"
+        Me.claimChart.PaletteCustomColors.FillColors.AddRange(New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer)), System.Drawing.Color.SkyBlue})
+        Me.claimChart.Size = New System.Drawing.Size(527, 379)
+        Me.claimChart.TabIndex = 1
+        ChartFont2.FontName = "Arial"
+        ChartFont2.Size = 12
+        ChartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold
+        Me.claimChart.Title.Font = ChartFont2
+        ChartFont3.FontName = "Arial"
+        Me.claimChart.Tooltips.BodyFont = ChartFont3
+        ChartFont4.FontName = "Arial"
+        ChartFont4.Size = 9
+        ChartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold
+        Me.claimChart.Tooltips.TitleFont = ChartFont4
+        Me.claimChart.XAxes.Display = False
+        Grid1.Color = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Grid1.ZeroLineColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.claimChart.XAxes.GridLines = Grid1
+        ChartFont5.FontName = "Arial"
+        Tick1.Font = ChartFont5
+        Me.claimChart.XAxes.Ticks = Tick1
+        Me.claimChart.YAxes.Display = False
+        Grid2.Color = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Grid2.Display = False
+        Grid2.DrawTicks = False
+        Grid2.ZeroLineColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.claimChart.YAxes.GridLines = Grid2
+        ChartFont6.FontName = "Arial"
+        Tick2.Font = ChartFont6
+        Me.claimChart.YAxes.Ticks = Tick2
+        Me.claimChart.ZAxes.GridLines = Grid3
+        ChartFont7.FontName = "Arial"
+        PointLabel1.Font = ChartFont7
+        Me.claimChart.ZAxes.PointLabels = PointLabel1
+        ChartFont8.FontName = "Arial"
+        Tick3.Font = ChartFont8
+        Me.claimChart.ZAxes.Ticks = Tick3
+        '
         'GunaDoughnutDataset1
         '
         LPoint1.Label = "Found"
@@ -434,6 +504,7 @@ Partial Class Dashboardcntrl
         '
         'lostFoundChart
         '
+        Me.lostFoundChart.Datasets.AddRange(New Guna.Charts.Interfaces.IGunaDataset() {Me.GunaStackedBarDataset1})
         Me.lostFoundChart.Dock = System.Windows.Forms.DockStyle.Fill
         ChartFont9.FontName = "Arial"
         Me.lostFoundChart.Legend.LabelFont = ChartFont9
@@ -482,10 +553,12 @@ Partial Class Dashboardcntrl
         '
         'TableLayoutPanel2
         '
-        Me.TableLayoutPanel2.ColumnCount = 3
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.TableLayoutPanel2.ColumnCount = 4
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.00062!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 24.99813!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Guna2Panel12, 3, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Panel7, 2, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Panel6, 1, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Guna2Panel5, 0, 0)
@@ -509,9 +582,9 @@ Partial Class Dashboardcntrl
         Me.Guna2Panel7.Controls.Add(Me.Label9)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel7.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel7.Location = New System.Drawing.Point(1059, 3)
+        Me.Guna2Panel7.Location = New System.Drawing.Point(795, 3)
         Me.Guna2Panel7.Name = "Guna2Panel7"
-        Me.Guna2Panel7.Size = New System.Drawing.Size(523, 194)
+        Me.Guna2Panel7.Size = New System.Drawing.Size(390, 194)
         Me.Guna2Panel7.TabIndex = 2
         '
         'Label7
@@ -545,9 +618,9 @@ Partial Class Dashboardcntrl
         Me.Label8.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Label8.Location = New System.Drawing.Point(187, 73)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(87, 64)
+        Me.Label8.Size = New System.Drawing.Size(57, 64)
         Me.Label8.TabIndex = 1
-        Me.Label8.Text = "23"
+        Me.Label8.Text = "0"
         '
         'Label9
         '
@@ -557,9 +630,9 @@ Partial Class Dashboardcntrl
         Me.Label9.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Label9.Location = New System.Drawing.Point(193, 54)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(112, 19)
+        Me.Label9.Size = New System.Drawing.Size(80, 19)
         Me.Label9.TabIndex = 0
-        Me.Label9.Text = "Pending Claims"
+        Me.Label9.Text = "Unclaimed"
         '
         'Guna2Panel6
         '
@@ -573,9 +646,9 @@ Partial Class Dashboardcntrl
         Me.Guna2Panel6.Controls.Add(Me.Label6)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel6.FillColor = System.Drawing.Color.White
-        Me.Guna2Panel6.Location = New System.Drawing.Point(531, 3)
+        Me.Guna2Panel6.Location = New System.Drawing.Point(399, 3)
         Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(522, 194)
+        Me.Guna2Panel6.Size = New System.Drawing.Size(390, 194)
         Me.Guna2Panel6.TabIndex = 1
         '
         'Label4
@@ -611,7 +684,7 @@ Partial Class Dashboardcntrl
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(57, 64)
         Me.Label5.TabIndex = 1
-        Me.Label5.Text = "7"
+        Me.Label5.Text = "0"
         '
         'Label6
         '
@@ -639,7 +712,7 @@ Partial Class Dashboardcntrl
         Me.Guna2Panel5.FillColor = System.Drawing.Color.White
         Me.Guna2Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel5.Name = "Guna2Panel5"
-        Me.Guna2Panel5.Size = New System.Drawing.Size(522, 194)
+        Me.Guna2Panel5.Size = New System.Drawing.Size(390, 194)
         Me.Guna2Panel5.TabIndex = 0
         '
         'Label3
@@ -654,6 +727,17 @@ Partial Class Dashboardcntrl
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Items reported as lost"
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.SkyBlue
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(55, 53)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(108, 102)
+        Me.Guna2PictureBox1.TabIndex = 2
+        Me.Guna2PictureBox1.TabStop = False
+        '
         'Label2
         '
         Me.Label2.Anchor = System.Windows.Forms.AnchorStyles.Left
@@ -662,9 +746,9 @@ Partial Class Dashboardcntrl
         Me.Label2.ForeColor = System.Drawing.Color.MidnightBlue
         Me.Label2.Location = New System.Drawing.Point(187, 73)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(87, 64)
+        Me.Label2.Size = New System.Drawing.Size(57, 64)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "12"
+        Me.Label2.Text = "0"
         '
         'Label1
         '
@@ -693,71 +777,81 @@ Partial Class Dashboardcntrl
         Me.Guna2Elipse3.BorderRadius = 20
         Me.Guna2Elipse3.TargetControl = Me.Guna2DataGridView1
         '
-        'Guna2Panel9
+        'Guna2Panel12
         '
-        Me.Guna2Panel9.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.Guna2Panel9.BorderRadius = 20
-        Me.Guna2Panel9.BorderThickness = 2
-        Me.Guna2Panel9.Controls.Add(Me.claimChart)
-        Me.Guna2Panel9.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel9.Location = New System.Drawing.Point(1047, 3)
-        Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Padding = New System.Windows.Forms.Padding(4)
-        Me.Guna2Panel9.Size = New System.Drawing.Size(535, 387)
-        Me.Guna2Panel9.TabIndex = 1
+        Me.Guna2Panel12.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel12.BorderColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
+        Me.Guna2Panel12.BorderRadius = 20
+        Me.Guna2Panel12.BorderThickness = 2
+        Me.Guna2Panel12.Controls.Add(Me.Label14)
+        Me.Guna2Panel12.Controls.Add(Me.Guna2PictureBox4)
+        Me.Guna2Panel12.Controls.Add(Me.Label15)
+        Me.Guna2Panel12.Controls.Add(Me.Label16)
+        Me.Guna2Panel12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel12.FillColor = System.Drawing.Color.White
+        Me.Guna2Panel12.Location = New System.Drawing.Point(1191, 3)
+        Me.Guna2Panel12.Name = "Guna2Panel12"
+        Me.Guna2Panel12.Size = New System.Drawing.Size(391, 194)
+        Me.Guna2Panel12.TabIndex = 3
         '
-        'claimChart
+        'Label14
         '
-        Me.claimChart.Datasets.AddRange(New Guna.Charts.Interfaces.IGunaDataset() {Me.GunaDoughnutDataset1})
-        Me.claimChart.Dock = System.Windows.Forms.DockStyle.Fill
-        ChartFont1.FontName = "Arial"
-        Me.claimChart.Legend.LabelFont = ChartFont1
-        Me.claimChart.Location = New System.Drawing.Point(4, 4)
-        Me.claimChart.Name = "claimChart"
-        Me.claimChart.PaletteCustomColors.FillColors.AddRange(New System.Drawing.Color() {System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer)), System.Drawing.Color.SkyBlue})
-        Me.claimChart.Size = New System.Drawing.Size(527, 379)
-        Me.claimChart.TabIndex = 1
-        ChartFont2.FontName = "Arial"
-        ChartFont2.Size = 12
-        ChartFont2.Style = Guna.Charts.WinForms.ChartFontStyle.Bold
-        Me.claimChart.Title.Font = ChartFont2
-        ChartFont3.FontName = "Arial"
-        Me.claimChart.Tooltips.BodyFont = ChartFont3
-        ChartFont4.FontName = "Arial"
-        ChartFont4.Size = 9
-        ChartFont4.Style = Guna.Charts.WinForms.ChartFontStyle.Bold
-        Me.claimChart.Tooltips.TitleFont = ChartFont4
-        Grid1.Color = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
-        Grid1.ZeroLineColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.claimChart.XAxes.GridLines = Grid1
-        ChartFont5.FontName = "Arial"
-        Tick1.Font = ChartFont5
-        Me.claimChart.XAxes.Ticks = Tick1
-        Grid2.Color = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
-        Grid2.ZeroLineColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(242, Byte), Integer))
-        Me.claimChart.YAxes.GridLines = Grid2
-        ChartFont6.FontName = "Arial"
-        Tick2.Font = ChartFont6
-        Me.claimChart.YAxes.Ticks = Tick2
-        Me.claimChart.ZAxes.GridLines = Grid3
-        ChartFont7.FontName = "Arial"
-        PointLabel1.Font = ChartFont7
-        Me.claimChart.ZAxes.PointLabels = PointLabel1
-        ChartFont8.FontName = "Arial"
-        Tick3.Font = ChartFont8
-        Me.claimChart.ZAxes.Ticks = Tick3
+        Me.Label14.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Label14.Location = New System.Drawing.Point(194, 138)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(134, 19)
+        Me.Label14.TabIndex = 3
+        Me.Label14.Text = "Awaiting verification"
         '
-        'Guna2PictureBox1
+        'Guna2PictureBox4
         '
-        Me.Guna2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2PictureBox1.FillColor = System.Drawing.Color.SkyBlue
-        Me.Guna2PictureBox1.ImageRotate = 0!
-        Me.Guna2PictureBox1.Location = New System.Drawing.Point(55, 53)
-        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
-        Me.Guna2PictureBox1.Size = New System.Drawing.Size(108, 102)
-        Me.Guna2PictureBox1.TabIndex = 2
-        Me.Guna2PictureBox1.TabStop = False
+        Me.Guna2PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Guna2PictureBox4.FillColor = System.Drawing.Color.SkyBlue
+        Me.Guna2PictureBox4.ImageRotate = 0!
+        Me.Guna2PictureBox4.Location = New System.Drawing.Point(55, 53)
+        Me.Guna2PictureBox4.Name = "Guna2PictureBox4"
+        Me.Guna2PictureBox4.Size = New System.Drawing.Size(108, 102)
+        Me.Guna2PictureBox4.TabIndex = 2
+        Me.Guna2PictureBox4.TabStop = False
+        '
+        'Label15
+        '
+        Me.Label15.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Microsoft YaHei UI", 36.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label15.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label15.Location = New System.Drawing.Point(187, 73)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(57, 64)
+        Me.Label15.TabIndex = 1
+        Me.Label15.Text = "0"
+        '
+        'Label16
+        '
+        Me.Label16.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.MidnightBlue
+        Me.Label16.Location = New System.Drawing.Point(193, 54)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(64, 19)
+        Me.Label16.TabIndex = 0
+        Me.Label16.Text = "Claimed"
+        '
+        'GunaStackedBarDataset1
+        '
+        LPoint3.Label = "Pending"
+        LPoint3.Y = 24.0R
+        LPoint4.Label = "Return"
+        LPoint4.Y = 34.0R
+        LPoint5.Label = "Reject"
+        LPoint5.Y = 98.0R
+        Me.GunaStackedBarDataset1.DataPoints.AddRange(New Guna.Charts.WinForms.LPoint() {LPoint3, LPoint4, LPoint5})
+        Me.GunaStackedBarDataset1.Label = "StackedBar1"
+        Me.GunaStackedBarDataset1.TargetChart = Me.lostFoundChart
         '
         'Dashboardcntrl
         '
@@ -777,6 +871,7 @@ Partial Class Dashboardcntrl
         CType(Me.Guna2DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel3.ResumeLayout(False)
         Me.TableLayoutPanel3.ResumeLayout(False)
+        Me.Guna2Panel9.ResumeLayout(False)
         Me.Guna2Panel8.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
         Me.TableLayoutPanel2.ResumeLayout(False)
@@ -788,8 +883,10 @@ Partial Class Dashboardcntrl
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel5.ResumeLayout(False)
         Me.Guna2Panel5.PerformLayout()
-        Me.Guna2Panel9.ResumeLayout(False)
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Guna2Panel12.ResumeLayout(False)
+        Me.Guna2Panel12.PerformLayout()
+        CType(Me.Guna2PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -842,4 +939,10 @@ Partial Class Dashboardcntrl
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents claimChart As Guna.Charts.WinForms.GunaChart
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2Panel12 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents Label14 As Label
+    Friend WithEvents Guna2PictureBox4 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents Label16 As Label
+    Friend WithEvents GunaStackedBarDataset1 As Guna.Charts.WinForms.GunaStackedBarDataset
 End Class

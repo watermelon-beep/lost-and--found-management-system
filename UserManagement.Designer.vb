@@ -1070,7 +1070,7 @@ Partial Class UserManagement
         Me.Gndrcmbx.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Gndrcmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Gndrcmbx.ItemHeight = 40
-        Me.Gndrcmbx.Items.AddRange(New Object() {"Male", "Female", "Prefer not say"})
+        Me.Gndrcmbx.Items.AddRange(New Object() {"Male", "Female", "Others"})
         Me.Gndrcmbx.Location = New System.Drawing.Point(709, 32)
         Me.Gndrcmbx.Name = "Gndrcmbx"
         Me.Gndrcmbx.Size = New System.Drawing.Size(158, 46)

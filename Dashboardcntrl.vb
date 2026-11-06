@@ -3,23 +3,94 @@ Imports System.Data.SqlClient
 Imports System.Drawing
 Public Class Dashboardcntrl
 
-    Private Sub claimCharts()
+    Private Sub pieChart()
+        Try
+            Dim maleCount As Integer = 0
+            Dim femaleCount As Integer = 0
+            Dim otherCount As Integer = 0
+            query = "SELECT Gender, COUNT(*) AS TOTALCOUNT
+                    FROM user_table
+                    GROUP BY Gender"
+            Using comm As New SqlCommand(query, conn)
+                Using dataRead = comm.ExecuteReader()
+
+                    While dataRead.Read
+                        Dim gender As String = dataRead("Gender").ToString()
+                        Dim count As Integer = Convert.ToInt32(dataRead("TOTALCOUNT"))
+
+                        If gender = "Male" Then
+                            maleCount = count
+                        ElseIf gender = "Female" Then
+                            femaleCount = count
+                        Else
+                            otherCount = count
+                        End If
+                    End While
+                    GunaPieDataset1.DataPoints.Add("Male", maleCount)
+                    GunaPieDataset1.DataPoints.Add("Female", femaleCount)
+                    GunaPieDataset1.DataPoints.Add("Other", otherCount)
+                End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub stackBarChart()
+
+        Try
+            Dim pendingCount As Integer = 0
+            Dim rejectedCount As Integer = 0
+            Dim approvedCount As Integer = 0
+
+            query = "Select ClaimStatus, COUNT(*) As TOTALCOUNT
+                    FROM Claims
+                    GROUP BY ClaimStatus"
+
+            Using comm As New SqlCommand(query, conn)
+
+                Using dataRead = comm.ExecuteReader()
+
+                    While dataRead.Read()
+                        Dim claimStatus As String = dataRead("ClaimStatus").ToString()
+                        Dim count As Integer = Convert.ToInt32(dataRead("TOTALCOUNT"))
+
+                        If claimStatus = "Pending" Then
+                            pendingCount = count
+                        ElseIf claimStatus = "Rejected" Then
+                            rejectedCount = count
+                        ElseIf claimStatus = "Approved" Then
+                            approvedCount = count
+                        End If
+                    End While
+
+                    GunaStackedBarDataset1.DataPoints.Add("Pending", pendingCount)
+                    GunaStackedBarDataset1.DataPoints.Add("Rejected", rejectedCount)
+                    GunaStackedBarDataset1.DataPoints.Add("Approved", approvedCount)
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub dougnutChart()
 
         Dim lostCount As Integer = 0
         Dim foundCount As Integer = 0
 
-        query = "SELECT ItemType, COUNT(*) AS TotalCount
-             FROM Items
-             GROUP BY ItemType"
+        query = "SELECT ItemType, COUNT(*) AS TOTALCOUNT
+                 FROM Items
+                 GROUP BY ItemType"
 
         Using comm As New SqlCommand(query, conn)
 
-            Using reader As SqlDataReader = comm.ExecuteReader()
+            Using dataRead = comm.ExecuteReader()
 
-                While reader.Read()
+                While dataRead.Read()
 
-                    Dim itemType As String = reader("ItemType").ToString()
-                    Dim count As Integer = Convert.ToInt32(reader("TotalCount"))
+                    Dim itemType As String = dataRead("ItemType").ToString()
+                    Dim count As Integer = Convert.ToInt32(dataRead("TOTALCOUNT"))
 
                     If itemType = "Lost" Then
                         lostCount = count
@@ -95,6 +166,8 @@ Public Class Dashboardcntrl
         totalFoundItems()
         totalUnclaimed()
         totalClaimed()
-        claimCharts()
+        dougnutChart()
+        stackBarChart()
+        pieChart()
     End Sub
 End Class

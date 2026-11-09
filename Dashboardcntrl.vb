@@ -3,6 +3,27 @@ Imports System.Data.SqlClient
 Imports System.Drawing
 Public Class Dashboardcntrl
 
+    Private Sub dashtable()
+        Try
+            query = "SELECT * FROM Items"
+
+            Using comm As New SqlCommand(query, conn)
+                Using dataRead = comm.ExecuteReader()
+                    DashItmtbl.Rows.Add(
+                                    dataRead("ItemID"),
+                                    dataRead("ItemName"),
+                                    dataRead("Category"),
+                                    dataRead("ItemType"),
+                                    Convert.ToDateTime(dataRead("DateReported")).ToString("yyyy-MM-dd"),
+                                    dataRead("Status")
+                    )
+                End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Private Sub pieChart()
         Try
             Dim maleCount As Integer = 0

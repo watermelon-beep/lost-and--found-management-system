@@ -3,6 +3,54 @@ Imports System.IO
 Imports Guna.UI2.WinForms
 
 Public Class ItemsCntrl
+    Public Sub viewItemTable()
+        Try
+            Itemtbl.Rows.Clear()
+
+            query = "SELECT ItemID, 
+                            ItemName, 
+                            Category, 
+                            ItemType,
+                            Location,
+                            DateLostFound, 
+                            DateReported, 
+                            PersonName,
+                            ContactNumber,
+                            Status
+                     FROM Items"
+
+            Using comm As New SqlCommand(query, conn)
+                comm.CommandTimeout = 120
+
+                Using dataRead = comm.ExecuteReader
+
+                    While dataRead.Read
+                        With Itemtbl.Rows
+                            .Add(
+                                    dataRead("ItemID"),
+                                    dataRead("ItemName"),
+                                    dataRead("Category"),
+                                    dataRead("ItemType"),
+                                    dataRead("Location").ToString(),
+                                    If(IsDBNull(dataRead("DateLostFound")), "", Convert.ToDateTime(dataRead("DateLostFound")).ToString("yyyy-MM-dd")),
+                                    Convert.ToDateTime(dataRead("DateReported")).ToString("yyyy-MM-dd"),
+                                    dataRead("PersonName").ToString(),
+                                    dataRead("ContactNumber").ToString(),
+                                    dataRead("Status"),
+                                    "Edit",
+                                    "Delete",
+                                    "View"
+                            )
+                        End With
+                    End While
+
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
     Private Sub viewItem(id As String)
         Try
@@ -306,55 +354,6 @@ Public Class ItemsCntrl
 
         updateUser()
 
-    End Sub
-
-    Public Sub viewItemTable()
-        Try
-            Itemtbl.Rows.Clear()
-
-            query = "SELECT ItemID, 
-                            ItemName, 
-                            Category, 
-                            ItemType,
-                            Location,
-                            DateLostFound, 
-                            DateReported, 
-                            PersonName,
-                            ContactNumber,
-                            Status
-                     FROM Items"
-
-            Using comm As New SqlCommand(query, conn)
-                comm.CommandTimeout = 120
-
-                Using dataRead = comm.ExecuteReader
-
-                    While dataRead.Read
-                        With Itemtbl.Rows
-                            .Add(
-                                    dataRead("ItemID"),
-                                    dataRead("ItemName"),
-                                    dataRead("Category"),
-                                    dataRead("ItemType"),
-                                    dataRead("Location").ToString(),
-                                    If(IsDBNull(dataRead("DateLostFound")), "", Convert.ToDateTime(dataRead("DateLostFound")).ToString("yyyy-MM-dd")),
-                                    Convert.ToDateTime(dataRead("DateReported")).ToString("yyyy-MM-dd"),
-                                    dataRead("PersonName").ToString(),
-                                    dataRead("ContactNumber").ToString(),
-                                    dataRead("Status"),
-                                    "Edit",
-                                    "Delete",
-                                    "View"
-                            )
-                        End With
-                    End While
-
-                End Using
-            End Using
-
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
     End Sub
 
     Private Sub ItemsCntrl_Load(sender As Object, e As EventArgs) Handles MyBase.Load

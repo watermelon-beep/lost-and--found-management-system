@@ -2,8 +2,11 @@
 
 Public Class LoginFrm
 
+    Dim count As Integer = 0
+    Dim time As Integer = 30
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlconnection()
+        Timer1.Stop()
     End Sub
 
     Private Function logVerification() As Boolean
@@ -34,11 +37,30 @@ Public Class LoginFrm
 
     Private Sub LogBtn_Click(sender As Object, e As EventArgs) Handles LogBtn.Click
 
+        If count <> 5 And Not logVerification() Then
+            MsgBox("Enter correct credentials")
+            count += 1
+        Else
+
+        End If
+
         If logVerification() Then
+            Usrnmtxtbx.Clear()
+            LogPasstxbx.Clear()
             Adminfrm.Show()
             Me.Hide()
         Else
-            MsgBox("Enter correct credentials")
+            If count = 5 And time <> 0 Then
+                Timer1.Start()
+                MsgBox("Too many failed attempts. Please try again later.")
+                MsgBox(TimeSpan.FromSeconds(time).ToString("m\:ss"))
+            ElseIf time = 0 Then
+                MsgBox("You can now try again.")
+                Timer1.Stop()
+                time = 30
+                count = 0
+            End If
+            LogPasstxbx.Clear()
         End If
     End Sub
     Dim passVisible As Boolean = False
@@ -59,6 +81,25 @@ Public Class LoginFrm
         Dim confirmResult As DialogResult = MessageBox.Show("Are you sure to exit?", "Confirm Exit", MessageBoxButtons.YesNo)
         If confirmResult = DialogResult.Yes Then
             Application.Exit()
+        End If
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If time <> 0 Then
+            time -= 1
+        End If
+
+    End Sub
+
+    Private Sub Usrnmtxtbx_TextChanged(sender As Object, e As EventArgs) Handles Usrnmtxtbx.TextChanged
+        If count = 5 Then
+            Usrnmtxtbx.Clear()
+        End If
+    End Sub
+
+    Private Sub LogPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles LogPasstxbx.TextChanged
+        If count = 5 Then
+            LogPasstxbx.Clear()
         End If
     End Sub
 End Class

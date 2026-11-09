@@ -73,4 +73,9 @@ Public Class Adminfrm
         Dim mngClms As New ManegClaimCntrl()
         selectedControl(mngClms, DisplayPnl)
     End Sub
+
+    Private Sub Logoutbtn_Click(sender As Object, e As EventArgs) Handles Logoutbtn.Click
+        LoginFrm.Show()
+        Me.Hide()
+    End Sub
 End Class

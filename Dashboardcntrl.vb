@@ -5,22 +5,28 @@ Public Class Dashboardcntrl
 
     Private Sub dashtable()
         Try
+            DashItmtbl.Rows.Clear()
+
             query = "SELECT * FROM Items"
 
             Using comm As New SqlCommand(query, conn)
                 Using dataRead = comm.ExecuteReader()
-                    DashItmtbl.Rows.Add(
-                                    dataRead("ItemID"),
-                                    dataRead("ItemName"),
-                                    dataRead("Category"),
-                                    dataRead("ItemType"),
-                                    Convert.ToDateTime(dataRead("DateReported")).ToString("yyyy-MM-dd"),
-                                    dataRead("Status")
-                    )
+                    While dataRead.Read
+                        With DashItmtbl.Rows
+                            .Add(
+                                dataRead("ItemID"),
+                                dataRead("ItemName"),
+                                dataRead("Category"),
+                                dataRead("ItemType"),
+                                Convert.ToDateTime(dataRead("DateReported")).ToString("yyyy-MM-dd"),
+                                dataRead("Status")
+                        )
+                        End With
+                    End While
                 End Using
             End Using
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -183,6 +189,7 @@ Public Class Dashboardcntrl
 
 
     Private Sub Dashboardcntrl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        dashtable()
         totalLostItems()
         totalFoundItems()
         totalUnclaimed()

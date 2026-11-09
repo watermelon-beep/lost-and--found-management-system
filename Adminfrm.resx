@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Logoutbtn.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAM5JREFUSEvd
+        lcsRwyAQQynFpaRTl+J7mkgPOeVGpKyInR+way7Om+HArpDGBpv0P+ScJ4wF44LxzixZHJqY11cWyeLI
+        iJxUGovMs6bjkb8rAPKyZ5NKv6E50bQLyBlA2iGmcwfw5JVTVw8xjX8PsKQvxPqxTcaydoj1PgNQOlvH
+        xU3LV9QYFXDV8hU19ryi54lS+RU1o5tcNycSuAIg7zMnEnkD+syJhN4A/oHb5uThDjQdD7zLh9L+cUWA
+        ce3CGXKjlRNRnmTL/hvtoKR0BxQx/i1eRoRtAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="Guna2Panel2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABE8AAAWSCAIAAABpF1wFAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF6s
@@ -23174,15 +23183,6 @@
         +PFbyeDM1wg6lQnYW3L87Sn4M2Xv1L3YqA7eft+Ie/pdSzgV1+yV7lc77DKw/RsdsXFIsrLpdnKDtgUt
         BHQXLrv2vEqlWhXcv8I+fF54pzGz7D83smbN7GfS/DCbXsIBB7+mbG+EQ/gzP9K24Sm0uy/+P9ehrBn8
         2pEVAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="Guna2Button3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAM5JREFUSEvd
-        lcsRwyAQQynFpaRTl+J7mkgPOeVGpKyInR+way7Om+HArpDGBpv0P+ScJ4wF44LxzixZHJqY11cWyeLI
-        iJxUGovMs6bjkb8rAPKyZ5NKv6E50bQLyBlA2iGmcwfw5JVTVw8xjX8PsKQvxPqxTcaydoj1PgNQOlvH
-        xU3LV9QYFXDV8hU19ryi54lS+RU1o5tcNycSuAIg7zMnEnkD+syJhN4A/oHb5uThDjQdD7zLh9L+cUWA
-        ce3CGXKjlRNRnmTL/hvtoKR0BxQx/i1eRoRtAAAAAElFTkSuQmCC
 </value>
   </data>
   <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

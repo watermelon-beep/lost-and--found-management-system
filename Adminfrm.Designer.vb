@@ -30,7 +30,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.DisplayPnl = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Logoutbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -118,7 +118,7 @@ Partial Class Adminfrm
         'Guna2Panel4
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.Guna2Panel4.Controls.Add(Me.Guna2Button3)
+        Me.Guna2Panel4.Controls.Add(Me.Logoutbtn)
         Me.Guna2Panel4.Controls.Add(Me.Guna2VSeparator1)
         Me.Guna2Panel4.Controls.Add(Me.Label5)
         Me.Guna2Panel4.Controls.Add(Me.Label4)
@@ -132,23 +132,23 @@ Partial Class Adminfrm
         Me.Guna2Panel4.Size = New System.Drawing.Size(1591, 120)
         Me.Guna2Panel4.TabIndex = 1
         '
-        'Guna2Button3
+        'Logoutbtn
         '
-        Me.Guna2Button3.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button3.BorderRadius = 10
-        Me.Guna2Button3.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button3.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button3.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button3.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button3.Image = CType(resources.GetObject("Guna2Button3.Image"), System.Drawing.Image)
-        Me.Guna2Button3.ImageSize = New System.Drawing.Size(30, 30)
-        Me.Guna2Button3.Location = New System.Drawing.Point(1517, 55)
-        Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(44, 41)
-        Me.Guna2Button3.TabIndex = 7
+        Me.Logoutbtn.BorderColor = System.Drawing.Color.Transparent
+        Me.Logoutbtn.BorderRadius = 10
+        Me.Logoutbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Logoutbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Logoutbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Logoutbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Logoutbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Logoutbtn.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Logoutbtn.ForeColor = System.Drawing.Color.White
+        Me.Logoutbtn.Image = CType(resources.GetObject("Logoutbtn.Image"), System.Drawing.Image)
+        Me.Logoutbtn.ImageSize = New System.Drawing.Size(30, 30)
+        Me.Logoutbtn.Location = New System.Drawing.Point(1517, 55)
+        Me.Logoutbtn.Name = "Logoutbtn"
+        Me.Logoutbtn.Size = New System.Drawing.Size(44, 41)
+        Me.Logoutbtn.TabIndex = 7
         '
         'Guna2VSeparator1
         '
@@ -459,5 +459,5 @@ Partial Class Adminfrm
     Friend WithEvents Label6 As Label
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
-    Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Logoutbtn As Guna.UI2.WinForms.Guna2Button
 End Class

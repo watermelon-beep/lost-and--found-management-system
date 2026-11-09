@@ -22,6 +22,7 @@ Partial Class LoginFrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginFrm))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -32,6 +33,7 @@ Partial Class LoginFrm
         Me.LogBtn = New Guna.UI2.WinForms.Guna2Button()
         Me.LogPasstxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Usrnmtxtbx = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -185,6 +187,10 @@ Partial Class LoginFrm
         Me.Usrnmtxtbx.Size = New System.Drawing.Size(269, 46)
         Me.Usrnmtxtbx.TabIndex = 0
         '
+        'Timer1
+        '
+        Me.Timer1.Interval = 1000
+        '
         'LoginFrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -213,4 +219,5 @@ Partial Class LoginFrm
     Friend WithEvents LogBtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Exitbtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Timer1 As Timer
 End Class

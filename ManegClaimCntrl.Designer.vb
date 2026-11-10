@@ -22,9 +22,10 @@ Partial Class ManegClaimCntrl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManegClaimCntrl))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
@@ -42,17 +43,14 @@ Partial Class ManegClaimCntrl
         Me.ItmImgPrf = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Itemtbl = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Claimtbl = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
@@ -62,6 +60,8 @@ Partial Class ManegClaimCntrl
         Me.Searchtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.ItemPic = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Updatebtn = New Guna.UI2.WinForms.Guna2Button()
         Me.StatusCmb = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.ContactTxt = New Guna.UI2.WinForms.Guna2TextBox()
@@ -69,7 +69,7 @@ Partial Class ManegClaimCntrl
         Me.Clearbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Addbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.DescriptionTxt = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.CategoryCmb = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Unclaimcmbx = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.PersonNameTxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -80,10 +80,12 @@ Partial Class ManegClaimCntrl
         CType(Me.ItmImgPrf, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel6.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
-        CType(Me.Itemtbl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Claimtbl, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Guna2Panel8.SuspendLayout()
         Me.Guna2Panel2.SuspendLayout()
         Me.Guna2Panel4.SuspendLayout()
+        Me.Guna2Panel5.SuspendLayout()
+        CType(Me.ItemPic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Panel1
@@ -285,7 +287,7 @@ Partial Class ManegClaimCntrl
         '
         Me.TableLayoutPanel4.ColumnCount = 1
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.Itemtbl, 0, 0)
+        Me.TableLayoutPanel4.Controls.Add(Me.Claimtbl, 0, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Guna2Panel8, 0, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(0, 0)
@@ -297,95 +299,80 @@ Partial Class ManegClaimCntrl
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(1233, 492)
         Me.TableLayoutPanel4.TabIndex = 0
         '
-        'Itemtbl
+        'Claimtbl
         '
-        Me.Itemtbl.AllowUserToAddRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.Itemtbl.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Itemtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
-        Me.Itemtbl.ColumnHeadersHeight = 50
-        Me.Itemtbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.Column3, Me.Column2, Me.DataGridViewTextBoxColumn12, Me.Column5, Me.Column6, Me.DataGridViewTextBoxColumn14, Me.Edit, Me.Delete, Me.View})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Itemtbl.DefaultCellStyle = DataGridViewCellStyle9
-        Me.Itemtbl.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Itemtbl.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Itemtbl.Location = New System.Drawing.Point(3, 3)
-        Me.Itemtbl.Name = "Itemtbl"
-        Me.Itemtbl.RowHeadersVisible = False
-        Me.Itemtbl.RowTemplate.Height = 50
-        Me.Itemtbl.RowTemplate.ReadOnly = True
-        Me.Itemtbl.Size = New System.Drawing.Size(1227, 403)
-        Me.Itemtbl.TabIndex = 2
-        Me.Itemtbl.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.Itemtbl.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.Itemtbl.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Itemtbl.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.Itemtbl.ThemeStyle.HeaderStyle.Height = 50
-        Me.Itemtbl.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Itemtbl.ThemeStyle.RowsStyle.Height = 50
+        Me.Claimtbl.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.Claimtbl.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Claimtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.Claimtbl.ColumnHeadersHeight = 50
+        Me.Claimtbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Edit, Me.Delete, Me.View})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Claimtbl.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Claimtbl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Claimtbl.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Claimtbl.Location = New System.Drawing.Point(3, 3)
+        Me.Claimtbl.Name = "Claimtbl"
+        Me.Claimtbl.RowHeadersVisible = False
+        Me.Claimtbl.RowTemplate.Height = 50
+        Me.Claimtbl.RowTemplate.ReadOnly = True
+        Me.Claimtbl.Size = New System.Drawing.Size(1227, 403)
+        Me.Claimtbl.TabIndex = 2
+        Me.Claimtbl.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.Claimtbl.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.Claimtbl.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Claimtbl.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.Claimtbl.ThemeStyle.HeaderStyle.Height = 50
+        Me.Claimtbl.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Claimtbl.ThemeStyle.RowsStyle.Height = 50
         '
         'DataGridViewTextBoxColumn8
         '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Item ID"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Claim ID"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
         'DataGridViewTextBoxColumn9
         '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Item Name"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Item No"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         '
-        'DataGridViewTextBoxColumn10
+        'Column1
         '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Category"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Type"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Location"
-        Me.Column3.Name = "Column3"
+        Me.Column1.HeaderText = "Claimant Name"
+        Me.Column1.Name = "Column1"
         '
         'Column2
         '
-        Me.Column2.HeaderText = "Date Lost/Found"
+        Me.Column2.HeaderText = "Claimant Contact"
         Me.Column2.Name = "Column2"
         '
-        'DataGridViewTextBoxColumn12
+        'Column3
         '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Date Reported"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.Column3.HeaderText = "Claim Date"
+        Me.Column3.Name = "Column3"
+        '
+        'Column4
+        '
+        Me.Column4.HeaderText = "Claim Status"
+        Me.Column4.Name = "Column4"
         '
         'Column5
         '
-        Me.Column5.HeaderText = "Person Name"
+        Me.Column5.HeaderText = "Process by"
         Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Contact Number"
-        Me.Column6.Name = "Column6"
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
         '
         'Edit
         '
@@ -477,6 +464,7 @@ Partial Class ManegClaimCntrl
         '
         'Guna2Panel4
         '
+        Me.Guna2Panel4.Controls.Add(Me.Guna2Panel5)
         Me.Guna2Panel4.Controls.Add(Me.Updatebtn)
         Me.Guna2Panel4.Controls.Add(Me.StatusCmb)
         Me.Guna2Panel4.Controls.Add(Me.ContactTxt)
@@ -484,13 +472,43 @@ Partial Class ManegClaimCntrl
         Me.Guna2Panel4.Controls.Add(Me.Clearbtn)
         Me.Guna2Panel4.Controls.Add(Me.Addbtn)
         Me.Guna2Panel4.Controls.Add(Me.DescriptionTxt)
-        Me.Guna2Panel4.Controls.Add(Me.CategoryCmb)
+        Me.Guna2Panel4.Controls.Add(Me.Unclaimcmbx)
         Me.Guna2Panel4.Controls.Add(Me.PersonNameTxt)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel4.Location = New System.Drawing.Point(3, 603)
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(1585, 297)
         Me.Guna2Panel4.TabIndex = 2
+        '
+        'Guna2Panel5
+        '
+        Me.Guna2Panel5.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Guna2Panel5.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2Panel5.BorderColor = System.Drawing.Color.Silver
+        Me.Guna2Panel5.BorderRadius = 10
+        Me.Guna2Panel5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
+        Me.Guna2Panel5.BorderThickness = 5
+        Me.Guna2Panel5.Controls.Add(Me.ItemPic)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(774, 93)
+        Me.Guna2Panel5.Name = "Guna2Panel5"
+        Me.Guna2Panel5.Size = New System.Drawing.Size(322, 185)
+        Me.Guna2Panel5.TabIndex = 38
+        '
+        'ItemPic
+        '
+        Me.ItemPic.BackColor = System.Drawing.Color.Transparent
+        Me.ItemPic.BackgroundImage = CType(resources.GetObject("ItemPic.BackgroundImage"), System.Drawing.Image)
+        Me.ItemPic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.ItemPic.BorderRadius = 10
+        Me.ItemPic.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ItemPic.FillColor = System.Drawing.Color.Transparent
+        Me.ItemPic.ImageRotate = 0!
+        Me.ItemPic.Location = New System.Drawing.Point(0, 0)
+        Me.ItemPic.Name = "ItemPic"
+        Me.ItemPic.Size = New System.Drawing.Size(322, 185)
+        Me.ItemPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.ItemPic.TabIndex = 0
+        Me.ItemPic.TabStop = False
         '
         'Updatebtn
         '
@@ -526,7 +544,7 @@ Partial Class ManegClaimCntrl
         Me.StatusCmb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.StatusCmb.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.StatusCmb.ItemHeight = 40
-        Me.StatusCmb.Items.AddRange(New Object() {"Unclaimed", "Claimed"})
+        Me.StatusCmb.Items.AddRange(New Object() {"Pending", "Reject", "Approved"})
         Me.StatusCmb.Location = New System.Drawing.Point(949, 28)
         Me.StatusCmb.Name = "StatusCmb"
         Me.StatusCmb.Size = New System.Drawing.Size(300, 46)
@@ -629,30 +647,28 @@ Partial Class ManegClaimCntrl
         Me.DescriptionTxt.Name = "DescriptionTxt"
         Me.DescriptionTxt.PlaceholderText = "Description..."
         Me.DescriptionTxt.SelectedText = ""
-        Me.DescriptionTxt.Size = New System.Drawing.Size(812, 185)
+        Me.DescriptionTxt.Size = New System.Drawing.Size(738, 185)
         Me.DescriptionTxt.TabIndex = 28
         '
-        'CategoryCmb
+        'Unclaimcmbx
         '
-        Me.CategoryCmb.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.CategoryCmb.BackColor = System.Drawing.Color.Transparent
-        Me.CategoryCmb.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.CategoryCmb.BorderRadius = 20
-        Me.CategoryCmb.BorderThickness = 2
-        Me.CategoryCmb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CategoryCmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CategoryCmb.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CategoryCmb.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CategoryCmb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.CategoryCmb.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
-        Me.CategoryCmb.ItemHeight = 40
-        Me.CategoryCmb.Items.AddRange(New Object() {"Others", "Electronics", "ID", "Documents", "Bags", "Clothing", "Personal Items"})
-        Me.CategoryCmb.Location = New System.Drawing.Point(643, 28)
-        Me.CategoryCmb.Name = "CategoryCmb"
-        Me.CategoryCmb.Size = New System.Drawing.Size(300, 46)
-        Me.CategoryCmb.StartIndex = 0
-        Me.CategoryCmb.TabIndex = 26
-        Me.CategoryCmb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Unclaimcmbx.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Unclaimcmbx.BackColor = System.Drawing.Color.Transparent
+        Me.Unclaimcmbx.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Unclaimcmbx.BorderRadius = 20
+        Me.Unclaimcmbx.BorderThickness = 2
+        Me.Unclaimcmbx.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Unclaimcmbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Unclaimcmbx.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Unclaimcmbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Unclaimcmbx.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Unclaimcmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Unclaimcmbx.ItemHeight = 40
+        Me.Unclaimcmbx.Location = New System.Drawing.Point(643, 28)
+        Me.Unclaimcmbx.Name = "Unclaimcmbx"
+        Me.Unclaimcmbx.Size = New System.Drawing.Size(300, 46)
+        Me.Unclaimcmbx.TabIndex = 26
+        Me.Unclaimcmbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'PersonNameTxt
         '
@@ -671,7 +687,7 @@ Partial Class ManegClaimCntrl
         Me.PersonNameTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.PersonNameTxt.Location = New System.Drawing.Point(31, 28)
         Me.PersonNameTxt.Name = "PersonNameTxt"
-        Me.PersonNameTxt.PlaceholderText = "Person name"
+        Me.PersonNameTxt.PlaceholderText = "Claimant name"
         Me.PersonNameTxt.SelectedText = ""
         Me.PersonNameTxt.Size = New System.Drawing.Size(300, 44)
         Me.PersonNameTxt.TabIndex = 24
@@ -693,11 +709,13 @@ Partial Class ManegClaimCntrl
         CType(Me.ItmImgPrf, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel6.ResumeLayout(False)
         Me.TableLayoutPanel4.ResumeLayout(False)
-        CType(Me.Itemtbl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Claimtbl, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Guna2Panel8.ResumeLayout(False)
         Me.Guna2Panel2.ResumeLayout(False)
         Me.Guna2Panel2.PerformLayout()
         Me.Guna2Panel4.ResumeLayout(False)
+        Me.Guna2Panel5.ResumeLayout(False)
+        CType(Me.ItemPic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -719,20 +737,7 @@ Partial Class ManegClaimCntrl
     Friend WithEvents ItmImgPrf As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents Itemtbl As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn10 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
-    Friend WithEvents Column5 As DataGridViewTextBoxColumn
-    Friend WithEvents Column6 As DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn14 As DataGridViewTextBoxColumn
-    Friend WithEvents Edit As DataGridViewButtonColumn
-    Friend WithEvents Delete As DataGridViewButtonColumn
-    Friend WithEvents View As DataGridViewButtonColumn
+    Friend WithEvents Claimtbl As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
@@ -746,6 +751,18 @@ Partial Class ManegClaimCntrl
     Friend WithEvents Clearbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Addbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents DescriptionTxt As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents CategoryCmb As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Unclaimcmbx As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents PersonNameTxt As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Edit As DataGridViewButtonColumn
+    Friend WithEvents Delete As DataGridViewButtonColumn
+    Friend WithEvents View As DataGridViewButtonColumn
+    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents ItemPic As Guna.UI2.WinForms.Guna2PictureBox
 End Class

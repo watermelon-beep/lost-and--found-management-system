@@ -4,6 +4,7 @@ Public Class LoginFrm
 
     Dim count As Integer = 0
     Dim time As Integer = 30
+
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlconnection()
         Timer1.Stop()

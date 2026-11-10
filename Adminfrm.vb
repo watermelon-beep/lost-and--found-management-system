@@ -40,14 +40,9 @@ Public Class Adminfrm
         Label4.Text = DateAndTime.Now.ToString("MMMM dd, yyyy")
         Label5.Text = DateAndTime.Now.ToString("hh:mm tt")
     End Sub
-
-
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
-        selectedControl(dashcntrl, DisplayPnl)
-    End Sub
-
     Private Sub Itmbtn_Click(sender As Object, e As EventArgs) Handles Itmbtn.Click
         selectedControl(itemCntrl, DisplayPnl)
+        Label1.Text = "Items"
     End Sub
 
     Private Sub DisplayPnl_Paint(sender As Object, e As PaintEventArgs) Handles DisplayPnl.Paint
@@ -56,6 +51,7 @@ Public Class Adminfrm
 
     Private Sub Usrsbtn_Click(sender As Object, e As EventArgs) Handles Usrsbtn.Click
         selectedControl(usrmanagement, DisplayPnl)
+        Label1.Text = "User Management"
     End Sub
 
     Private Sub Adminfrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -72,10 +68,20 @@ Public Class Adminfrm
     Private Sub ManageClaimsbtn_Click(sender As Object, e As EventArgs) Handles ManageClaimsbtn.Click
         Dim mngClms As New ManegClaimCntrl()
         selectedControl(mngClms, DisplayPnl)
+        Label1.Text = "Manage Claims"
     End Sub
 
     Private Sub Logoutbtn_Click(sender As Object, e As EventArgs) Handles Logoutbtn.Click
         LoginFrm.Show()
         Me.Hide()
+    End Sub
+
+    Private Sub Dashboardbtn_Click(sender As Object, e As EventArgs) Handles Dashboardbtn.Click
+        selectedControl(dashcntrl, DisplayPnl)
+        Label1.Text = "Dashboard"
+    End Sub
+
+    Private Sub Reportbtn_Click(sender As Object, e As EventArgs) Handles Reportbtn.Click
+        Label1.Text = "Reports"
     End Sub
 End Class

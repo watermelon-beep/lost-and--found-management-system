@@ -59,7 +59,7 @@ Public Class Dashboardcntrl
                 End Using
             End Using
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -102,37 +102,41 @@ Public Class Dashboardcntrl
     End Sub
 
     Private Sub dougnutChart()
+        Try
+            Dim lostCount As Integer = 0
+            Dim foundCount As Integer = 0
 
-        Dim lostCount As Integer = 0
-        Dim foundCount As Integer = 0
-
-        query = "SELECT ItemType, COUNT(*) AS TOTALCOUNT
+            query = "SELECT ItemType, COUNT(*) AS TOTALCOUNT
                  FROM Items
                  GROUP BY ItemType"
 
-        Using comm As New SqlCommand(query, conn)
+            Using comm As New SqlCommand(query, conn)
 
-            Using dataRead = comm.ExecuteReader()
+                Using dataRead = comm.ExecuteReader()
 
-                While dataRead.Read()
+                    While dataRead.Read()
 
-                    Dim itemType As String = dataRead("ItemType").ToString()
-                    Dim count As Integer = Convert.ToInt32(dataRead("TOTALCOUNT"))
+                        Dim itemType As String = dataRead("ItemType").ToString()
+                        Dim count As Integer = Convert.ToInt32(dataRead("TOTALCOUNT"))
 
-                    If itemType = "Lost" Then
-                        lostCount = count
+                        If itemType = "Lost" Then
+                            lostCount = count
 
-                    ElseIf itemType = "Found" Then
-                        foundCount = count
-                    End If
+                        ElseIf itemType = "Found" Then
+                            foundCount = count
+                        End If
 
-                End While
+                    End While
 
-                GunaDoughnutDataset1.DataPoints.Add("Lost", lostCount)
-                GunaDoughnutDataset1.DataPoints.Add("Found", foundCount)
+                    GunaDoughnutDataset1.DataPoints.Add("Lost", lostCount)
+                    GunaDoughnutDataset1.DataPoints.Add("Found", foundCount)
 
+                End Using
             End Using
-        End Using
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
 
     End Sub
 

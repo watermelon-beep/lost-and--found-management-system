@@ -2,15 +2,17 @@
 
 Public Class ManegClaimCntrl
 
+
+
     Private Sub mngClmTbl()
         Claimtbl.Rows.Clear()
         Try
-            query = "Select c.ClaimNo, i.ItemID, i.ItemName, c.ClaimantName, c.ClaimantContact, " &
-                    "c.ClaimDate, c.ClaimStatus, u.StaffID As ProcessedBy " &
-                    "FROM Claims c " &
-                    "INNER JOIN Items i On c.ItemNo = i.ItemNo " &
-                    "LEFT JOIN user_table u On c.ProcessedBy = u.StaffNo " &
-                    "ORDER BY c.ClaimNo"
+            query = "Select c.ClaimNo, i.ItemID, i.ItemName, c.ClaimantName, c.ClaimantContact, 
+                    c.ClaimDate, c.ClaimStatus, u.StaffID As ProcessedBy
+                    FROM Claims c
+                    INNER JOIN Items i On c.ItemNo = i.ItemNo
+                    LEFT JOIN user_table u On c.ProcessedBy = u.StaffNo
+                    ORDER BY c.ClaimNo"
 
             Using comm As New SqlCommand(query, conn)
                 Using dataRead = comm.ExecuteReader()

@@ -40,13 +40,13 @@ Partial Class Adminfrm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Reportbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.ManageClaimsbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Usrsbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Dashboardbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -247,12 +247,12 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button2, 0, 5)
+        Me.TableLayoutPanel3.Controls.Add(Me.Reportbtn, 0, 5)
         Me.TableLayoutPanel3.Controls.Add(Me.ManageClaimsbtn, 0, 4)
         Me.TableLayoutPanel3.Controls.Add(Me.Usrsbtn, 0, 3)
         Me.TableLayoutPanel3.Controls.Add(Me.Itmbtn, 0, 2)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Panel6, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Guna2Button1, 0, 1)
+        Me.TableLayoutPanel3.Controls.Add(Me.Dashboardbtn, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
@@ -268,28 +268,28 @@ Partial Class Adminfrm
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(295, 1035)
         Me.TableLayoutPanel3.TabIndex = 0
         '
-        'Guna2Button2
+        'Reportbtn
         '
-        Me.Guna2Button2.Animated = True
-        Me.Guna2Button2.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.BorderThickness = 2
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button2.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.HoverState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button2.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button2.Location = New System.Drawing.Point(0, 455)
-        Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(295, 82)
-        Me.Guna2Button2.TabIndex = 8
-        Me.Guna2Button2.Text = "Reports"
-        Me.Guna2Button2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Reportbtn.Animated = True
+        Me.Reportbtn.BorderColor = System.Drawing.Color.Transparent
+        Me.Reportbtn.BorderThickness = 2
+        Me.Reportbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Reportbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Reportbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Reportbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Reportbtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Reportbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Reportbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold)
+        Me.Reportbtn.ForeColor = System.Drawing.Color.White
+        Me.Reportbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Reportbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Reportbtn.Location = New System.Drawing.Point(0, 455)
+        Me.Reportbtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.Reportbtn.Name = "Reportbtn"
+        Me.Reportbtn.Size = New System.Drawing.Size(295, 82)
+        Me.Reportbtn.TabIndex = 8
+        Me.Reportbtn.Text = "Reports"
+        Me.Reportbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'ManageClaimsbtn
         '
@@ -382,30 +382,30 @@ Partial Class Adminfrm
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Campus" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lost and Found" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management system"
         '
-        'Guna2Button1
+        'Dashboardbtn
         '
-        Me.Guna2Button1.Animated = True
-        Me.Guna2Button1.BorderColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.BorderThickness = 2
-        Me.Guna2Button1.CheckedState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button1.CheckedState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Button1.FillColor = System.Drawing.Color.Transparent
-        Me.Guna2Button1.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.HoverState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button1.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Guna2Button1.Location = New System.Drawing.Point(0, 127)
-        Me.Guna2Button1.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(295, 82)
-        Me.Guna2Button1.TabIndex = 4
-        Me.Guna2Button1.Text = "Dashboard"
-        Me.Guna2Button1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
+        Me.Dashboardbtn.Animated = True
+        Me.Dashboardbtn.BorderColor = System.Drawing.Color.Transparent
+        Me.Dashboardbtn.BorderThickness = 2
+        Me.Dashboardbtn.CheckedState.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Dashboardbtn.CheckedState.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Dashboardbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Dashboardbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Dashboardbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Dashboardbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Dashboardbtn.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dashboardbtn.FillColor = System.Drawing.Color.Transparent
+        Me.Dashboardbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dashboardbtn.ForeColor = System.Drawing.Color.White
+        Me.Dashboardbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
+        Me.Dashboardbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
+        Me.Dashboardbtn.Location = New System.Drawing.Point(0, 127)
+        Me.Dashboardbtn.Margin = New System.Windows.Forms.Padding(0)
+        Me.Dashboardbtn.Name = "Dashboardbtn"
+        Me.Dashboardbtn.Size = New System.Drawing.Size(295, 82)
+        Me.Dashboardbtn.TabIndex = 4
+        Me.Dashboardbtn.Text = "Dashboard"
+        Me.Dashboardbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Timer1
         '
@@ -445,7 +445,7 @@ Partial Class Adminfrm
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Dashboardbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents ManageClaimsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Usrsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
@@ -457,7 +457,7 @@ Partial Class Adminfrm
     Friend WithEvents Label3 As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Label6 As Label
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Reportbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
     Friend WithEvents Logoutbtn As Guna.UI2.WinForms.Guna2Button
 End Class

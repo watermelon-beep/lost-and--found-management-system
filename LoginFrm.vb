@@ -4,6 +4,7 @@ Public Class LoginFrm
 
     Dim count As Integer = 0
     Dim time As Integer = 30
+    Dim role As String = ""
 
     Private Sub LoginFrm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         sqlconnection()
@@ -13,7 +14,7 @@ Public Class LoginFrm
     Private Function logVerification() As Boolean
 
         Try
-            query = "SELECT UserPassword, StaffNo, AccountStatus FROM user_table WHERE Username = @Username"
+            query = "SELECT UserPassword, StaffNo, AccountStatus, Role FROM user_table WHERE Username = @Username"
 
             Using comm As New SqlCommand(query, conn)
 
@@ -23,6 +24,7 @@ Public Class LoginFrm
                     While dataRead.Read
                         If dataRead("UserPassword").ToString() = LogPasstxbx.Text And dataRead("AccountStatus").ToString() = "Active" Then
                             currentStaffNo = Convert.ToInt32(dataRead("StaffNo"))
+                            role = dataRead("Role").ToString()
                             currentUserName = Usrnmtxtbx.Text
                             Return True
                         End If
@@ -48,8 +50,15 @@ Public Class LoginFrm
         If logVerification() Then
             Usrnmtxtbx.Clear()
             LogPasstxbx.Clear()
-            Adminfrm.Show()
-            Me.Hide()
+
+            Select Case role
+                Case "Admin"
+                    Adminfrm.Show()
+                    Me.Hide()
+                Case "Staff"
+                    Stafffrm.Show()
+                    Me.Hide()
+            End Select
         Else
             If count = 5 And time <> 0 Then
                 Timer1.Start()
@@ -64,6 +73,7 @@ Public Class LoginFrm
             LogPasstxbx.Clear()
         End If
     End Sub
+
     Dim passVisible As Boolean = False
     Private Sub LogPasstxbx_IconRightClick(sender As Object, e As EventArgs) Handles LogPasstxbx.IconRightClick
 

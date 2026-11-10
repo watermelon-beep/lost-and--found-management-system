@@ -131,6 +131,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="SelectCntrl.vb" />
+    <Compile Include="Stafffrm.Designer.vb">
+      <DependentUpon>Stafffrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Stafffrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UserManagement.Designer.vb">
       <DependentUpon>UserManagement.vb</DependentUpon>
     </Compile>
@@ -159,6 +165,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stafffrm.resx">
+      <DependentUpon>Stafffrm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagement.resx">
       <DependentUpon>UserManagement.vb</DependentUpon>

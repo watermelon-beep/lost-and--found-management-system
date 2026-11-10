@@ -383,4 +383,8 @@ Public Class ItemsCntrl
     Private Sub Searchtxbx_TextChanged(sender As Object, e As EventArgs) Handles Searchtxbx.TextChanged
         searchItems()
     End Sub
+
+    Private Sub ItemNameTxt_TextChanged(sender As Object, e As EventArgs) Handles ItemNameTxt.TextChanged
+
+    End Sub
 End Class

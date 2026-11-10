@@ -1,8 +1,40 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports Guna.UI2.WinForms
+Imports System.Text.RegularExpressions
 
 Public Class UserManagement
+
+    Dim updateTriggered As Boolean = False
+
+    Private Sub trimAllTextBoxes()
+        FrstNmtxbx.Text = FrstNmtxbx.Text.Trim()
+        MddlNmtxbx.Text = MddlNmtxbx.Text.Trim()
+        Srnmtxbx.Text = Srnmtxbx.Text.Trim()
+        Agetxbx.Text = Agetxbx.Text.Trim()
+        CntctNumtxbx.Text = CntctNumtxbx.Text.Trim()
+        Emailtxbx.Text = Emailtxbx.Text.Trim()
+        RegUsrnmtxbx.Text = RegUsrnmtxbx.Text.Trim()
+        RegPasstxbx.Text = RegPasstxbx.Text.Trim()
+        CnfrmPasstxbx.Text = CnfrmPasstxbx.Text.Trim()
+    End Sub
+
+    Private Sub clearAllFields()
+        FrstNmtxbx.Clear()
+        MddlNmtxbx.Clear()
+        Srnmtxbx.Clear()
+        Gndrcmbx.SelectedIndex = 2
+        Rolecmbx.SelectedIndex = 1
+        Brthdt.Value = DateTime.Now
+        Agetxbx.Clear()
+        CntctNumtxbx.Clear()
+        Emailtxbx.Clear()
+        RegUsrnmtxbx.Clear()
+        RegPasstxbx.Clear()
+        CnfrmPasstxbx.Clear()
+        Statuscmbx.SelectedIndex = 0
+        UsrImg.Image = Nothing
+    End Sub
 
     Private Sub searchUser()
         Try
@@ -350,23 +382,37 @@ Public Class UserManagement
 
     Private Sub RegPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles RegPasstxbx.TextChanged
         CnfrmPasstxbx.Text = RegPasstxbx.Text
+        If RegPasstxbx.Text = "" Or
+           Regex.IsMatch(RegPasstxbx.Text, ".[A-Z]") AndAlso
+           Regex.IsMatch(RegPasstxbx.Text, ".[0-9]") AndAlso
+           Regex.IsMatch(RegPasstxbx.Text, ".{6}") Then
+
+            RegPasstxbx.BorderColor = Color.FromArgb(36, 93, 170)
+
+        Else
+            RegPasstxbx.BorderColor = Color.Red
+        End If
     End Sub
 
     Private Sub AddUsrbtn_Click(sender As Object, e As EventArgs) Handles AddUsrbtn.Click
+        trimAllTextBoxes()
         addUser()
+        clearAllFields()
     End Sub
 
     Private Sub UsrImg_Click(sender As Object, e As EventArgs) Handles UsrImg.Click
 
         With OpenFileDialog1
             .FileName = ""
-            .Filter = "Image files| *.jpeg;*jpg;*.png;*.bmp"
+            .Filter = "Image Files|*.jpeg;*.jpg;*.png;*.bmp"
         End With
 
-        If OpenFileDialog1.ShowDialog Then
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+
             UsrImg.Image = Image.FromFile(OpenFileDialog1.FileName)
             Guna2Panel9.BorderColor = Color.Transparent
             UsrImg.BackgroundImage = Nothing
+
         End If
     End Sub
 
@@ -375,8 +421,10 @@ Public Class UserManagement
     End Sub
 
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
-
+        trimAllTextBoxes()
+        clearAllFields()
         updateUser()
+        updateTriggered = False
     End Sub
 
     Private Sub Usertbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Usertbl.CellContentClick
@@ -392,6 +440,7 @@ Public Class UserManagement
                 viewProfile(rowId)
                 ViewPhoto(rowId, Guna2PictureBox1)
             Case "Update"
+                updateTriggered = True
                 updateAction(rowId)
                 ViewPhoto(rowId, UsrImg)
             Case "Delete"
@@ -403,12 +452,116 @@ Public Class UserManagement
 
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        Guna2Panel2.Enabled = True
-    End Sub
-
     Private Sub Searchtxbx_TextChanged(sender As Object, e As EventArgs) Handles Searchtxbx.TextChanged
         searchUser()
     End Sub
 
+    Private Sub FrstNmtxbx_TextChanged(sender As Object, e As EventArgs) Handles FrstNmtxbx.TextChanged
+        If Not Regex.IsMatch(FrstNmtxbx.Text, "^[a-zA-Z ]*$") Then
+            FrstNmtxbx.Text = FrstNmtxbx.Text.Remove(FrstNmtxbx.Text.Length - 1)
+            FrstNmtxbx.SelectionStart = FrstNmtxbx.Text.Length
+        End If
+    End Sub
+
+    Private Sub MddlNmtxbx_TextChanged(sender As Object, e As EventArgs) Handles MddlNmtxbx.TextChanged
+        If Not Regex.IsMatch(MddlNmtxbx.Text, "^[a-zA-Z ]*$") Then
+            MddlNmtxbx.Text = MddlNmtxbx.Text.Remove(MddlNmtxbx.Text.Length - 1)
+            MddlNmtxbx.SelectionStart = MddlNmtxbx.Text.Length
+        End If
+    End Sub
+
+    Private Sub Srnmtxbx_TextChanged(sender As Object, e As EventArgs) Handles Srnmtxbx.TextChanged
+        If Not Regex.IsMatch(Srnmtxbx.Text, "^[a-zA-Z ]*$") Then
+            Srnmtxbx.Text = Srnmtxbx.Text.Remove(Srnmtxbx.Text.Length - 1)
+            Srnmtxbx.SelectionStart = Srnmtxbx.Text.Length
+        End If
+    End Sub
+
+    Private Sub Agetxbx_TextChanged(sender As Object, e As EventArgs) Handles Agetxbx.TextChanged
+
+        If Not Regex.IsMatch(Agetxbx.Text, "^[0-9]*$") Or Agetxbx.Text.Length >= 3 Then
+            Agetxbx.Text = Agetxbx.Text.Remove(Agetxbx.Text.Length - 1)
+            Agetxbx.SelectionStart = Agetxbx.Text.Length
+        End If
+    End Sub
+
+    Private Sub CntctNumtxbx_TextChanged(sender As Object, e As EventArgs) Handles CntctNumtxbx.TextChanged
+
+        If contactNumExist(CntctNumtxbx.Text) And updateTriggered = False Then
+            CntctNumtxbx.BorderColor = Color.Red
+            MsgBox("Contact number already exists. Please choose a different contact number.")
+        End If
+
+        If CntctNumtxbx.Text.Length > 11 Then
+            CntctNumtxbx.Text = CntctNumtxbx.Text.Remove(CntctNumtxbx.Text.Length - 1)
+            CntctNumtxbx.SelectionStart = CntctNumtxbx.Text.Length
+        End If
+
+        If Not Regex.IsMatch(CntctNumtxbx.Text, "^[0-9]*$") Then
+            CntctNumtxbx.Text = CntctNumtxbx.Text.Remove(CntctNumtxbx.Text.Length - 1)
+            CntctNumtxbx.SelectionStart = CntctNumtxbx.Text.Length
+        End If
+    End Sub
+
+    Private Sub Emailtxbx_TextChanged(sender As Object, e As EventArgs) Handles Emailtxbx.TextChanged
+
+        If emailExist(Emailtxbx.Text) And updateTriggered = False Then
+            Emailtxbx.BorderColor = Color.Red
+            MsgBox("Email already exists. Please choose a different email.")
+        End If
+
+        If Not Emailtxbx.Text.Contains("@gmail.com") And Emailtxbx.Text <> "" Then
+            Emailtxbx.BorderColor = Color.Red
+        Else
+            Emailtxbx.BorderColor = Color.FromArgb(36, 93, 170)
+        End If
+    End Sub
+
+    Private Sub RegUsrnmtxbx_TextChanged(sender As Object, e As EventArgs) Handles RegUsrnmtxbx.TextChanged
+
+        If userLogExist(RegUsrnmtxbx.Text) And updateTriggered = False Then
+            RegUsrnmtxbx.BorderColor = Color.Red
+            MsgBox("Username already exists. Please choose a different username.")
+        End If
+
+        If RegUsrnmtxbx.Text = "" Or
+           Regex.IsMatch(RegUsrnmtxbx.Text, ".[A-Z]") AndAlso
+           Regex.IsMatch(RegUsrnmtxbx.Text, ".[0-9]") AndAlso
+           Regex.IsMatch(RegUsrnmtxbx.Text, ".{6}") Then
+
+            RegUsrnmtxbx.BorderColor = Color.FromArgb(36, 93, 170)
+
+        Else
+            RegUsrnmtxbx.BorderColor = Color.Red
+        End If
+    End Sub
+
+    Private Sub CnfrmPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles CnfrmPasstxbx.TextChanged
+        If CnfrmPasstxbx.Text = "" Or
+           Regex.IsMatch(CnfrmPasstxbx.Text, ".[A-Z]") AndAlso
+           Regex.IsMatch(CnfrmPasstxbx.Text, ".[0-9]") AndAlso
+           Regex.IsMatch(CnfrmPasstxbx.Text, ".{6}") Then
+
+            CnfrmPasstxbx.BorderColor = Color.FromArgb(36, 93, 170)
+
+        Else
+            CnfrmPasstxbx.BorderColor = Color.Red
+        End If
+    End Sub
+
+    Private Sub Clearbtn_Click(sender As Object, e As EventArgs) Handles Clearbtn.Click
+        clearAllFields()
+    End Sub
+
+    Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
+        Clipboard.SetText(Label6.Text)
+    End Sub
+
+    Private Sub Viewbtn_Click(sender As Object, e As EventArgs) Handles Viewbtn.Click
+        If Usertbl.ScrollBars = ScrollBars.Horizontal Then
+            Usertbl.ScrollBars = ScrollBars.Both
+        Else
+            Usertbl.ScrollBars = ScrollBars.Horizontal
+        End If
+    End Sub
 End Class

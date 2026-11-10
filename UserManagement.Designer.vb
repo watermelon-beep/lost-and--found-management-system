@@ -53,7 +53,7 @@ Partial Class UserManagement
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.Viewbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Usertbl = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Staffno = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -73,7 +73,6 @@ Partial Class UserManagement
         Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Addbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Searchtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2CustomGradientPanel1 = New Guna.UI2.WinForms.Guna2CustomGradientPanel()
@@ -97,6 +96,7 @@ Partial Class UserManagement
         Me.MddlNmtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.FrstNmtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.ProgressField = New Guna.UI2.WinForms.Guna2CircleProgressBar()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -471,29 +471,29 @@ Partial Class UserManagement
         '
         'Guna2Panel8
         '
-        Me.Guna2Panel8.Controls.Add(Me.Guna2Button2)
+        Me.Guna2Panel8.Controls.Add(Me.Viewbtn)
         Me.Guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel8.Location = New System.Drawing.Point(3, 565)
         Me.Guna2Panel8.Name = "Guna2Panel8"
         Me.Guna2Panel8.Size = New System.Drawing.Size(1191, 65)
         Me.Guna2Panel8.TabIndex = 9
         '
-        'Guna2Button2
+        'Viewbtn
         '
-        Me.Guna2Button2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Guna2Button2.BorderRadius = 10
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Guna2Button2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.Guna2Button2.Location = New System.Drawing.Point(25, 13)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(87, 36)
-        Me.Guna2Button2.TabIndex = 4
-        Me.Guna2Button2.Text = "View all"
+        Me.Viewbtn.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Viewbtn.BorderRadius = 10
+        Me.Viewbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.Viewbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.Viewbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.Viewbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.Viewbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Viewbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Viewbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Viewbtn.Location = New System.Drawing.Point(25, 13)
+        Me.Viewbtn.Name = "Viewbtn"
+        Me.Viewbtn.Size = New System.Drawing.Size(87, 36)
+        Me.Viewbtn.TabIndex = 4
+        Me.Viewbtn.Text = "View all"
         '
         'Guna2Panel7
         '
@@ -534,6 +534,7 @@ Partial Class UserManagement
         Me.Usertbl.RowHeadersVisible = False
         Me.Usertbl.RowTemplate.Height = 50
         Me.Usertbl.RowTemplate.ReadOnly = True
+        Me.Usertbl.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.Usertbl.Size = New System.Drawing.Size(1191, 450)
         Me.Usertbl.TabIndex = 3
         Me.Usertbl.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -663,7 +664,6 @@ Partial Class UserManagement
         '
         'Guna2Panel6
         '
-        Me.Guna2Panel6.Controls.Add(Me.Addbtn)
         Me.Guna2Panel6.Controls.Add(Me.Label3)
         Me.Guna2Panel6.Controls.Add(Me.Searchtxbx)
         Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
@@ -672,36 +672,13 @@ Partial Class UserManagement
         Me.Guna2Panel6.Size = New System.Drawing.Size(1191, 100)
         Me.Guna2Panel6.TabIndex = 7
         '
-        'Addbtn
-        '
-        Me.Addbtn.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Addbtn.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Addbtn.BorderRadius = 10
-        Me.Addbtn.BorderThickness = 2
-        Me.Addbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Addbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Addbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Addbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Addbtn.FillColor = System.Drawing.Color.Transparent
-        Me.Addbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Addbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Addbtn.Image = CType(resources.GetObject("Addbtn.Image"), System.Drawing.Image)
-        Me.Addbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
-        Me.Addbtn.ImageOffset = New System.Drawing.Point(10, 0)
-        Me.Addbtn.Location = New System.Drawing.Point(995, 37)
-        Me.Addbtn.Name = "Addbtn"
-        Me.Addbtn.Size = New System.Drawing.Size(157, 44)
-        Me.Addbtn.TabIndex = 15
-        Me.Addbtn.Text = "Add user"
-        Me.Addbtn.TextOffset = New System.Drawing.Point(5, 0)
-        '
         'Label3
         '
         Me.Label3.Anchor = System.Windows.Forms.AnchorStyles.Left
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(20, 18)
+        Me.Label3.Location = New System.Drawing.Point(20, 40)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(150, 28)
         Me.Label3.TabIndex = 5
@@ -727,7 +704,7 @@ Partial Class UserManagement
         Me.Searchtxbx.IconLeft = CType(resources.GetObject("Searchtxbx.IconLeft"), System.Drawing.Image)
         Me.Searchtxbx.IconLeftOffset = New System.Drawing.Point(10, 0)
         Me.Searchtxbx.IconRightOffset = New System.Drawing.Point(10, 0)
-        Me.Searchtxbx.Location = New System.Drawing.Point(15, 52)
+        Me.Searchtxbx.Location = New System.Drawing.Point(713, 35)
         Me.Searchtxbx.Margin = New System.Windows.Forms.Padding(0)
         Me.Searchtxbx.Name = "Searchtxbx"
         Me.Searchtxbx.PlaceholderText = "Search firstname, lastname or ID..."
@@ -749,6 +726,7 @@ Partial Class UserManagement
         Me.Guna2Panel2.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.Guna2Panel2.BorderRadius = 20
         Me.Guna2Panel2.BorderThickness = 2
+        Me.Guna2Panel2.Controls.Add(Me.ProgressField)
         Me.Guna2Panel2.Controls.Add(Me.Rolecmbx)
         Me.Guna2Panel2.Controls.Add(Me.Statuscmbx)
         Me.Guna2Panel2.Controls.Add(Me.Emailtxbx)
@@ -767,7 +745,6 @@ Partial Class UserManagement
         Me.Guna2Panel2.Controls.Add(Me.MddlNmtxbx)
         Me.Guna2Panel2.Controls.Add(Me.FrstNmtxbx)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel2.Enabled = False
         Me.Guna2Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(1585, 252)
@@ -788,9 +765,10 @@ Partial Class UserManagement
         Me.Rolecmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Rolecmbx.ItemHeight = 40
         Me.Rolecmbx.Items.AddRange(New Object() {"Admin", "Staff"})
-        Me.Rolecmbx.Location = New System.Drawing.Point(878, 30)
+        Me.Rolecmbx.Location = New System.Drawing.Point(920, 30)
         Me.Rolecmbx.Name = "Rolecmbx"
         Me.Rolecmbx.Size = New System.Drawing.Size(137, 46)
+        Me.Rolecmbx.StartIndex = 1
         Me.Rolecmbx.TabIndex = 23
         Me.Rolecmbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -809,7 +787,7 @@ Partial Class UserManagement
         Me.Statuscmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Statuscmbx.ItemHeight = 40
         Me.Statuscmbx.Items.AddRange(New Object() {"Active", "Inactive"})
-        Me.Statuscmbx.Location = New System.Drawing.Point(848, 102)
+        Me.Statuscmbx.Location = New System.Drawing.Point(890, 102)
         Me.Statuscmbx.Name = "Statuscmbx"
         Me.Statuscmbx.Size = New System.Drawing.Size(167, 46)
         Me.Statuscmbx.StartIndex = 0
@@ -831,7 +809,7 @@ Partial Class UserManagement
         Me.Emailtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Emailtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Emailtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Emailtxbx.Location = New System.Drawing.Point(613, 104)
+        Me.Emailtxbx.Location = New System.Drawing.Point(655, 104)
         Me.Emailtxbx.Name = "Emailtxbx"
         Me.Emailtxbx.PlaceholderText = "Email"
         Me.Emailtxbx.SelectedText = ""
@@ -853,7 +831,7 @@ Partial Class UserManagement
         Me.Agetxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Agetxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Agetxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Agetxbx.Location = New System.Drawing.Point(308, 104)
+        Me.Agetxbx.Location = New System.Drawing.Point(350, 104)
         Me.Agetxbx.Name = "Agetxbx"
         Me.Agetxbx.PlaceholderText = "Age"
         Me.Agetxbx.SelectedText = ""
@@ -869,7 +847,7 @@ Partial Class UserManagement
         Me.Brthdt.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Brthdt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Brthdt.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Brthdt.Location = New System.Drawing.Point(54, 104)
+        Me.Brthdt.Location = New System.Drawing.Point(96, 104)
         Me.Brthdt.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.Brthdt.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.Brthdt.Name = "Brthdt"
@@ -891,15 +869,13 @@ Partial Class UserManagement
         Me.Clearbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Clearbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Clearbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Clearbtn.Image = CType(resources.GetObject("Clearbtn.Image"), System.Drawing.Image)
         Me.Clearbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left
         Me.Clearbtn.ImageOffset = New System.Drawing.Point(5, 0)
-        Me.Clearbtn.Location = New System.Drawing.Point(923, 174)
+        Me.Clearbtn.Location = New System.Drawing.Point(965, 174)
         Me.Clearbtn.Name = "Clearbtn"
         Me.Clearbtn.Size = New System.Drawing.Size(92, 44)
         Me.Clearbtn.TabIndex = 18
         Me.Clearbtn.Text = "Clear"
-        Me.Clearbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Guna2Panel9
         '
@@ -910,9 +886,9 @@ Partial Class UserManagement
         Me.Guna2Panel9.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
         Me.Guna2Panel9.BorderThickness = 5
         Me.Guna2Panel9.Controls.Add(Me.UsrImg)
-        Me.Guna2Panel9.Location = New System.Drawing.Point(1128, 38)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(1105, 38)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(405, 180)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(413, 180)
         Me.Guna2Panel9.TabIndex = 17
         '
         'UsrImg
@@ -926,7 +902,7 @@ Partial Class UserManagement
         Me.UsrImg.ImageRotate = 0!
         Me.UsrImg.Location = New System.Drawing.Point(0, 0)
         Me.UsrImg.Name = "UsrImg"
-        Me.UsrImg.Size = New System.Drawing.Size(405, 180)
+        Me.UsrImg.Size = New System.Drawing.Size(413, 180)
         Me.UsrImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.UsrImg.TabIndex = 0
         Me.UsrImg.TabStop = False
@@ -945,7 +921,7 @@ Partial Class UserManagement
         Me.Updtbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Updtbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Updtbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Updtbtn.Location = New System.Drawing.Point(816, 174)
+        Me.Updtbtn.Location = New System.Drawing.Point(858, 174)
         Me.Updtbtn.Name = "Updtbtn"
         Me.Updtbtn.Size = New System.Drawing.Size(101, 44)
         Me.Updtbtn.TabIndex = 16
@@ -966,7 +942,7 @@ Partial Class UserManagement
         Me.CnfrmPasstxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CnfrmPasstxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.CnfrmPasstxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CnfrmPasstxbx.Location = New System.Drawing.Point(486, 174)
+        Me.CnfrmPasstxbx.Location = New System.Drawing.Point(528, 174)
         Me.CnfrmPasstxbx.Name = "CnfrmPasstxbx"
         Me.CnfrmPasstxbx.PlaceholderText = "Confirm password"
         Me.CnfrmPasstxbx.SelectedText = ""
@@ -984,7 +960,7 @@ Partial Class UserManagement
         Me.AddUsrbtn.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.AddUsrbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.AddUsrbtn.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.AddUsrbtn.Location = New System.Drawing.Point(709, 174)
+        Me.AddUsrbtn.Location = New System.Drawing.Point(751, 174)
         Me.AddUsrbtn.Name = "AddUsrbtn"
         Me.AddUsrbtn.Size = New System.Drawing.Size(101, 44)
         Me.AddUsrbtn.TabIndex = 14
@@ -1005,7 +981,7 @@ Partial Class UserManagement
         Me.RegPasstxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RegPasstxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.RegPasstxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RegPasstxbx.Location = New System.Drawing.Point(270, 174)
+        Me.RegPasstxbx.Location = New System.Drawing.Point(312, 174)
         Me.RegPasstxbx.Name = "RegPasstxbx"
         Me.RegPasstxbx.PlaceholderText = "Password"
         Me.RegPasstxbx.SelectedText = ""
@@ -1027,7 +1003,7 @@ Partial Class UserManagement
         Me.RegUsrnmtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.RegUsrnmtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.RegUsrnmtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RegUsrnmtxbx.Location = New System.Drawing.Point(54, 174)
+        Me.RegUsrnmtxbx.Location = New System.Drawing.Point(96, 174)
         Me.RegUsrnmtxbx.Name = "RegUsrnmtxbx"
         Me.RegUsrnmtxbx.PlaceholderText = "Username"
         Me.RegUsrnmtxbx.SelectedText = ""
@@ -1049,7 +1025,7 @@ Partial Class UserManagement
         Me.CntctNumtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CntctNumtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.CntctNumtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CntctNumtxbx.Location = New System.Drawing.Point(378, 104)
+        Me.CntctNumtxbx.Location = New System.Drawing.Point(420, 104)
         Me.CntctNumtxbx.Name = "CntctNumtxbx"
         Me.CntctNumtxbx.PlaceholderText = "Contact number"
         Me.CntctNumtxbx.SelectedText = ""
@@ -1071,9 +1047,10 @@ Partial Class UserManagement
         Me.Gndrcmbx.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.Gndrcmbx.ItemHeight = 40
         Me.Gndrcmbx.Items.AddRange(New Object() {"Male", "Female", "Others"})
-        Me.Gndrcmbx.Location = New System.Drawing.Point(709, 32)
+        Me.Gndrcmbx.Location = New System.Drawing.Point(751, 32)
         Me.Gndrcmbx.Name = "Gndrcmbx"
         Me.Gndrcmbx.Size = New System.Drawing.Size(158, 46)
+        Me.Gndrcmbx.StartIndex = 2
         Me.Gndrcmbx.TabIndex = 9
         Me.Gndrcmbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -1092,7 +1069,7 @@ Partial Class UserManagement
         Me.Srnmtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Srnmtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.Srnmtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Srnmtxbx.Location = New System.Drawing.Point(486, 32)
+        Me.Srnmtxbx.Location = New System.Drawing.Point(528, 32)
         Me.Srnmtxbx.Name = "Srnmtxbx"
         Me.Srnmtxbx.PlaceholderText = "Surname"
         Me.Srnmtxbx.SelectedText = ""
@@ -1114,7 +1091,7 @@ Partial Class UserManagement
         Me.MddlNmtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MddlNmtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.MddlNmtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MddlNmtxbx.Location = New System.Drawing.Point(270, 32)
+        Me.MddlNmtxbx.Location = New System.Drawing.Point(312, 32)
         Me.MddlNmtxbx.Name = "MddlNmtxbx"
         Me.MddlNmtxbx.PlaceholderText = "Middle name"
         Me.MddlNmtxbx.SelectedText = ""
@@ -1136,7 +1113,7 @@ Partial Class UserManagement
         Me.FrstNmtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.FrstNmtxbx.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.FrstNmtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.FrstNmtxbx.Location = New System.Drawing.Point(54, 34)
+        Me.FrstNmtxbx.Location = New System.Drawing.Point(96, 34)
         Me.FrstNmtxbx.Name = "FrstNmtxbx"
         Me.FrstNmtxbx.PlaceholderText = "First name"
         Me.FrstNmtxbx.SelectedText = ""
@@ -1146,6 +1123,23 @@ Partial Class UserManagement
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'ProgressField
+        '
+        Me.ProgressField.FillColor = System.Drawing.Color.FromArgb(CType(CType(200, Byte), Integer), CType(CType(213, Byte), Integer), CType(CType(218, Byte), Integer), CType(CType(223, Byte), Integer))
+        Me.ProgressField.FillThickness = 5
+        Me.ProgressField.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.ProgressField.ForeColor = System.Drawing.Color.White
+        Me.ProgressField.Location = New System.Drawing.Point(16, 20)
+        Me.ProgressField.Minimum = 0
+        Me.ProgressField.Name = "ProgressField"
+        Me.ProgressField.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.ProgressField.ProgressColor2 = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.ProgressField.ProgressThickness = 5
+        Me.ProgressField.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
+        Me.ProgressField.Size = New System.Drawing.Size(37, 37)
+        Me.ProgressField.TabIndex = 24
+        Me.ProgressField.Text = "Guna2CircleProgressBar1"
         '
         'UserManagement
         '
@@ -1189,7 +1183,7 @@ Partial Class UserManagement
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Usertbl As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Viewbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Searchtxbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Srnmtxbx As Guna.UI2.WinForms.Guna2TextBox
@@ -1246,5 +1240,5 @@ Partial Class UserManagement
     Friend WithEvents Update As DataGridViewButtonColumn
     Friend WithEvents Delete As DataGridViewButtonColumn
     Friend WithEvents View As DataGridViewButtonColumn
-    Friend WithEvents Addbtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents ProgressField As Guna.UI2.WinForms.Guna2CircleProgressBar
 End Class

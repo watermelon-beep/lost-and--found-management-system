@@ -45,19 +45,6 @@ Partial Class ItemsCntrl
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
         Me.Itemtbl = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
@@ -81,6 +68,19 @@ Partial Class ItemsCntrl
         Me.PersonNameTxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn14 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Delete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.View = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -175,7 +175,7 @@ Partial Class ItemsCntrl
         '
         Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(185, 139)
+        Me.Label10.Location = New System.Drawing.Point(185, 122)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(144, 23)
         Me.Label10.TabIndex = 9
@@ -218,7 +218,7 @@ Partial Class ItemsCntrl
         '
         Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(185, 119)
+        Me.Label6.Location = New System.Drawing.Point(185, 435)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(144, 23)
         Me.Label6.TabIndex = 5
@@ -314,6 +314,7 @@ Partial Class ItemsCntrl
         Me.Itemtbl.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.Itemtbl.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.Itemtbl.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.None
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -324,7 +325,7 @@ Partial Class ItemsCntrl
         Me.Itemtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.Itemtbl.ColumnHeadersHeight = 50
         Me.Itemtbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.Column3, Me.Column2, Me.DataGridViewTextBoxColumn12, Me.Column5, Me.Column6, Me.DataGridViewTextBoxColumn14, Me.Edit, Me.Delete, Me.View})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
@@ -339,6 +340,7 @@ Partial Class ItemsCntrl
         Me.Itemtbl.RowHeadersVisible = False
         Me.Itemtbl.RowTemplate.Height = 50
         Me.Itemtbl.RowTemplate.ReadOnly = True
+        Me.Itemtbl.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal
         Me.Itemtbl.Size = New System.Drawing.Size(1227, 393)
         Me.Itemtbl.TabIndex = 2
         Me.Itemtbl.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -348,71 +350,6 @@ Partial Class ItemsCntrl
         Me.Itemtbl.ThemeStyle.HeaderStyle.Height = 50
         Me.Itemtbl.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Itemtbl.ThemeStyle.RowsStyle.Height = 50
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Item ID"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.HeaderText = "Item Name"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.HeaderText = "Category"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.HeaderText = "Type"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Location"
-        Me.Column3.Name = "Column3"
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Date Lost/Found"
-        Me.Column2.Name = "Column2"
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.HeaderText = "Date Reported"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        '
-        'Column5
-        '
-        Me.Column5.HeaderText = "Person Name"
-        Me.Column5.Name = "Column5"
-        '
-        'Column6
-        '
-        Me.Column6.HeaderText = "Contact Number"
-        Me.Column6.Name = "Column6"
-        '
-        'DataGridViewTextBoxColumn14
-        '
-        Me.DataGridViewTextBoxColumn14.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
-        '
-        'Edit
-        '
-        Me.Edit.HeaderText = "Edit"
-        Me.Edit.Name = "Edit"
-        '
-        'Delete
-        '
-        Me.Delete.HeaderText = "Delete"
-        Me.Delete.Name = "Delete"
-        '
-        'View
-        '
-        Me.View.HeaderText = "View"
-        Me.View.Name = "View"
         '
         'Guna2Panel8
         '
@@ -582,8 +519,8 @@ Partial Class ItemsCntrl
         Me.DateLostFoundDtp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.DateLostFoundDtp.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.DateLostFoundDtp.Location = New System.Drawing.Point(503, 76)
-        Me.DateLostFoundDtp.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DateLostFoundDtp.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.DateLostFoundDtp.MaxDate = New Date(2026, 11, 11, 0, 0, 0, 0)
+        Me.DateLostFoundDtp.MinDate = New Date(2022, 1, 1, 0, 0, 0, 0)
         Me.DateLostFoundDtp.Name = "DateLostFoundDtp"
         Me.DateLostFoundDtp.Size = New System.Drawing.Size(224, 44)
         Me.DateLostFoundDtp.TabIndex = 34
@@ -679,7 +616,7 @@ Partial Class ItemsCntrl
         Me.Guna2Panel5.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash
         Me.Guna2Panel5.BorderThickness = 5
         Me.Guna2Panel5.Controls.Add(Me.ItemPic)
-        Me.Guna2Panel5.Location = New System.Drawing.Point(738, 29)
+        Me.Guna2Panel5.Location = New System.Drawing.Point(738, 20)
         Me.Guna2Panel5.Name = "Guna2Panel5"
         Me.Guna2Panel5.Size = New System.Drawing.Size(321, 173)
         Me.Guna2Panel5.TabIndex = 29
@@ -741,6 +678,7 @@ Partial Class ItemsCntrl
         Me.TypeCmb.Location = New System.Drawing.Point(273, 147)
         Me.TypeCmb.Name = "TypeCmb"
         Me.TypeCmb.Size = New System.Drawing.Size(224, 46)
+        Me.TypeCmb.StartIndex = 0
         Me.TypeCmb.TabIndex = 27
         Me.TypeCmb.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -818,6 +756,95 @@ Partial Class ItemsCntrl
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.FillWeight = 200.0!
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Item ID"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.FillWeight = 200.0!
+        Me.DataGridViewTextBoxColumn9.HeaderText = "Item Name"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.Width = 127
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn10.HeaderText = "Category"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.Width = 93
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn11.HeaderText = "Type"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.Width = 64
+        '
+        'Column3
+        '
+        Me.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Column3.HeaderText = "Location"
+        Me.Column3.Name = "Column3"
+        Me.Column3.Width = 89
+        '
+        'Column2
+        '
+        Me.Column2.FillWeight = 250.0!
+        Me.Column2.HeaderText = "Date Lost/Found"
+        Me.Column2.Name = "Column2"
+        Me.Column2.Width = 158
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.FillWeight = 300.0!
+        Me.DataGridViewTextBoxColumn12.HeaderText = "Date Reported"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.Width = 150
+        '
+        'Column5
+        '
+        Me.Column5.FillWeight = 200.0!
+        Me.Column5.HeaderText = "Person Name"
+        Me.Column5.Name = "Column5"
+        Me.Column5.Width = 127
+        '
+        'Column6
+        '
+        Me.Column6.FillWeight = 250.0!
+        Me.Column6.HeaderText = "Contact Number"
+        Me.Column6.Name = "Column6"
+        Me.Column6.Width = 158
+        '
+        'DataGridViewTextBoxColumn14
+        '
+        Me.DataGridViewTextBoxColumn14.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.DataGridViewTextBoxColumn14.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn14.Name = "DataGridViewTextBoxColumn14"
+        Me.DataGridViewTextBoxColumn14.Width = 72
+        '
+        'Edit
+        '
+        Me.Edit.HeaderText = "Edit"
+        Me.Edit.Name = "Edit"
+        Me.Edit.Width = 50
+        '
+        'Delete
+        '
+        Me.Delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.Delete.HeaderText = "Delete"
+        Me.Delete.Name = "Delete"
+        Me.Delete.Width = 56
+        '
+        'View
+        '
+        Me.View.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
+        Me.View.HeaderText = "View"
+        Me.View.Name = "View"
+        Me.View.Width = 45
         '
         'ItemsCntrl
         '

@@ -418,6 +418,9 @@ Public Class UserManagement
 
     Private Sub UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewUserTable()
+        Dim firstRowIndex As Integer = Usertbl.Rows(0).Index
+        viewProfile(Usertbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn9").Value.ToString())
+        ViewPhoto(Usertbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn9").Value.ToString(), Guna2PictureBox1)
     End Sub
 
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
@@ -477,13 +480,6 @@ Public Class UserManagement
         End If
     End Sub
 
-    Private Sub Agetxbx_TextChanged(sender As Object, e As EventArgs) Handles Agetxbx.TextChanged
-
-        If Not Regex.IsMatch(Agetxbx.Text, "^[0-9]*$") Or Agetxbx.Text.Length >= 3 Then
-            Agetxbx.Text = Agetxbx.Text.Remove(Agetxbx.Text.Length - 1)
-            Agetxbx.SelectionStart = Agetxbx.Text.Length
-        End If
-    End Sub
 
     Private Sub CntctNumtxbx_TextChanged(sender As Object, e As EventArgs) Handles CntctNumtxbx.TextChanged
 
@@ -492,12 +488,7 @@ Public Class UserManagement
             MsgBox("Contact number already exists. Please choose a different contact number.")
         End If
 
-        If CntctNumtxbx.Text.Length > 11 Then
-            CntctNumtxbx.Text = CntctNumtxbx.Text.Remove(CntctNumtxbx.Text.Length - 1)
-            CntctNumtxbx.SelectionStart = CntctNumtxbx.Text.Length
-        End If
-
-        If Not Regex.IsMatch(CntctNumtxbx.Text, "^[0-9]*$") Then
+        If Not Regex.IsMatch(CntctNumtxbx.Text, "^[0-9]*$") Or CntctNumtxbx.Text.Length > 11 Then
             CntctNumtxbx.Text = CntctNumtxbx.Text.Remove(CntctNumtxbx.Text.Length - 1)
             CntctNumtxbx.SelectionStart = CntctNumtxbx.Text.Length
         End If
@@ -563,5 +554,18 @@ Public Class UserManagement
         Else
             Usertbl.ScrollBars = ScrollBars.Horizontal
         End If
+    End Sub
+
+    Private Sub Brthdt_ValueChanged(sender As Object, e As EventArgs) Handles Brthdt.ValueChanged
+        Dim birthDate As Date = Brthdt.Value
+        Dim today As Date = Date.Today
+
+        Dim age As Integer = today.Year - birthDate.Year
+
+        If birthDate.Date > today.AddYears(-age) Then
+            age -= 1
+        End If
+
+        Agetxbx.Text = age.ToString()
     End Sub
 End Class

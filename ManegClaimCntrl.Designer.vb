@@ -22,22 +22,19 @@ Partial Class ManegClaimCntrl
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ManegClaimCntrl))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel3 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Guna2Panel7 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2Panel9 = New Guna.UI2.WinForms.Guna2Panel()
         Me.ItmImgPrf = New Guna.UI2.WinForms.Guna2PictureBox()
@@ -57,7 +54,6 @@ Partial Class ManegClaimCntrl
         Me.Guna2Panel8 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
-        Me.Searchtxbx = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel5 = New Guna.UI2.WinForms.Guna2Panel()
@@ -65,12 +61,16 @@ Partial Class ManegClaimCntrl
         Me.Updatebtn = New Guna.UI2.WinForms.Guna2Button()
         Me.StatusCmb = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.ContactTxt = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.DateLostFoundDtp = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.ClaimDate = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Clearbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Addbtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.DescriptionTxt = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.ProofOfOwnTxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Unclaimcmbx = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.PersonNameTxt = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.Guna2ComboBox1 = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -146,13 +146,12 @@ Partial Class ManegClaimCntrl
         Me.Guna2Panel7.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.Guna2Panel7.BorderRadius = 20
         Me.Guna2Panel7.BorderThickness = 2
-        Me.Guna2Panel7.Controls.Add(Me.Label10)
+        Me.Guna2Panel7.Controls.Add(Me.Label4)
+        Me.Guna2Panel7.Controls.Add(Me.Label2)
         Me.Guna2Panel7.Controls.Add(Me.Label9)
+        Me.Guna2Panel7.Controls.Add(Me.Label6)
         Me.Guna2Panel7.Controls.Add(Me.Label8)
         Me.Guna2Panel7.Controls.Add(Me.Label7)
-        Me.Guna2Panel7.Controls.Add(Me.Label6)
-        Me.Guna2Panel7.Controls.Add(Me.Label5)
-        Me.Guna2Panel7.Controls.Add(Me.Label2)
         Me.Guna2Panel7.Controls.Add(Me.Label1)
         Me.Guna2Panel7.Controls.Add(Me.Guna2Panel9)
         Me.Guna2Panel7.Dock = System.Windows.Forms.DockStyle.Fill
@@ -161,32 +160,21 @@ Partial Class ManegClaimCntrl
         Me.Guna2Panel7.Size = New System.Drawing.Size(340, 489)
         Me.Guna2Panel7.TabIndex = 1
         '
-        'Label10
-        '
-        Me.Label10.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label10.Location = New System.Drawing.Point(185, 139)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(144, 23)
-        Me.Label10.TabIndex = 9
-        Me.Label10.Text = "Location"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'Label9
         '
         Me.Label9.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label9.Location = New System.Drawing.Point(20, 230)
+        Me.Label9.Location = New System.Drawing.Point(19, 323)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(292, 110)
         Me.Label9.TabIndex = 8
-        Me.Label9.Text = "Description"
+        Me.Label9.Text = "Proof of Ownership"
         '
         'Label8
         '
         Me.Label8.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label8.Location = New System.Drawing.Point(185, 31)
+        Me.Label8.Location = New System.Drawing.Point(22, 212)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(144, 30)
         Me.Label8.TabIndex = 7
@@ -195,9 +183,10 @@ Partial Class ManegClaimCntrl
         '
         'Label7
         '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label7.Location = New System.Drawing.Point(24, 179)
+        Me.Label7.Location = New System.Drawing.Point(97, 182)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(149, 30)
         Me.Label7.TabIndex = 6
@@ -206,57 +195,37 @@ Partial Class ManegClaimCntrl
         '
         'Label6
         '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(185, 119)
+        Me.Label6.Location = New System.Drawing.Point(170, 446)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(144, 23)
         Me.Label6.TabIndex = 5
-        Me.Label6.Text = "Date Reported"
+        Me.Label6.Text = "Claim date"
         Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label5
-        '
-        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(185, 97)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(144, 25)
-        Me.Label5.TabIndex = 4
-        Me.Label5.Text = "Type"
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label2
-        '
-        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(185, 76)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(144, 19)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Category"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(185, 50)
+        Me.Label1.Location = New System.Drawing.Point(22, 242)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(144, 30)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Item name"
+        Me.Label1.Text = "Claimnant Name"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Guna2Panel9
         '
+        Me.Guna2Panel9.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.Guna2Panel9.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
         Me.Guna2Panel9.BorderRadius = 20
         Me.Guna2Panel9.BorderThickness = 2
         Me.Guna2Panel9.Controls.Add(Me.ItmImgPrf)
-        Me.Guna2Panel9.Location = New System.Drawing.Point(24, 31)
+        Me.Guna2Panel9.Location = New System.Drawing.Point(71, 31)
         Me.Guna2Panel9.Name = "Guna2Panel9"
-        Me.Guna2Panel9.Size = New System.Drawing.Size(149, 145)
+        Me.Guna2Panel9.Size = New System.Drawing.Size(199, 145)
         Me.Guna2Panel9.TabIndex = 1
         '
         'ItmImgPrf
@@ -268,7 +237,7 @@ Partial Class ManegClaimCntrl
         Me.ItmImgPrf.ImageRotate = 0!
         Me.ItmImgPrf.Location = New System.Drawing.Point(0, 0)
         Me.ItmImgPrf.Name = "ItmImgPrf"
-        Me.ItmImgPrf.Size = New System.Drawing.Size(149, 145)
+        Me.ItmImgPrf.Size = New System.Drawing.Size(199, 145)
         Me.ItmImgPrf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.ItmImgPrf.TabIndex = 0
         Me.ItmImgPrf.TabStop = False
@@ -302,26 +271,26 @@ Partial Class ManegClaimCntrl
         'Claimtbl
         '
         Me.Claimtbl.AllowUserToAddRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.Claimtbl.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Claimtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
+        Me.Claimtbl.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.Claimtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.Claimtbl.ColumnHeadersHeight = 50
         Me.Claimtbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Edit, Me.Delete, Me.View})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.Claimtbl.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.Claimtbl.DefaultCellStyle = DataGridViewCellStyle21
         Me.Claimtbl.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Claimtbl.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Claimtbl.Location = New System.Drawing.Point(3, 3)
@@ -351,13 +320,17 @@ Partial Class ManegClaimCntrl
         '
         'Column1
         '
+        Me.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Column1.HeaderText = "Claimant Name"
         Me.Column1.Name = "Column1"
+        Me.Column1.Width = 123
         '
         'Column2
         '
+        Me.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Column2.HeaderText = "Claimant Contact"
         Me.Column2.Name = "Column2"
+        Me.Column2.Width = 133
         '
         'Column3
         '
@@ -417,38 +390,13 @@ Partial Class ManegClaimCntrl
         '
         'Guna2Panel2
         '
-        Me.Guna2Panel2.Controls.Add(Me.Searchtxbx)
+        Me.Guna2Panel2.Controls.Add(Me.Guna2ComboBox1)
         Me.Guna2Panel2.Controls.Add(Me.Label3)
         Me.Guna2Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Guna2Panel2.Name = "Guna2Panel2"
         Me.Guna2Panel2.Size = New System.Drawing.Size(1585, 96)
         Me.Guna2Panel2.TabIndex = 0
-        '
-        'Searchtxbx
-        '
-        Me.Searchtxbx.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.Searchtxbx.Animated = True
-        Me.Searchtxbx.AutoRoundedCorners = True
-        Me.Searchtxbx.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.Searchtxbx.BorderRadius = 21
-        Me.Searchtxbx.BorderThickness = 2
-        Me.Searchtxbx.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.Searchtxbx.DefaultText = ""
-        Me.Searchtxbx.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.Searchtxbx.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.Searchtxbx.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Searchtxbx.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.Searchtxbx.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Searchtxbx.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Searchtxbx.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Searchtxbx.Location = New System.Drawing.Point(843, 30)
-        Me.Searchtxbx.Margin = New System.Windows.Forms.Padding(0)
-        Me.Searchtxbx.Name = "Searchtxbx"
-        Me.Searchtxbx.PlaceholderText = "Search item name or ID..."
-        Me.Searchtxbx.SelectedText = ""
-        Me.Searchtxbx.Size = New System.Drawing.Size(739, 45)
-        Me.Searchtxbx.TabIndex = 1
         '
         'Label3
         '
@@ -468,10 +416,10 @@ Partial Class ManegClaimCntrl
         Me.Guna2Panel4.Controls.Add(Me.Updatebtn)
         Me.Guna2Panel4.Controls.Add(Me.StatusCmb)
         Me.Guna2Panel4.Controls.Add(Me.ContactTxt)
-        Me.Guna2Panel4.Controls.Add(Me.DateLostFoundDtp)
+        Me.Guna2Panel4.Controls.Add(Me.ClaimDate)
         Me.Guna2Panel4.Controls.Add(Me.Clearbtn)
         Me.Guna2Panel4.Controls.Add(Me.Addbtn)
-        Me.Guna2Panel4.Controls.Add(Me.DescriptionTxt)
+        Me.Guna2Panel4.Controls.Add(Me.ProofOfOwnTxt)
         Me.Guna2Panel4.Controls.Add(Me.Unclaimcmbx)
         Me.Guna2Panel4.Controls.Add(Me.PersonNameTxt)
         Me.Guna2Panel4.Dock = System.Windows.Forms.DockStyle.Fill
@@ -544,7 +492,7 @@ Partial Class ManegClaimCntrl
         Me.StatusCmb.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
         Me.StatusCmb.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.StatusCmb.ItemHeight = 40
-        Me.StatusCmb.Items.AddRange(New Object() {"Pending", "Reject", "Approved"})
+        Me.StatusCmb.Items.AddRange(New Object() {"Pending", "Rejected", "Approved"})
         Me.StatusCmb.Location = New System.Drawing.Point(949, 28)
         Me.StatusCmb.Name = "StatusCmb"
         Me.StatusCmb.Size = New System.Drawing.Size(300, 46)
@@ -574,22 +522,22 @@ Partial Class ManegClaimCntrl
         Me.ContactTxt.Size = New System.Drawing.Size(300, 44)
         Me.ContactTxt.TabIndex = 35
         '
-        'DateLostFoundDtp
+        'ClaimDate
         '
-        Me.DateLostFoundDtp.BorderRadius = 20
-        Me.DateLostFoundDtp.Checked = True
-        Me.DateLostFoundDtp.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.DateLostFoundDtp.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateLostFoundDtp.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
-        Me.DateLostFoundDtp.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.DateLostFoundDtp.Location = New System.Drawing.Point(1255, 28)
-        Me.DateLostFoundDtp.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.DateLostFoundDtp.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.DateLostFoundDtp.Name = "DateLostFoundDtp"
-        Me.DateLostFoundDtp.Size = New System.Drawing.Size(300, 44)
-        Me.DateLostFoundDtp.TabIndex = 34
-        Me.DateLostFoundDtp.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.DateLostFoundDtp.Value = New Date(2026, 10, 28, 9, 49, 28, 860)
+        Me.ClaimDate.BorderRadius = 20
+        Me.ClaimDate.Checked = True
+        Me.ClaimDate.FillColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.ClaimDate.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ClaimDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.ClaimDate.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.ClaimDate.Location = New System.Drawing.Point(1255, 28)
+        Me.ClaimDate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.ClaimDate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.ClaimDate.Name = "ClaimDate"
+        Me.ClaimDate.Size = New System.Drawing.Size(300, 44)
+        Me.ClaimDate.TabIndex = 34
+        Me.ClaimDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.ClaimDate.Value = New Date(2026, 10, 28, 9, 49, 28, 860)
         '
         'Clearbtn
         '
@@ -627,28 +575,28 @@ Partial Class ManegClaimCntrl
         Me.Addbtn.TabIndex = 30
         Me.Addbtn.Text = "Submit"
         '
-        'DescriptionTxt
+        'ProofOfOwnTxt
         '
-        Me.DescriptionTxt.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.DescriptionTxt.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
-        Me.DescriptionTxt.BorderRadius = 10
-        Me.DescriptionTxt.BorderThickness = 2
-        Me.DescriptionTxt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.DescriptionTxt.DefaultText = ""
-        Me.DescriptionTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.DescriptionTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.DescriptionTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.DescriptionTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.DescriptionTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DescriptionTxt.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.DescriptionTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DescriptionTxt.Location = New System.Drawing.Point(30, 93)
-        Me.DescriptionTxt.Multiline = True
-        Me.DescriptionTxt.Name = "DescriptionTxt"
-        Me.DescriptionTxt.PlaceholderText = "Description..."
-        Me.DescriptionTxt.SelectedText = ""
-        Me.DescriptionTxt.Size = New System.Drawing.Size(738, 185)
-        Me.DescriptionTxt.TabIndex = 28
+        Me.ProofOfOwnTxt.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.ProofOfOwnTxt.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.ProofOfOwnTxt.BorderRadius = 10
+        Me.ProofOfOwnTxt.BorderThickness = 2
+        Me.ProofOfOwnTxt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.ProofOfOwnTxt.DefaultText = ""
+        Me.ProofOfOwnTxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.ProofOfOwnTxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.ProofOfOwnTxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.ProofOfOwnTxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.ProofOfOwnTxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ProofOfOwnTxt.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ProofOfOwnTxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ProofOfOwnTxt.Location = New System.Drawing.Point(30, 93)
+        Me.ProofOfOwnTxt.Multiline = True
+        Me.ProofOfOwnTxt.Name = "ProofOfOwnTxt"
+        Me.ProofOfOwnTxt.PlaceholderText = "Description..."
+        Me.ProofOfOwnTxt.SelectedText = ""
+        Me.ProofOfOwnTxt.Size = New System.Drawing.Size(738, 185)
+        Me.ProofOfOwnTxt.TabIndex = 28
         '
         'Unclaimcmbx
         '
@@ -692,6 +640,55 @@ Partial Class ManegClaimCntrl
         Me.PersonNameTxt.Size = New System.Drawing.Size(300, 44)
         Me.PersonNameTxt.TabIndex = 24
         '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'Guna2ComboBox1
+        '
+        Me.Guna2ComboBox1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.Guna2ComboBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2ComboBox1.BorderColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Guna2ComboBox1.BorderRadius = 10
+        Me.Guna2ComboBox1.BorderThickness = 2
+        Me.Guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.Guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.Guna2ComboBox1.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ComboBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ComboBox1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Guna2ComboBox1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.Guna2ComboBox1.ItemHeight = 40
+        Me.Guna2ComboBox1.Items.AddRange(New Object() {"All", "Pending", "Rejected", "Approved"})
+        Me.Guna2ComboBox1.Location = New System.Drawing.Point(215, 30)
+        Me.Guna2ComboBox1.Name = "Guna2ComboBox1"
+        Me.Guna2ComboBox1.Size = New System.Drawing.Size(165, 46)
+        Me.Guna2ComboBox1.StartIndex = 0
+        Me.Guna2ComboBox1.TabIndex = 37
+        Me.Guna2ComboBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Label2.Location = New System.Drawing.Point(19, 446)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(144, 30)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Proccess by"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(93, Byte), Integer), CType(CType(170, Byte), Integer))
+        Me.Label4.Location = New System.Drawing.Point(22, 272)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(144, 30)
+        Me.Label4.TabIndex = 10
+        Me.Label4.Text = "Claimnant Contact"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
         'ManegClaimCntrl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -725,13 +722,10 @@ Partial Class ManegClaimCntrl
     Friend WithEvents Guna2Panel3 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Guna2Panel7 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Label10 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2Panel9 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents ItmImgPrf As Guna.UI2.WinForms.Guna2PictureBox
@@ -741,18 +735,19 @@ Partial Class ManegClaimCntrl
     Friend WithEvents Guna2Panel8 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel2 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents Searchtxbx As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Guna2Panel4 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Updatebtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents StatusCmb As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents ContactTxt As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents DateLostFoundDtp As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents ClaimDate As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Clearbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Addbtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents DescriptionTxt As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents ProofOfOwnTxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Unclaimcmbx As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents PersonNameTxt As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
+    Friend WithEvents ItemPic As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents DataGridViewTextBoxColumn8 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn9 As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -763,6 +758,8 @@ Partial Class ManegClaimCntrl
     Friend WithEvents Edit As DataGridViewButtonColumn
     Friend WithEvents Delete As DataGridViewButtonColumn
     Friend WithEvents View As DataGridViewButtonColumn
-    Friend WithEvents Guna2Panel5 As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents ItemPic As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
+    Friend WithEvents Guna2ComboBox1 As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label4 As Label
 End Class

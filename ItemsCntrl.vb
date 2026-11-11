@@ -1,8 +1,37 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports Guna.UI2.WinForms
-
+Imports System.Text.RegularExpressions
 Public Class ItemsCntrl
+
+    Private Sub clearAllField()
+        ItemNameTxt.Clear()
+        LocationTxt.Clear()
+        StorageTxt.Clear()
+        PersonNameTxt.Clear()
+        ContactTxt.Clear()
+        CategoryCmb.SelectedIndex = 0
+        TypeCmb.SelectedIndex = 0
+        StatusCmb.SelectedIndex = 0
+        ItemPic.Image = Nothing
+        DateLostFoundDtp.Value = DateTime.Now
+        DescriptionTxt.Clear()
+    End Sub
+
+    Public Function contactExist(contact As String) As Boolean
+        Try
+            query = "SELECT COUNT(*) FROM Items WHERE ContactNumber = @ContactNumber"
+            Using comm As New SqlCommand(query, conn)
+                comm.Parameters.AddWithValue("@ContactNumber", contact)
+                Dim count As Integer = Convert.ToInt32(comm.ExecuteScalar)
+                Return count > 0
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+        Return False
+    End Function
+
     Public Sub viewItemTable()
         Try
             Itemtbl.Rows.Clear()
@@ -327,7 +356,7 @@ Public Class ItemsCntrl
                 MsgBox("added")
                 viewItemTable()
             End Using
-
+            clearAllField()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -340,24 +369,30 @@ Public Class ItemsCntrl
     Private Sub ItemPic_Click(sender As Object, e As EventArgs) Handles ItemPic.Click
         With OpenFileDialog1
             .FileName = ""
-            .Filter = "Image files| *.jpeg;*jpg;*.png;*.bmp"
+            .Filter = "Image Files|*.jpeg;*.jpg;*.png;*.bmp"
         End With
 
-        If OpenFileDialog1.ShowDialog Then
+        If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
+
             ItemPic.Image = Image.FromFile(OpenFileDialog1.FileName)
-            Guna2Panel1.BorderColor = Color.Transparent
+            Guna2Panel5.BorderColor = Color.Transparent
             ItemPic.BackgroundImage = Nothing
+
         End If
     End Sub
 
     Private Sub Updatebtn_Click(sender As Object, e As EventArgs) Handles Updatebtn.Click
 
         updateUser()
+        clearAllField()
 
     End Sub
 
     Private Sub ItemsCntrl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewItemTable()
+        Dim firstRowIndex As Integer = Itemtbl.Rows(0).Index
+        viewItem(Itemtbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn8").Value.ToString())
+        ViewPhoto(Itemtbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn8").Value.ToString(), ItmImgPrf)
     End Sub
 
     Private Sub Itemtbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Itemtbl.CellContentClick
@@ -386,5 +421,33 @@ Public Class ItemsCntrl
 
     Private Sub ItemNameTxt_TextChanged(sender As Object, e As EventArgs) Handles ItemNameTxt.TextChanged
 
+    End Sub
+
+    Private Sub PersonNameTxt_TextChanged(sender As Object, e As EventArgs) Handles PersonNameTxt.TextChanged
+        If Not Regex.IsMatch(PersonNameTxt.Text, "^[a-zA-Z ]*$") Then
+            PersonNameTxt.Text = PersonNameTxt.Text.Remove(PersonNameTxt.Text.Length - 1)
+            PersonNameTxt.SelectionStart = PersonNameTxt.Text.Length
+        End If
+    End Sub
+
+    Private Sub ContactTxt_TextChanged(sender As Object, e As EventArgs) Handles ContactTxt.TextChanged
+
+        If contactExist(ContactTxt.Text) Then
+            ContactTxt.BorderColor = Color.Red
+            MsgBox("Contact number already exists. Please choose a different contact number.")
+        End If
+
+        If Not Regex.IsMatch(ContactTxt.Text, "^[0-9]*$") Or ContactTxt.Text.Length > 11 Then
+            ContactTxt.Text = ContactTxt.Text.Remove(ContactTxt.Text.Length - 1)
+            ContactTxt.SelectionStart = ContactTxt.Text.Length
+        End If
+    End Sub
+
+    Private Sub Guna2Button2_Click_1(sender As Object, e As EventArgs) Handles Guna2Button2.Click
+        If Itemtbl.ScrollBars = ScrollBars.Horizontal Then
+            Itemtbl.ScrollBars = ScrollBars.Both
+        Else
+            Itemtbl.ScrollBars = ScrollBars.Horizontal
+        End If
     End Sub
 End Class

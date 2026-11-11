@@ -6,6 +6,7 @@ Public Class Adminfrm
     Private dashcntrl As New Dashboardcntrl()
     Private itemCntrl As New ItemsCntrl()
     Private usrmanagement As New UserManagement()
+    Private report As New ReportCntrl()
 
     Private Sub ViewPhoto(username As String, images As Guna2CirclePictureBox)
         Try
@@ -83,5 +84,6 @@ Public Class Adminfrm
 
     Private Sub Reportbtn_Click(sender As Object, e As EventArgs) Handles Reportbtn.Click
         Label1.Text = "Reports"
+        selectedControl(report, DisplayPnl)
     End Sub
 End Class

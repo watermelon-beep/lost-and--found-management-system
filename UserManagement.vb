@@ -6,6 +6,15 @@ Imports System.Text.RegularExpressions
 Public Class UserManagement
 
     Dim updateTriggered As Boolean = False
+    Dim isLoading As Boolean = False
+    Private selectedStaffId As String = ""
+
+    Private Function calcAge(birth As Date) As Integer
+        Dim result As Integer = Date.Today.Year - birth.Year
+        If birth.Date > Date.Today.AddYears(-result) Then result -= 1
+        If result < 0 Then result = 0
+        Return result
+    End Function
 
     Private Sub trimAllTextBoxes()
         FrstNmtxbx.Text = FrstNmtxbx.Text.Trim()
@@ -25,7 +34,7 @@ Public Class UserManagement
         Srnmtxbx.Clear()
         Gndrcmbx.SelectedIndex = 2
         Rolecmbx.SelectedIndex = 1
-        Brthdt.Value = DateTime.Now
+        Brthdt.Value = Brthdt.MaxDate
         Agetxbx.Clear()
         CntctNumtxbx.Clear()
         Emailtxbx.Clear()
@@ -36,20 +45,29 @@ Public Class UserManagement
         UsrImg.Image = Nothing
     End Sub
 
+    Private Sub resetBorders()
+        Dim normal As Color = Color.FromArgb(36, 93, 170)
+        CntctNumtxbx.BorderColor = normal
+        Emailtxbx.BorderColor = normal
+        RegUsrnmtxbx.BorderColor = normal
+        RegPasstxbx.BorderColor = normal
+        CnfrmPasstxbx.BorderColor = normal
+    End Sub
+
     Private Sub searchUser()
         Try
 
-            query = "SELECT StaffNo, 
-                            StaffID, 
-                            FirstName, 
-                            MiddleName, 
-                            LastName, 
-                            Birthdate, 
+            query = "SELECT StaffNo,
+                            StaffID,
+                            FirstName,
+                            MiddleName,
+                            LastName,
+                            Birthdate,
                             Age,
-                            Gender, 
-                            Role, 
-                            ContactNumber, 
-                            Email, 
+                            Gender,
+                            Role,
+                            ContactNumber,
+                            Email,
                             Username,
                             AccountStatus
                     FROM user_table
@@ -91,22 +109,49 @@ Public Class UserManagement
     End Sub
 
     Private Sub deleteUser(id As String)
-
         Try
-            query = "DELETE FROM user_table WHERE StaffID = @StaffID"
-
-            Using comm As New SqlCommand(query, conn)
-                comm.Parameters.AddWithValue("@StaffID", id)
-
-                Dim rowsAffected As Integer = comm.ExecuteNonQuery()
-
-                If rowsAffected > 0 Then
-                    MsgBox("User deleted successfully.")
-                    viewUserTable()
-                Else
+            Dim oldNo As Integer
+            Using c As New SqlCommand("SELECT StaffNo FROM user_table WHERE StaffID = @id", conn)
+                c.Parameters.AddWithValue("@id", id)
+                Dim r As Object = c.ExecuteScalar()
+                If r Is Nothing Then
                     MsgBox("No user found with the specified StaffID.")
+                    Return
                 End If
+                oldNo = Convert.ToInt32(r)
             End Using
+
+            If oldNo = currentStaffNo Then
+                MsgBox("You cannot delete your own account.")
+                Return
+            End If
+
+            Using tran As SqlTransaction = conn.BeginTransaction()
+                Try
+                    Dim sqls() As String = {
+                    "UPDATE Items SET RecordedBy = @new WHERE RecordedBy = @old",
+                    "UPDATE Claims SET ProcessedBy = @new WHERE ProcessedBy = @old",
+                    "DELETE FROM user_table WHERE StaffNo = @old"
+                }
+
+                    For Each s As String In sqls
+                        Using cmd As New SqlCommand(s, conn, tran)
+                            cmd.Parameters.AddWithValue("@old", oldNo)
+                            cmd.Parameters.AddWithValue("@new", currentStaffNo)
+                            cmd.ExecuteNonQuery()
+                        End Using
+                    Next
+
+                    tran.Commit()
+                Catch
+                    tran.Rollback()
+                    Throw
+                End Try
+            End Using
+
+            MsgBox("User deleted. Their items and claims were transferred to you.")
+            viewUserTable()
+
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -121,7 +166,7 @@ Public Class UserManagement
                 comm.Parameters.AddWithValue("@StaffID", id)
 
                 Using dataRead = comm.ExecuteReader()
-                    While dataRead.Read
+                    If dataRead.Read() Then
                         Label2.Text = dataRead("FirstName").ToString()
                         Label4.Text = dataRead("MiddleName").ToString()
                         Label5.Text = dataRead("LastName").ToString()
@@ -133,7 +178,7 @@ Public Class UserManagement
                         Label12.Text = dataRead("Email").ToString()
                         Label14.Text = dataRead("Username").ToString()
                         Label16.Text = Convert.ToDateTime(dataRead("DateCreated")).ToString("MMMM dd, yyyy")
-                    End While
+                    End If
                 End Using
             End Using
 
@@ -144,26 +189,26 @@ Public Class UserManagement
 
     Private Sub viewUserTable()
         Try
-            comm.CommandTimeout = 120
-
             Usertbl.Rows.Clear()
 
-            query = "SELECT StaffNo, 
-                            StaffID, 
-                            FirstName, 
-                            MiddleName, 
-                            LastName, 
-                            Birthdate, 
+            query = "SELECT StaffNo,
+                            StaffID,
+                            FirstName,
+                            MiddleName,
+                            LastName,
+                            Birthdate,
                             Age,
-                            Gender, 
-                            Role, 
-                            ContactNumber, 
-                            Email, 
+                            Gender,
+                            Role,
+                            ContactNumber,
+                            Email,
                             Username,
                             AccountStatus
                     FROM user_table"
 
             Using comm As New SqlCommand(query, conn)
+                comm.CommandTimeout = 120
+
                 Using dataRead = comm.ExecuteReader
 
                     While dataRead.Read
@@ -226,9 +271,8 @@ Public Class UserManagement
         End Try
     End Sub
 
-    Private selectedStaffId As String = ""
-
     Private Sub updateAction(id As String)
+        isLoading = True
         Try
             selectedStaffId = id
 
@@ -238,33 +282,55 @@ Public Class UserManagement
                 comm.Parameters.AddWithValue("@StaffID", id)
 
                 Using dataRead = comm.ExecuteReader()
-                    While dataRead.Read
+                    If dataRead.Read() Then
                         FrstNmtxbx.Text = dataRead("FirstName").ToString()
                         MddlNmtxbx.Text = dataRead("MiddleName").ToString()
                         Srnmtxbx.Text = dataRead("LastName").ToString()
                         Gndrcmbx.Text = dataRead("Gender").ToString()
                         Rolecmbx.Text = dataRead("Role").ToString()
                         Brthdt.Value = Convert.ToDateTime(dataRead("Birthdate"))
-                        Agetxbx.Text = dataRead("Age").ToString()
+                        Agetxbx.Text = calcAge(Brthdt.Value).ToString()
                         CntctNumtxbx.Text = dataRead("ContactNumber").ToString()
                         Emailtxbx.Text = dataRead("Email").ToString()
                         RegUsrnmtxbx.Text = dataRead("Username").ToString()
-                        RegPasstxbx.Text = dataRead("UserPassword").ToString()
+                        RegPasstxbx.Clear()
+                        CnfrmPasstxbx.Clear()
                         Statuscmbx.Text = dataRead("AccountStatus").ToString()
-                    End While
+                    End If
                 End Using
             End Using
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+        Finally
+            isLoading = False
+            resetBorders()
         End Try
     End Sub
 
-    Private Sub updateUser()
+    Private Function updateUser() As Boolean
         Try
             If selectedStaffId = "" Then
-                MsgBox("choose a user to update")
-                Return
+                MsgBox("Choose a user to update.")
+                Return False
+            End If
+
+            If FrstNmtxbx.Text.Trim() = "" OrElse Srnmtxbx.Text.Trim() = "" OrElse RegUsrnmtxbx.Text.Trim() = "" Then
+                MsgBox("First name, surname and username are required.")
+                Return False
+            End If
+
+            Dim birth As Date = Brthdt.Value.Date
+            If birth > Date.Today Then
+                MsgBox("Birthdate cannot be in the future.")
+                Return False
+            End If
+            Dim userAge As Integer = calcAge(birth)
+
+            Dim changePassword As Boolean = RegPasstxbx.Text <> ""
+            If changePassword AndAlso RegPasstxbx.Text <> CnfrmPasstxbx.Text Then
+                MsgBox("Passwords do not match.")
+                Return False
             End If
 
             Dim imgData As Object = DBNull.Value
@@ -285,51 +351,74 @@ Public Class UserManagement
                                        ContactNumber = @ContactNumber,
                                        Email = @Email,
                                        Username = @Username,
-                                       UserPassword = @UserPassword,
                                        UserImg = ISNULL(@UserImg, UserImg),
-                                       AccountStatus = @AccountStatus
-                 WHERE StaffID = @StaffID"
+                                       AccountStatus = @AccountStatus"
+            If changePassword Then query &= ", UserPassword = @UserPassword"
+            query &= " WHERE StaffID = @StaffID"
 
             Using comm As New SqlCommand(query, conn)
                 With comm.Parameters
                     .AddWithValue("@StaffID", selectedStaffId)
-                    .AddWithValue("@FirstName", FrstNmtxbx.Text)
-                    .AddWithValue("@MiddleName", MddlNmtxbx.Text)
-                    .AddWithValue("@LastName", Srnmtxbx.Text)
+                    .AddWithValue("@FirstName", FrstNmtxbx.Text.Trim())
+                    .AddWithValue("@MiddleName", MddlNmtxbx.Text.Trim())
+                    .AddWithValue("@LastName", Srnmtxbx.Text.Trim())
                     .AddWithValue("@Gender", Gndrcmbx.Text)
                     .AddWithValue("@Role", Rolecmbx.Text)
-                    .AddWithValue("@Birthdate", Brthdt.Value.Date)
-                    .AddWithValue("@Age", Convert.ToInt32(Agetxbx.Text))
-                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text)
-                    .AddWithValue("@Email", Emailtxbx.Text)
-                    .AddWithValue("@Username", RegUsrnmtxbx.Text)
-                    .AddWithValue("@UserPassword", RegPasstxbx.Text)
+                    .AddWithValue("@Birthdate", birth)
+                    .AddWithValue("@Age", userAge)
+                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text.Trim())
+                    .AddWithValue("@Email", Emailtxbx.Text.Trim())
+                    .AddWithValue("@Username", RegUsrnmtxbx.Text.Trim())
                     .Add("@UserImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@AccountStatus", Statuscmbx.Text)
+                    If changePassword Then .AddWithValue("@UserPassword", RegPasstxbx.Text)
                 End With
 
                 Dim rows As Integer = comm.ExecuteNonQuery()
 
                 If rows > 0 Then
-                    MsgBox("updated")
-                    Usertbl.Rows.Clear()
+                    MsgBox("Updated.")
                     viewUserTable()
+                    Return True
                 Else
-                    MsgBox("no changes made")
+                    MsgBox("No changes made.")
+                    Return False
                 End If
             End Using
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+            Return False
         End Try
-    End Sub
+    End Function
 
-    Private Sub addUser()
+    Private Function addUser() As Boolean
         Try
+            If FrstNmtxbx.Text.Trim() = "" OrElse Srnmtxbx.Text.Trim() = "" OrElse RegUsrnmtxbx.Text.Trim() = "" Then
+                MsgBox("First name, surname and username are required.")
+                Return False
+            End If
+
+            If RegPasstxbx.Text = "" Then
+                MsgBox("Password is required.")
+                Return False
+            End If
+
+            If RegPasstxbx.Text <> CnfrmPasstxbx.Text Then
+                MsgBox("Passwords do not match.")
+                Return False
+            End If
+
+            Dim birth As Date = Brthdt.Value.Date
+            If birth > Date.Today Then
+                MsgBox("Birthdate cannot be in the future.")
+                Return False
+            End If
+
             Dim imgData As Object = DBNull.Value
             If UsrImg.Image IsNot Nothing Then
                 Using ms As New MemoryStream
-                    UsrImg.Image.Save(ms, UsrImg.Image.RawFormat)
+                    UsrImg.Image.Save(ms, Imaging.ImageFormat.Png)
                     imgData = ms.ToArray()
                 End Using
             End If
@@ -354,16 +443,16 @@ Public Class UserManagement
             Using comm As New SqlCommand(query, conn)
 
                 With comm.Parameters
-                    .AddWithValue("@FirstName", FrstNmtxbx.Text)
-                    .AddWithValue("@MiddleName", MddlNmtxbx.Text)
-                    .AddWithValue("@LastName", Srnmtxbx.Text)
+                    .AddWithValue("@FirstName", FrstNmtxbx.Text.Trim())
+                    .AddWithValue("@MiddleName", MddlNmtxbx.Text.Trim())
+                    .AddWithValue("@LastName", Srnmtxbx.Text.Trim())
                     .AddWithValue("@Gender", Gndrcmbx.Text)
                     .AddWithValue("@Role", Rolecmbx.Text)
-                    .AddWithValue("@Birthdate", Brthdt.Value.ToString("yyyy-MM-dd"))
-                    .AddWithValue("@Age", Agetxbx.Text)
-                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text)
-                    .AddWithValue("@Email", Emailtxbx.Text)
-                    .AddWithValue("@Username", RegUsrnmtxbx.Text)
+                    .AddWithValue("@Birthdate", birth)
+                    .AddWithValue("@Age", calcAge(birth))
+                    .AddWithValue("@ContactNumber", CntctNumtxbx.Text.Trim())
+                    .AddWithValue("@Email", Emailtxbx.Text.Trim())
+                    .AddWithValue("@Username", RegUsrnmtxbx.Text.Trim())
                     .AddWithValue("@UserPassword", RegPasstxbx.Text)
                     .Add("@UserImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@AccountStatus", Statuscmbx.Text)
@@ -371,16 +460,20 @@ Public Class UserManagement
 
                 comm.ExecuteNonQuery()
 
-                MsgBox("added")
+                MsgBox("Added.")
                 viewUserTable()
+                Return True
             End Using
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+            Return False
         End Try
-    End Sub
+    End Function
 
     Private Sub RegPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles RegPasstxbx.TextChanged
+        If isLoading Then Return
+
         CnfrmPasstxbx.Text = RegPasstxbx.Text
         If RegPasstxbx.Text = "" Or
            Regex.IsMatch(RegPasstxbx.Text, ".[A-Z]") AndAlso
@@ -396,8 +489,9 @@ Public Class UserManagement
 
     Private Sub AddUsrbtn_Click(sender As Object, e As EventArgs) Handles AddUsrbtn.Click
         trimAllTextBoxes()
-        addUser()
-        clearAllFields()
+        If addUser() Then
+            clearAllFields()
+        End If
     End Sub
 
     Private Sub UsrImg_Click(sender As Object, e As EventArgs) Handles UsrImg.Click
@@ -418,16 +512,20 @@ Public Class UserManagement
 
     Private Sub UserManagement_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         viewUserTable()
-        Dim firstRowIndex As Integer = Usertbl.Rows(0).Index
-        viewProfile(Usertbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn9").Value.ToString())
-        ViewPhoto(Usertbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn9").Value.ToString(), Guna2PictureBox1)
+        If Usertbl.Rows.Count > 0 Then
+            Dim firstId As String = Usertbl.Rows(0).Cells("DataGridViewTextBoxColumn9").Value.ToString()
+            viewProfile(firstId)
+            ViewPhoto(firstId, Guna2PictureBox1)
+        End If
     End Sub
 
     Private Sub Updtbtn_Click(sender As Object, e As EventArgs) Handles Updtbtn.Click
         trimAllTextBoxes()
-        clearAllFields()
-        updateUser()
-        updateTriggered = False
+        If updateUser() Then
+            clearAllFields()
+            selectedStaffId = ""
+            updateTriggered = False
+        End If
     End Sub
 
     Private Sub Usertbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Usertbl.CellContentClick
@@ -438,7 +536,7 @@ Public Class UserManagement
         Dim rowId As String = Convert.ToString(selectedRow.Cells("DataGridViewTextBoxColumn9").Value)
 
         Select Case columnName
- 
+
             Case "View"
                 viewProfile(rowId)
                 ViewPhoto(rowId, Guna2PictureBox1)
@@ -480,23 +578,25 @@ Public Class UserManagement
         End If
     End Sub
 
-
     Private Sub CntctNumtxbx_TextChanged(sender As Object, e As EventArgs) Handles CntctNumtxbx.TextChanged
-
-        If contactNumExist(CntctNumtxbx.Text) And updateTriggered = False Then
-            CntctNumtxbx.BorderColor = Color.Red
-            MsgBox("Contact number already exists. Please choose a different contact number.")
-        End If
+        If isLoading Then Return
 
         If Not Regex.IsMatch(CntctNumtxbx.Text, "^[0-9]*$") Or CntctNumtxbx.Text.Length > 11 Then
             CntctNumtxbx.Text = CntctNumtxbx.Text.Remove(CntctNumtxbx.Text.Length - 1)
             CntctNumtxbx.SelectionStart = CntctNumtxbx.Text.Length
+            Return
+        End If
+
+        If CntctNumtxbx.Text <> "" AndAlso updateTriggered = False AndAlso contactNumExist(CntctNumtxbx.Text) Then
+            CntctNumtxbx.BorderColor = Color.Red
+            MsgBox("Contact number already exists. Please choose a different contact number.")
         End If
     End Sub
 
     Private Sub Emailtxbx_TextChanged(sender As Object, e As EventArgs) Handles Emailtxbx.TextChanged
+        If isLoading Then Return
 
-        If emailExist(Emailtxbx.Text) And updateTriggered = False Then
+        If Emailtxbx.Text <> "" AndAlso updateTriggered = False AndAlso emailExist(Emailtxbx.Text) Then
             Emailtxbx.BorderColor = Color.Red
             MsgBox("Email already exists. Please choose a different email.")
         End If
@@ -509,8 +609,9 @@ Public Class UserManagement
     End Sub
 
     Private Sub RegUsrnmtxbx_TextChanged(sender As Object, e As EventArgs) Handles RegUsrnmtxbx.TextChanged
+        If isLoading Then Return
 
-        If userLogExist(RegUsrnmtxbx.Text) And updateTriggered = False Then
+        If RegUsrnmtxbx.Text <> "" AndAlso updateTriggered = False AndAlso userLogExist(RegUsrnmtxbx.Text) Then
             RegUsrnmtxbx.BorderColor = Color.Red
             MsgBox("Username already exists. Please choose a different username.")
         End If
@@ -528,6 +629,8 @@ Public Class UserManagement
     End Sub
 
     Private Sub CnfrmPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles CnfrmPasstxbx.TextChanged
+        If isLoading Then Return
+
         If CnfrmPasstxbx.Text = "" Or
            Regex.IsMatch(CnfrmPasstxbx.Text, ".[A-Z]") AndAlso
            Regex.IsMatch(CnfrmPasstxbx.Text, ".[0-9]") AndAlso
@@ -542,6 +645,9 @@ Public Class UserManagement
 
     Private Sub Clearbtn_Click(sender As Object, e As EventArgs) Handles Clearbtn.Click
         clearAllFields()
+        selectedStaffId = ""
+        updateTriggered = False
+        resetBorders()
     End Sub
 
     Private Sub Guna2Button5_Click(sender As Object, e As EventArgs) Handles Guna2Button5.Click
@@ -557,15 +663,6 @@ Public Class UserManagement
     End Sub
 
     Private Sub Brthdt_ValueChanged(sender As Object, e As EventArgs) Handles Brthdt.ValueChanged
-        Dim birthDate As Date = Brthdt.Value
-        Dim today As Date = Date.Today
-
-        Dim age As Integer = today.Year - birthDate.Year
-
-        If birthDate.Date > today.AddYears(-age) Then
-            age -= 1
-        End If
-
-        Agetxbx.Text = age.ToString()
+        Agetxbx.Text = calcAge(Brthdt.Value).ToString()
     End Sub
 End Class

@@ -14,7 +14,7 @@ Public Class ItemsCntrl
         TypeCmb.SelectedIndex = 0
         StatusCmb.SelectedIndex = 0
         ItemPic.Image = Nothing
-        DateLostFoundDtp.Value = DateTime.Now
+        DateLostFoundDtp.Value = DateLostFoundDtp.MaxDate
         DescriptionTxt.Clear()
     End Sub
 

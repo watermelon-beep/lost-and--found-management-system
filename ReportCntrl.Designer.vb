@@ -42,6 +42,7 @@ Partial Class ReportCntrl
         Me.ReportViewer1.LocalReport.ReportEmbeddedResource = "lost_and_found_management_system.ReportLostFound.rdlc"
         Me.ReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.ReportViewer1.Name = "ReportViewer1"
+        Me.ReportViewer1.PageCountMode = Microsoft.Reporting.WinForms.PageCountMode.Actual
         Me.ReportViewer1.ServerReport.BearerToken = Nothing
         Me.ReportViewer1.Size = New System.Drawing.Size(1591, 903)
         Me.ReportViewer1.TabIndex = 0

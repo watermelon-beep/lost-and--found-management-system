@@ -14,8 +14,7 @@ Public Class ReportCntrl
         Dim query As String =
             "SELECT ItemID, ItemName, Category, Description,
                 DateLostFound, DateReported, Location, Status
-         FROM Items
-         WHERE ItemType = 'Lost'"
+         FROM Items"
 
         Try
 

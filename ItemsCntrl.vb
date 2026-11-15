@@ -4,25 +4,37 @@ Imports Guna.UI2.WinForms
 Imports System.Text.RegularExpressions
 Public Class ItemsCntrl
 
+    Dim selectedItemId As String = ""
+    Dim isLoading As Boolean = False
+    Dim defaultBorder As Color
+
     Private Sub clearAllField()
-        ItemNameTxt.Clear()
-        LocationTxt.Clear()
-        StorageTxt.Clear()
-        PersonNameTxt.Clear()
-        ContactTxt.Clear()
-        CategoryCmb.SelectedIndex = 0
-        TypeCmb.SelectedIndex = 0
-        StatusCmb.SelectedIndex = 0
-        ItemPic.Image = Nothing
-        DateLostFoundDtp.Value = DateLostFoundDtp.MaxDate
-        DescriptionTxt.Clear()
+        isLoading = True
+        Try
+            selectedItemId = ""
+            ItemNameTxt.Clear()
+            LocationTxt.Clear()
+            StorageTxt.Clear()
+            PersonNameTxt.Clear()
+            ContactTxt.Clear()
+            CategoryCmb.SelectedIndex = 0
+            TypeCmb.SelectedIndex = 0
+            StatusCmb.SelectedIndex = 0
+            ItemPic.Image = Nothing
+            DateLostFoundDtp.Value = DateLostFoundDtp.MaxDate
+            DescriptionTxt.Clear()
+            ContactTxt.BorderColor = defaultBorder
+        Finally
+            isLoading = False
+        End Try
     End Sub
 
-    Public Function contactExist(contact As String) As Boolean
+    Public Function contactExist(contact As String, Optional ignoreId As String = "") As Boolean
         Try
-            query = "SELECT COUNT(*) FROM Items WHERE ContactNumber = @ContactNumber"
+            query = "SELECT COUNT(*) FROM Items WHERE ContactNumber = @ContactNumber AND (@ItemID = '' OR ItemID <> @ItemID)"
             Using comm As New SqlCommand(query, conn)
                 comm.Parameters.AddWithValue("@ContactNumber", contact)
+                comm.Parameters.AddWithValue("@ItemID", ignoreId)
                 Dim count As Integer = Convert.ToInt32(comm.ExecuteScalar)
                 Return count > 0
             End Using
@@ -36,13 +48,13 @@ Public Class ItemsCntrl
         Try
             Itemtbl.Rows.Clear()
 
-            query = "SELECT ItemID, 
-                            ItemName, 
-                            Category, 
+            query = "SELECT ItemID,
+                            ItemName,
+                            Category,
                             ItemType,
                             Location,
-                            DateLostFound, 
-                            DateReported, 
+                            DateLostFound,
+                            DateReported,
                             PersonName,
                             ContactNumber,
                             Status
@@ -90,16 +102,16 @@ Public Class ItemsCntrl
                 comm.Parameters.AddWithValue("@ItemID", id)
 
                 Using dataRead = comm.ExecuteReader()
-                    While dataRead.Read
+                    If dataRead.Read() Then
                         Label8.Text = dataRead("ItemID").ToString()
                         Label1.Text = dataRead("ItemName").ToString()
                         Label2.Text = dataRead("Category").ToString()
                         Label5.Text = dataRead("ItemType").ToString()
-                        Label6.Text = dataRead("DateReported").ToString()
+                        Label6.Text = Convert.ToDateTime(dataRead("DateReported")).ToString("MMMM dd, yyyy")
                         Label10.Text = dataRead("Location").ToString()
                         Label7.Text = dataRead("Status").ToString()
                         Label9.Text = dataRead("Description").ToString()
-                    End While
+                    End If
                 End Using
             End Using
 
@@ -111,15 +123,15 @@ Public Class ItemsCntrl
     Private Sub searchItems()
         Try
 
-            query = "SELECT ItemID, 
-                            ItemName, 
-                            Category, 
-                            ItemType, 
-                            Location, 
+            query = "SELECT ItemID,
+                            ItemName,
+                            Category,
+                            ItemType,
+                            Location,
                             DateLostFound,
                             DateReported,
-                            PersonName, 
-                            ContactNumber, 
+                            PersonName,
+                            ContactNumber,
                             Status
                     FROM Items
                     WHERE ItemID LIKE @search OR ItemName LIKE @search"
@@ -157,7 +169,7 @@ Public Class ItemsCntrl
         End Try
     End Sub
 
-    Private Sub deleteUser(id As String)
+    Private Sub deleteItem(id As String)
 
         Try
             query = "DELETE FROM Items WHERE ItemID = @ItemID"
@@ -174,14 +186,41 @@ Public Class ItemsCntrl
                     MsgBox("No item found with the specified ItemID.")
                 End If
             End Using
+        Catch ex As SqlException When ex.Number = 547
+            MsgBox("This item cannot be deleted because it already has claims. Delete or resolve its claims first.")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
 
-    Dim selectedItemId As String
-    Private Sub updateUser()
+    Private Function validateForm() As Boolean
+        If ItemNameTxt.Text.Trim() = "" Then
+            MsgBox("Item name is required.")
+            Return False
+        End If
+
+        If LocationTxt.Text.Trim() = "" Then
+            MsgBox("Location is required.")
+            Return False
+        End If
+
+        If DateLostFoundDtp.Value.Date > Date.Today Then
+            MsgBox("Date cannot be in the future.")
+            Return False
+        End If
+
+        Return True
+    End Function
+
+    Private Function updateUser() As Boolean
         Try
+            If selectedItemId = "" Then
+                MsgBox("Choose an item to edit first.")
+                Return False
+            End If
+
+            If Not validateForm() Then Return False
+
             Dim imgData As Object = DBNull.Value
             If ItemPic.Image IsNot Nothing Then
                 Using ms As New MemoryStream
@@ -199,43 +238,44 @@ Public Class ItemsCntrl
                                             DateLostFound = @DateLostFound,
                                             PersonName = @PersonName,
                                             ContactNumber = @ContactNumber,
-                                            ItemImg = @ItemImg,
-                                            Status = @Status,
-                                            RecordedBy = @RecordedBy
+                                            ItemImg = ISNULL(@ItemImg, ItemImg),
+                                            Status = @Status
                  WHERE ItemID = @ItemID"
 
             Using comm As New SqlCommand(query, conn)
                 With comm.Parameters
                     .AddWithValue("@ItemID", selectedItemId)
 
-                    .AddWithValue("@ItemName", ItemNameTxt.Text)
+                    .AddWithValue("@ItemName", ItemNameTxt.Text.Trim())
                     .AddWithValue("@Category", CategoryCmb.Text)
                     .AddWithValue("@ItemType", TypeCmb.Text)
-                    .AddWithValue("@Description", DescriptionTxt.Text)
-                    .AddWithValue("@Location", LocationTxt.Text)
-                    .AddWithValue("@StorageLocation", StorageTxt.Text)
+                    .AddWithValue("@Description", DescriptionTxt.Text.Trim())
+                    .AddWithValue("@Location", LocationTxt.Text.Trim())
+                    .AddWithValue("@StorageLocation", StorageTxt.Text.Trim())
                     .AddWithValue("@DateLostFound", DateLostFoundDtp.Value.Date)
-                    .AddWithValue("@PersonName", PersonNameTxt.Text)
-                    .AddWithValue("@ContactNumber", ContactTxt.Text)
+                    .AddWithValue("@PersonName", PersonNameTxt.Text.Trim())
+                    .AddWithValue("@ContactNumber", ContactTxt.Text.Trim())
                     .Add("@ItemImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@Status", StatusCmb.Text)
-                    .AddWithValue("@RecordedBy", currentStaffNo)
                 End With
 
                 Dim rows As Integer = comm.ExecuteNonQuery()
 
                 If rows > 0 Then
-                    MsgBox("updated")
+                    MsgBox("Updated.")
                     viewItemTable()
+                    Return True
                 Else
-                    MsgBox("no changes made")
+                    MsgBox("No changes made.")
+                    Return False
                 End If
             End Using
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+            Return False
         End Try
-    End Sub
+    End Function
 
     Private Sub ViewPhoto(id As String, images As Guna2PictureBox)
         Try
@@ -267,6 +307,7 @@ Public Class ItemsCntrl
     End Sub
 
     Public Sub updateAction(id As String)
+        isLoading = True
         Try
             selectedItemId = id
 
@@ -277,28 +318,47 @@ Public Class ItemsCntrl
                 comm.Parameters.AddWithValue("@ItemID", id)
 
                 Using dataRead = comm.ExecuteReader()
-                    While dataRead.Read
+                    If dataRead.Read() Then
                         PersonNameTxt.Text = dataRead("PersonName").ToString()
                         CategoryCmb.Text = dataRead("Category").ToString()
                         TypeCmb.Text = dataRead("ItemType").ToString()
                         DescriptionTxt.Text = dataRead("Description").ToString()
                         LocationTxt.Text = dataRead("Location").ToString()
                         StorageTxt.Text = dataRead("StorageLocation").ToString()
-                        DateLostFoundDtp.Value = Convert.ToDateTime(dataRead("DateLostFound")).ToString("ddd, MMMM dd, yyyy")
+
+                        If IsDBNull(dataRead("DateLostFound")) Then
+                            DateLostFoundDtp.Value = DateLostFoundDtp.MaxDate
+                        Else
+                            Dim d As Date = Convert.ToDateTime(dataRead("DateLostFound"))
+                            If d < DateLostFoundDtp.MinDate Then d = DateLostFoundDtp.MinDate
+                            If d > DateLostFoundDtp.MaxDate Then d = DateLostFoundDtp.MaxDate
+                            DateLostFoundDtp.Value = d
+                        End If
+
                         ItemNameTxt.Text = dataRead("ItemName").ToString()
                         ContactTxt.Text = dataRead("ContactNumber").ToString()
                         StatusCmb.Text = dataRead("Status").ToString()
-                    End While
+                    End If
                 End Using
             End Using
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+        Finally
+            isLoading = False
+            ContactTxt.BorderColor = defaultBorder
         End Try
     End Sub
 
-    Private Sub addItem()
+    Private Function addItem() As Boolean
         Try
+            If Not validateForm() Then Return False
+
+            If currentStaffNo = 0 Then
+                MsgBox("No logged-in user found. Please log in again.")
+                Return False
+            End If
+
             Dim imgData As Object = DBNull.Value
             If ItemPic.Image IsNot Nothing Then
                 Using ms As New MemoryStream
@@ -337,15 +397,15 @@ Public Class ItemsCntrl
             Using comm As New SqlCommand(query, conn)
 
                 With comm.Parameters
-                    .AddWithValue("@ItemName", ItemNameTxt.Text)
+                    .AddWithValue("@ItemName", ItemNameTxt.Text.Trim())
                     .AddWithValue("@Category", CategoryCmb.Text)
                     .AddWithValue("@ItemType", TypeCmb.Text)
-                    .AddWithValue("@Description", DescriptionTxt.Text)
-                    .AddWithValue("@Location", LocationTxt.Text)
-                    .AddWithValue("@StorageLocation", StorageTxt.Text)
+                    .AddWithValue("@Description", DescriptionTxt.Text.Trim())
+                    .AddWithValue("@Location", LocationTxt.Text.Trim())
+                    .AddWithValue("@StorageLocation", StorageTxt.Text.Trim())
                     .AddWithValue("@DateLostFound", DateLostFoundDtp.Value.Date)
-                    .AddWithValue("@PersonName", PersonNameTxt.Text)
-                    .AddWithValue("@ContactNumber", ContactTxt.Text)
+                    .AddWithValue("@PersonName", PersonNameTxt.Text.Trim())
+                    .AddWithValue("@ContactNumber", ContactTxt.Text.Trim())
                     .Add("@ItemImg", SqlDbType.VarBinary, -1).Value = imgData
                     .AddWithValue("@Status", StatusCmb.Text)
                     .AddWithValue("@RecordedBy", currentStaffNo)
@@ -353,17 +413,21 @@ Public Class ItemsCntrl
 
                 comm.ExecuteNonQuery()
 
-                MsgBox("added")
+                MsgBox("Added.")
                 viewItemTable()
+                Return True
             End Using
-            clearAllField()
+
         Catch ex As Exception
-            MsgBox(ex.Message)
+            MsgBox(ex.ToString())
+            Return False
         End Try
-    End Sub
+    End Function
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Addbtn.Click
-        addItem()
+        If addItem() Then
+            clearAllField()
+        End If
     End Sub
 
     Private Sub ItemPic_Click(sender As Object, e As EventArgs) Handles ItemPic.Click
@@ -374,7 +438,9 @@ Public Class ItemsCntrl
 
         If OpenFileDialog1.ShowDialog() = DialogResult.OK Then
 
-            ItemPic.Image = Image.FromFile(OpenFileDialog1.FileName)
+            Using temp As Image = Image.FromFile(OpenFileDialog1.FileName)
+                ItemPic.Image = New Bitmap(temp)
+            End Using
             Guna2Panel5.BorderColor = Color.Transparent
             ItemPic.BackgroundImage = Nothing
 
@@ -382,20 +448,24 @@ Public Class ItemsCntrl
     End Sub
 
     Private Sub Updatebtn_Click(sender As Object, e As EventArgs) Handles Updatebtn.Click
-
-        updateUser()
-        clearAllField()
-
+        If updateUser() Then
+            clearAllField()
+        End If
     End Sub
 
     Private Sub ItemsCntrl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        defaultBorder = ContactTxt.BorderColor
         viewItemTable()
-        Dim firstRowIndex As Integer = Itemtbl.Rows(0).Index
-        viewItem(Itemtbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn8").Value.ToString())
-        ViewPhoto(Itemtbl.Rows(firstRowIndex).Cells("DataGridViewTextBoxColumn8").Value.ToString(), ItmImgPrf)
+        If Itemtbl.Rows.Count > 0 Then
+            Dim firstId As String = Itemtbl.Rows(0).Cells("DataGridViewTextBoxColumn8").Value.ToString()
+            viewItem(firstId)
+            ViewPhoto(firstId, ItmImgPrf)
+        End If
     End Sub
 
     Private Sub Itemtbl_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Itemtbl.CellContentClick
+        If e.RowIndex < 0 Then Return
+
         Dim columnName As String = Itemtbl.Columns(e.ColumnIndex).Name
         Dim selectedRow As DataGridViewRow = Itemtbl.Rows(e.RowIndex)
         Dim rowId As String = Convert.ToString(selectedRow.Cells("DataGridViewTextBoxColumn8").Value)
@@ -407,7 +477,7 @@ Public Class ItemsCntrl
             Case "Delete"
                 Dim confirmResult As DialogResult = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButtons.YesNo)
                 If confirmResult = DialogResult.Yes Then
-                    deleteUser(rowId)
+                    deleteItem(rowId)
                 End If
             Case "View"
                 viewItem(rowId)
@@ -419,10 +489,6 @@ Public Class ItemsCntrl
         searchItems()
     End Sub
 
-    Private Sub ItemNameTxt_TextChanged(sender As Object, e As EventArgs) Handles ItemNameTxt.TextChanged
-
-    End Sub
-
     Private Sub PersonNameTxt_TextChanged(sender As Object, e As EventArgs) Handles PersonNameTxt.TextChanged
         If Not Regex.IsMatch(PersonNameTxt.Text, "^[a-zA-Z ]*$") Then
             PersonNameTxt.Text = PersonNameTxt.Text.Remove(PersonNameTxt.Text.Length - 1)
@@ -431,15 +497,19 @@ Public Class ItemsCntrl
     End Sub
 
     Private Sub ContactTxt_TextChanged(sender As Object, e As EventArgs) Handles ContactTxt.TextChanged
-
-        If contactExist(ContactTxt.Text) Then
-            ContactTxt.BorderColor = Color.Red
-            MsgBox("Contact number already exists. Please choose a different contact number.")
-        End If
+        If isLoading Then Return
 
         If Not Regex.IsMatch(ContactTxt.Text, "^[0-9]*$") Or ContactTxt.Text.Length > 11 Then
             ContactTxt.Text = ContactTxt.Text.Remove(ContactTxt.Text.Length - 1)
             ContactTxt.SelectionStart = ContactTxt.Text.Length
+            Return
+        End If
+
+        If ContactTxt.Text <> "" AndAlso contactExist(ContactTxt.Text, selectedItemId) Then
+            ContactTxt.BorderColor = Color.Red
+            MsgBox("Contact number already exists. Please choose a different contact number.")
+        Else
+            ContactTxt.BorderColor = defaultBorder
         End If
     End Sub
 

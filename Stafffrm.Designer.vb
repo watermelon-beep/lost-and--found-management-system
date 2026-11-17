@@ -40,10 +40,9 @@ Partial Class Stafffrm
         Me.Guna2Panel2 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.ManageClaimsbtn = New Guna.UI2.WinForms.Guna2Button()
+        Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.Dashboardbtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -243,20 +242,18 @@ Partial Class Stafffrm
         Me.TableLayoutPanel3.BackColor = System.Drawing.Color.Transparent
         Me.TableLayoutPanel3.ColumnCount = 1
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel3.Controls.Add(Me.ManageClaimsbtn, 0, 3)
-        Me.TableLayoutPanel3.Controls.Add(Me.Itmbtn, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.ManageClaimsbtn, 0, 2)
+        Me.TableLayoutPanel3.Controls.Add(Me.Itmbtn, 0, 1)
         Me.TableLayoutPanel3.Controls.Add(Me.Guna2Panel6, 0, 0)
-        Me.TableLayoutPanel3.Controls.Add(Me.Dashboardbtn, 0, 1)
         Me.TableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel3.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel3.Margin = New System.Windows.Forms.Padding(0)
         Me.TableLayoutPanel3.Name = "TableLayoutPanel3"
-        Me.TableLayoutPanel3.RowCount = 5
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.60336!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.449843!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.449843!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.449843!))
-        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 57.04711!))
+        Me.TableLayoutPanel3.RowCount = 4
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.12737!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.43603!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.43603!))
+        Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 63.00056!))
         Me.TableLayoutPanel3.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel3.Size = New System.Drawing.Size(295, 1035)
         Me.TableLayoutPanel3.TabIndex = 0
@@ -276,60 +273,13 @@ Partial Class Stafffrm
         Me.ManageClaimsbtn.ForeColor = System.Drawing.Color.White
         Me.ManageClaimsbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.ManageClaimsbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.ManageClaimsbtn.Location = New System.Drawing.Point(0, 345)
+        Me.ManageClaimsbtn.Location = New System.Drawing.Point(0, 274)
         Me.ManageClaimsbtn.Margin = New System.Windows.Forms.Padding(0)
         Me.ManageClaimsbtn.Name = "ManageClaimsbtn"
-        Me.ManageClaimsbtn.Size = New System.Drawing.Size(295, 97)
+        Me.ManageClaimsbtn.Size = New System.Drawing.Size(295, 108)
         Me.ManageClaimsbtn.TabIndex = 7
         Me.ManageClaimsbtn.Text = "Manage claims"
         Me.ManageClaimsbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
-        '
-        'Guna2Panel6
-        '
-        Me.Guna2Panel6.Controls.Add(Me.Label6)
-        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(0)
-        Me.Guna2Panel6.Name = "Guna2Panel6"
-        Me.Guna2Panel6.Size = New System.Drawing.Size(295, 151)
-        Me.Guna2Panel6.TabIndex = 3
-        '
-        'Label6
-        '
-        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Mongolian Baiti", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(45, 42)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(200, 69)
-        Me.Label6.TabIndex = 1
-        Me.Label6.Text = "Campus" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lost and Found" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management system"
-        '
-        'Dashboardbtn
-        '
-        Me.Dashboardbtn.Animated = True
-        Me.Dashboardbtn.BorderColor = System.Drawing.Color.Transparent
-        Me.Dashboardbtn.BorderThickness = 2
-        Me.Dashboardbtn.CheckedState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Dashboardbtn.CheckedState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Dashboardbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Dashboardbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Dashboardbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Dashboardbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Dashboardbtn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Dashboardbtn.FillColor = System.Drawing.Color.Transparent
-        Me.Dashboardbtn.Font = New System.Drawing.Font("Microsoft YaHei UI", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Dashboardbtn.ForeColor = System.Drawing.Color.White
-        Me.Dashboardbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
-        Me.Dashboardbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Dashboardbtn.Location = New System.Drawing.Point(0, 151)
-        Me.Dashboardbtn.Margin = New System.Windows.Forms.Padding(0)
-        Me.Dashboardbtn.Name = "Dashboardbtn"
-        Me.Dashboardbtn.Size = New System.Drawing.Size(295, 97)
-        Me.Dashboardbtn.TabIndex = 4
-        Me.Dashboardbtn.Text = "Dashboard"
-        Me.Dashboardbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
         'Itmbtn
         '
@@ -346,21 +296,43 @@ Partial Class Stafffrm
         Me.Itmbtn.ForeColor = System.Drawing.Color.White
         Me.Itmbtn.HoverState.BorderColor = System.Drawing.Color.SteelBlue
         Me.Itmbtn.HoverState.ForeColor = System.Drawing.Color.SteelBlue
-        Me.Itmbtn.Location = New System.Drawing.Point(0, 248)
+        Me.Itmbtn.Location = New System.Drawing.Point(0, 166)
         Me.Itmbtn.Margin = New System.Windows.Forms.Padding(0)
         Me.Itmbtn.Name = "Itmbtn"
-        Me.Itmbtn.Size = New System.Drawing.Size(295, 97)
+        Me.Itmbtn.Size = New System.Drawing.Size(295, 108)
         Me.Itmbtn.TabIndex = 5
         Me.Itmbtn.Text = "Items"
         Me.Itmbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Left
         '
-        'Stafffrmvb
+        'Guna2Panel6
+        '
+        Me.Guna2Panel6.Controls.Add(Me.Label6)
+        Me.Guna2Panel6.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Guna2Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Guna2Panel6.Margin = New System.Windows.Forms.Padding(0)
+        Me.Guna2Panel6.Name = "Guna2Panel6"
+        Me.Guna2Panel6.Size = New System.Drawing.Size(295, 166)
+        Me.Guna2Panel6.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Mongolian Baiti", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(45, 50)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(200, 69)
+        Me.Label6.TabIndex = 1
+        Me.Label6.Text = "Campus" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lost and Found" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management system"
+        '
+        'Stafffrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1904, 1041)
         Me.Controls.Add(Me.Guna2Panel1)
-        Me.Name = "Stafffrmvb"
+        Me.Name = "Stafffrm"
         Me.Text = "Stafffrmvb"
         Me.Guna2Panel1.ResumeLayout(False)
         Me.TableLayoutPanel1.ResumeLayout(False)
@@ -396,6 +368,5 @@ Partial Class Stafffrm
     Friend WithEvents ManageClaimsbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label6 As Label
-    Friend WithEvents Dashboardbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
 End Class

@@ -6,7 +6,7 @@ Public Class ItemsCntrl
 
     Dim selectedItemId As String = ""
     Dim isLoading As Boolean = False
-    Dim defaultBorder As Color
+    Dim defaultBorder As Color = Color.FromArgb(36, 93, 170)
 
     Private Sub clearAllField()
         isLoading = True

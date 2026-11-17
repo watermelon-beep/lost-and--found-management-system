@@ -60,6 +60,7 @@ Public Class Adminfrm
         sqlconnection()
         selectedControl(dashcntrl, DisplayPnl)
         ViewPhoto(currentUserName, UserPrfl)
+        Label7.Text = uName
     End Sub
 
     Private Sub Adminfrm_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed

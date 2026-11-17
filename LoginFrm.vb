@@ -14,7 +14,7 @@ Public Class LoginFrm
     Private Function logVerification() As Boolean
 
         Try
-            query = "SELECT UserPassword, StaffNo, AccountStatus, Role FROM user_table WHERE Username = @Username"
+            query = "SELECT UserPassword, StaffNo, AccountStatus, Role, firstName FROM user_table WHERE Username = @Username"
 
             Using comm As New SqlCommand(query, conn)
 
@@ -26,6 +26,7 @@ Public Class LoginFrm
                             currentStaffNo = Convert.ToInt32(dataRead("StaffNo"))
                             role = dataRead("Role").ToString()
                             currentUserName = Usrnmtxtbx.Text
+                            uName = dataRead("firstName")
                             Return True
                         End If
                     End While

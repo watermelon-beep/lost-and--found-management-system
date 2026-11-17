@@ -5,7 +5,7 @@ Module DbConnection
     Public conn As New SqlConnection
     Public comm As New SqlCommand
     Public dataRead As SqlDataReader
-
+    Public uName As String = ""
 
     Public currentStaffNo As Integer
     Public currentUserName As String
@@ -71,5 +71,9 @@ Module DbConnection
         End Try
         Return False
     End Function
+
+    Public Sub SelectedUser()
+
+    End Sub
 
 End Module

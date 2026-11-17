@@ -30,6 +30,7 @@ Partial Class Adminfrm
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.DisplayPnl = New Guna.UI2.WinForms.Guna2Panel()
         Me.Guna2Panel4 = New Guna.UI2.WinForms.Guna2Panel()
+        Me.Label7 = New System.Windows.Forms.Label()
         Me.Logoutbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2VSeparator1 = New Guna.UI2.WinForms.Guna2VSeparator()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -118,6 +119,7 @@ Partial Class Adminfrm
         'Guna2Panel4
         '
         Me.Guna2Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(45, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.Guna2Panel4.Controls.Add(Me.Label7)
         Me.Guna2Panel4.Controls.Add(Me.Logoutbtn)
         Me.Guna2Panel4.Controls.Add(Me.Guna2VSeparator1)
         Me.Guna2Panel4.Controls.Add(Me.Label5)
@@ -131,6 +133,18 @@ Partial Class Adminfrm
         Me.Guna2Panel4.Name = "Guna2Panel4"
         Me.Guna2Panel4.Size = New System.Drawing.Size(1591, 120)
         Me.Guna2Panel4.TabIndex = 1
+        '
+        'Label7
+        '
+        Me.Label7.Anchor = System.Windows.Forms.AnchorStyles.Left
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft YaHei UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
+        Me.Label7.Location = New System.Drawing.Point(121, 74)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(46, 19)
+        Me.Label7.TabIndex = 8
+        Me.Label7.Text = "Name"
         '
         'Logoutbtn
         '
@@ -215,9 +229,9 @@ Partial Class Adminfrm
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label2.Location = New System.Drawing.Point(23, 74)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(146, 19)
+        Me.Label2.Size = New System.Drawing.Size(102, 19)
         Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Welcome back, Admin"
+        Me.Label2.Text = "Welcome back,"
         '
         'Label1
         '
@@ -460,4 +474,5 @@ Partial Class Adminfrm
     Friend WithEvents Reportbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Guna2VSeparator1 As Guna.UI2.WinForms.Guna2VSeparator
     Friend WithEvents Logoutbtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Label7 As Label
 End Class

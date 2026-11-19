@@ -54,6 +54,14 @@ Public Class UserManagement
         CnfrmPasstxbx.BorderColor = normal
     End Sub
 
+    Private Sub setRuleBorder(box As Guna2TextBox)
+        If box.Text = "" OrElse (Regex.IsMatch(box.Text, "[A-Z]") AndAlso Regex.IsMatch(box.Text, "[0-9]")) Then
+            box.BorderColor = Color.FromArgb(36, 93, 170)
+        Else
+            box.BorderColor = Color.Red
+        End If
+    End Sub
+
     Private Sub searchUser()
         Try
 
@@ -475,16 +483,7 @@ Public Class UserManagement
         If isLoading Then Return
 
         CnfrmPasstxbx.Text = RegPasstxbx.Text
-        If RegPasstxbx.Text = "" Or
-           Regex.IsMatch(RegPasstxbx.Text, ".[A-Z]") AndAlso
-           Regex.IsMatch(RegPasstxbx.Text, ".[0-9]") AndAlso
-           Regex.IsMatch(RegPasstxbx.Text, ".{6}") Then
-
-            RegPasstxbx.BorderColor = Color.FromArgb(36, 93, 170)
-
-        Else
-            RegPasstxbx.BorderColor = Color.Red
-        End If
+        setRuleBorder(RegPasstxbx)
     End Sub
 
     Private Sub AddUsrbtn_Click(sender As Object, e As EventArgs) Handles AddUsrbtn.Click
@@ -611,36 +610,18 @@ Public Class UserManagement
     Private Sub RegUsrnmtxbx_TextChanged(sender As Object, e As EventArgs) Handles RegUsrnmtxbx.TextChanged
         If isLoading Then Return
 
+        setRuleBorder(RegUsrnmtxbx)
+
         If RegUsrnmtxbx.Text <> "" AndAlso updateTriggered = False AndAlso userLogExist(RegUsrnmtxbx.Text) Then
             RegUsrnmtxbx.BorderColor = Color.Red
             MsgBox("Username already exists. Please choose a different username.")
-        End If
-
-        If RegUsrnmtxbx.Text = "" Or
-           Regex.IsMatch(RegUsrnmtxbx.Text, ".[A-Z]") AndAlso
-           Regex.IsMatch(RegUsrnmtxbx.Text, ".[0-9]") AndAlso
-           Regex.IsMatch(RegUsrnmtxbx.Text, ".{6}") Then
-
-            RegUsrnmtxbx.BorderColor = Color.FromArgb(36, 93, 170)
-
-        Else
-            RegUsrnmtxbx.BorderColor = Color.Red
         End If
     End Sub
 
     Private Sub CnfrmPasstxbx_TextChanged(sender As Object, e As EventArgs) Handles CnfrmPasstxbx.TextChanged
         If isLoading Then Return
 
-        If CnfrmPasstxbx.Text = "" Or
-           Regex.IsMatch(CnfrmPasstxbx.Text, ".[A-Z]") AndAlso
-           Regex.IsMatch(CnfrmPasstxbx.Text, ".[0-9]") AndAlso
-           Regex.IsMatch(CnfrmPasstxbx.Text, ".{6}") Then
-
-            CnfrmPasstxbx.BorderColor = Color.FromArgb(36, 93, 170)
-
-        Else
-            CnfrmPasstxbx.BorderColor = Color.Red
-        End If
+        setRuleBorder(CnfrmPasstxbx)
     End Sub
 
     Private Sub Clearbtn_Click(sender As Object, e As EventArgs) Handles Clearbtn.Click

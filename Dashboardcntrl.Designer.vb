@@ -263,7 +263,7 @@ Partial Class Dashboardcntrl
         Me.DashItmtbl.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DashItmtbl.ColumnHeadersHeight = 50
         Me.DashItmtbl.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(234, Byte), Integer), CType(CType(247, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
@@ -431,6 +431,8 @@ Partial Class Dashboardcntrl
         '
         Me.Chart.Datasets.AddRange(New Guna.Charts.Interfaces.IGunaDataset() {Me.GunaStackedBarDataset1})
         Me.Chart.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Chart.Legend.Align = Guna.Charts.WinForms.ChartTextAlignment.[End]
+        Me.Chart.Legend.Display = False
         ChartFont17.FontName = "Arial"
         Me.Chart.Legend.LabelFont = ChartFont17
         Me.Chart.Location = New System.Drawing.Point(4, 4)

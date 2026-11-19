@@ -22,6 +22,7 @@ Partial Class Stafffrm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Stafffrm))
         Me.Guna2Panel1 = New Guna.UI2.WinForms.Guna2Panel()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
@@ -43,6 +44,7 @@ Partial Class Stafffrm
         Me.Itmbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2Panel6 = New Guna.UI2.WinForms.Guna2Panel()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Guna2Panel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.Guna2Panel3.SuspendLayout()
@@ -186,9 +188,9 @@ Partial Class Stafffrm
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(246, Byte), Integer), CType(CType(252, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(1268, 52)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(64, 22)
+        Me.Label3.Size = New System.Drawing.Size(48, 22)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Admin"
+        Me.Label3.Text = "Staff"
         '
         'UserPrfl
         '
@@ -326,6 +328,9 @@ Partial Class Stafffrm
         Me.Label6.TabIndex = 1
         Me.Label6.Text = "Campus" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Lost and Found" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Management system"
         '
+        'Timer1
+        '
+        '
         'Stafffrm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -369,4 +374,5 @@ Partial Class Stafffrm
     Friend WithEvents Guna2Panel6 As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents Label6 As Label
     Friend WithEvents Itmbtn As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Timer1 As Timer
 End Class
